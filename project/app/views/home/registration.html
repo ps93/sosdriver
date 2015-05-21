@@ -1,0 +1,41 @@
+<div class="bar bar-header bar-balanced">
+  <a ng-click="goToPrehome()" class="button icon-left ion-chevron-left button-clear "></a>
+  <h1 class="title">REGISTRAZIONE</h1>
+</div>
+<br><br>
+
+<div class="list">
+<label class="item item-input item-floating-label item-stable">
+  <span class="input-label">Nome</span>
+  <input type="text" placeholder="Nome" ng-model="name">
+</label>
+
+<label class="item item-input item-floating-label item-stable">
+  <span class="input-label  item-royal">Cognome</span>
+  <input type="text" placeholder="Cognome" ng-model="surname">
+</label>
+
+<label class="item item-input item-floating-label item-stable">
+<span class="input-label">Username</span>
+<input class="item-royal" name="username" type="text" placeholder="Username" ng-model="username">
+</label>
+
+<label class="item item-input item-floating-label item-stable">
+<span class="input-label">Password</span>
+<input class="item-royal" name="password" type="text" placeholder="Password" ng-model="password">
+</label>
+
+ <label class="item item-input item-floating-label item-stable">
+  <span class="input-label">email</span>
+  <input class="item-royal" name="Partenza" type="text" placeholder="email" ng-model="email" >
+</label>
+   <label class="item item-input item-floating-label item-stable">
+  <span class="input-label">numero di telefono</span>
+  <input class="item-royal" name="destinazione" type="text" placeholder="numero di telefono" ng-model="number" >
+</label>
+
+</div>
+
+ <button align="center" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="registration()">
+REGISTRA
+</button>

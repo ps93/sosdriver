@@ -1,0 +1,71 @@
+<div id="full-page"
+     ng-class="{'overflow-hidden':toggleMenu || toggleSpinner || _toggle_panelShare || _toggle_panelSearch}">
+
+    <header define-area type-area="paddingTopHeader">
+        <back-button ng-if="toggleBackButton" class="back-button icon icon-angle-left"></back-button>
+        <div class="page-title" ng-bind="pageTitle"></div>
+        <div ng-click="openMenu()" class="header-icon-menu">
+            <i class="icon icon-reorder"></i>
+        </div>
+    </header>
+
+    <!--MAIN MENU-->
+    <div ng-class="toggleMenu ? 'open-menu':'close-menu'"
+         ng-swipe-right="closeMenu()"
+         id="right-page">
+        <div id="main-menu">
+            <ul>
+                <li>
+                    <span ui-sref="prehome">
+                        <i class="icon icon-home"></i>
+                        <b>Home</b>
+                    </span>
+                </li>
+                <li>
+                    <span ng-click="goToSearch()">
+                        <i class="icon icon-search-1"></i>
+                        <b ng-bind="'SEARCH' | translate"></b>
+                    </span>
+                </li>
+                <li ng-if="currentPage !== 'home'">
+                    <span ng-click="goToHome('0')">
+                        <i class="icon icon-lodging"></i>
+                        <b>Hotels</b>
+                    </span>
+                </li>
+                <li ng-if="currentPage !== 'home'">
+                    <span ng-click="goToHome('1')">
+                        <i class="icon icon-cutlery"></i>
+                        <b ng-bind="'RESTAURANTS' | translate"></b>
+                    </span>
+                </li>
+                <li ng-if="currentPage !== 'home'">
+                    <span ng-click="goToHome('2')">
+                        <i class="icon icon-pin-location"></i>
+                        <b ng-bind="'GEOLOCALIZATION' | translate"></b>
+                    </span>
+                </li>
+                <li>
+                    <span ui-sref="settings">
+                        <i class="icon icon-settings"></i>
+                        <b ng-bind="'SETTINGS' | translate"></b>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--PAGE CONTENT-->
+    <ui-view></ui-view>
+
+    <!-- MENU OVERLAY -->
+    <div ng-click="closeMenu()" ng-swipe-right="closeMenu()" ng-class="toggleMenu ? 'open-overlay':'close-overlay'"
+         class="overlay"></div>
+
+    <!-- OVERLAY -->
+    <div ng-class="(toggleSpinner) ? 'open-overlay':'close-overlay'" class="overlay"></div>
+
+    <!-- SPINNER -->
+    <spinner ng-if="toggleSpinner"></spinner>
+
+</div>

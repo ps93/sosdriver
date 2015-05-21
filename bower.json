@@ -1,0 +1,21 @@
+{
+  "name": "SOSDriver",
+  "version": "1.0",
+  "author": "Paulo Silva",
+  "dependencies": {
+    "angular": "latest",
+    "angular-ui-router": "latest",
+    "angular-i18n": "latest",
+    "angular-touch": "latest",
+    "angular-local-storage": "latest",
+    "swiper": "latest",
+    "angular-translate": "~2.6.1",
+    "oclazyload": "~0.6.3",
+    "lodash": "~3.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "private": true
+}

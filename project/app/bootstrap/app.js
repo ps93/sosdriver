@@ -10,3 +10,9 @@ var app = angular.module('app', [
         'ionic'
     ]
 );
+
+
+
+
+
+angular.bootstrap(document.body, ['app']);

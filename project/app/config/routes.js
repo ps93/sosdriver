@@ -115,8 +115,56 @@ module.exports = function (app) {
                       }
                   })
 
+
+
+                  //////////////////////////////////////////////
+                    //////////////// HEADERMENU ////////////////
+                    ////////////////////////////////////////////
+                    .state('headerMenu', {
+                        url: '/myarea',
+                        template: require('../views/partials/headermenu.html'),
+                        controller: 'UserAreaController',
+                        resolve: {
+                            load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
+                                var deferred = $q.defer();
+                                require.ensure([], function () {
+                                    $ocLazyLoad.load({name: 'app.userArea'});
+                                    deferred.resolve(require('../controllers/userArea'));
+                                });
+                                return deferred.promise;
+                            }]
+                        }
+                    })
+
+
+                    //////////////////////////////////////////////
+                      //////////////// HEADERMENU ////////////////
+                      ////////////////////////////////////////////
+                      .state('person', {
+                          url: '/person',
+                          parent:'headerMenu',
+                          template: require('../views/home/person.html'),
+                          controller: 'PersonController',
+                          resolve: {
+                              load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
+                                  var deferred = $q.defer();
+                                  require.ensure([], function () {
+                                      $ocLazyLoad.load({name: 'app.userArea'});
+                                      deferred.resolve(require('../controllers/userArea'));
+                                  });
+                                  return deferred.promise;
+                              }]
+                          }
+                      })
+
+
+
+
         }
     ]);
+
+
+
 
     console.log(app);
 

@@ -1,0 +1,485 @@
+.home-change-view {
+    clear: left;
+    float: left;
+    width: 100%;
+    height: 44px;
+    background: #e8e8e8;
+}
+
+.autocomplete-container-white {
+    background: #fff !important;
+}
+
+.autocomplete-color-gray {
+    background: #f0f0f0 !important;
+}
+
+#NamespaceHome ul, #NamespaceFavourites ul, #NamespaceRecommended ul {
+    position: relative;
+    left: 50%;
+    clear: left;
+    float: left;
+    width: 132px;
+    height: 24px;
+    margin-top: 10px;
+    margin-left: -66px;
+    list-style: none;
+    overflow: hidden;
+}
+
+#NamespaceHome ul li, #NamespaceFavourites ul li, #NamespaceRecommended ul li {
+    display: inline;
+}
+
+#NamespaceHome ul li i, #NamespaceFavourites ul li i, #NamespaceRecommended ul li i {
+    display: block;
+    float: left;
+    width: 66px;
+    height: 22px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.search-bottom {
+    position: absolute;
+    display: block;
+    z-index: 80;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: rgba(234, 229, 210, 0.8);
+}
+
+.search-bottom-icon, .add-bottom-friends, .add-bottom-favourites, .add-bottom-recommended {
+    position: relative;
+    left: 50%;
+    clear: left;
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-top: -18px;
+    margin-left: -25px;
+    background-color: #3b5998;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.search-bottom-icon {
+    padding-top: 11px;
+    color: #3c312d;
+    font-size: 24px;
+    text-align: center;
+    background: #eae5d2;
+    border: 1px solid #3c312d;
+}
+
+.add-bottom-friends, .add-bottom-favourites, .add-bottom-recommended {
+    border: 1px solid #fff;
+}
+
+.show_tabs, .hide_tabs {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.show_tabs {
+    opacity: 1;
+    z-index: 50;
+}
+
+.hide_tabs {
+    opacity: 0;
+    z-index: -10;
+}
+
+.hotels-list {
+    position: relative;
+    clear: left;
+    float: left;
+    width: 94%;
+    margin: 0 3% 3% 3%;
+    padding: 10px 0;
+    background: #fff;
+    box-shadow: 0 0 3px #d0d0d0;
+}
+
+.hotels-list-image {
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin-left: 10px;
+    background-color: #d0d0d0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hotel-list-content {
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.hotel-list-arrow {
+    display: table;
+    float: right;
+    width: 20px;
+    height: 90px;
+}
+
+.hotel-list-buttons-arrow {
+    float: right;
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    margin-right: 15px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 8px;
+}
+
+.hotel-list-title, .hotel-list-address, .hotel-list-buttons, .hotel-list-stars {
+    clear: left;
+    float: left;
+    margin-left: 10px;
+}
+
+.hotel-list-address {
+    margin-right: 10px;
+}
+
+.best-price-listlarge, .best-price-listlarge span {
+    font-size: 18px;
+    text-align: center;
+    font-family: 'robotobold';
+    color: #3c312d;
+}
+
+.hotel-list-booking {
+    clear: left;
+    float: left;
+    width: 100%;
+    height: 34px;
+    overflow: hidden;
+}
+
+.best-price-listsmall {
+    float: left;
+    margin-top: 8px;
+    margin-left: 10px;
+    font-size: 18px;
+    color: #e94625;
+}
+
+.best-price-listsmall-button-booking {
+    float: right;
+    margin-top: 7px !important;
+    margin-right: 10px;
+}
+
+.hotel-list-title {
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.hotel-list-stars-icon {
+    float: left;
+    font-size: 10px;
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.hotel-list-address {
+    font-size: 12px;
+}
+
+.hotel-list-buttons {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.icon-share-card-list, .icon-favourite-card-list, .icon-remove-card-list, .icon-detail-card-list {
+    float: left;
+    width: 34px;
+    height: 34px;
+    padding-top: 9px;
+    margin-right: 10px;
+    color: #fff;
+    text-align: center;
+    background: #3c312d;
+    border-radius: 50%;
+}
+
+/* HOTEL LIST LARGE */
+.hotels-list-large, .hotels-list-large-content, .hotels-list-large-image, .hotels-list-large-buttons {
+    clear: left;
+    float: left;
+    width: 100%;
+}
+
+.hotels-list-large {
+    width: 94%;
+    margin: 0 3% 3% 3%;
+    padding-bottom: 10px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 3px #d0d0d0;
+}
+
+.hotels-list-large-content {
+    margin-top: 10px;
+}
+
+.hotels-list-large-content-hotel {
+    display: block;
+    overflow: auto;
+}
+
+.hotels-list-large-content-button {
+    float: right;
+    padding-right: 10px;
+}
+
+.hotels-list-large-button-margintop {
+    margin-top: 10px !important;
+}
+
+.hotels-list-large-buttons {
+    position: relative;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+    overflow: hidden;
+}
+
+.hotels-list-large-button {
+    float: right !important;
+    width: 70px;
+    height: 26px;
+    margin-top: 24px;
+    line-height: 26px;
+    font-size: 12px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.hotels-list-large-image {
+    height: 140px;
+    background-color: #d0d0d0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.icon-share-card, .icon-remove-card, .icon-favourite-card {
+    float: left;
+    width: 40px;
+    height: 40px;
+    padding-top: 9px;
+    margin-right: 10px;
+    color: #eae5d2;
+    font-size: 20px;
+    text-align: center;
+    background: #3c312d;
+    border-radius: 50%;
+}
+
+/************************* HOME FRIENDS  *************************/
+
+.friends-listview-filter {
+    clear: left;
+    float: left;
+    width: 100%;
+    height: 30px;
+    list-style: none;
+}
+
+.friends-listview-container, .offers-listview-container {
+    clear: left;
+    float: left;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border-bottom: 1px solid #d0d0d0;
+    background: #fff;
+}
+
+.friends-listview-container {
+    height: auto;
+    padding: 20px 10px 10px 10px;
+}
+
+.friends-listview-container-image {
+    clear: left;
+    float: left;
+    width: 60px;
+    height: 60px;
+}
+
+.friends-listview-container-image, .offers-listview-container-image {
+    clear: left;
+    float: left;
+    width: 60px;
+    height: 60px;
+    background-color: #f0f0f0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.friends-listview-container-data {
+    display: table;
+    height: 100%;
+    padding-left: 10px;
+    overflow: auto;
+}
+
+.friends-listview-container-icon {
+    float: right;
+    width: 36px;
+    height: 100%;
+}
+
+.friends-listview-container-data-name {
+    display: block;
+    word-break: break-all;
+    margin-top: 12px;
+}
+
+.friends-listview-container-data-email {
+    display: block;
+    word-break: break-all;
+    font-size: 12px;
+}
+
+.friends-listview-container-icon-remove, .friends-listview-container-icon-mail, .friends-listview-container-icon-addfriend {
+    clear: left;
+    float: left;
+    width: 36px;
+    height: 36px;
+    margin-top: 12px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.friends-listview-status {
+    position: absolute;
+    right: 10px;
+    margin-top: -21px;
+    padding: 2px 6px 2px 6px;
+    font-size: 11px;
+    color: #e94625;
+    text-transform: lowercase;
+}
+
+/************************* HOME OFFERS  *************************/
+
+.offers-listview-container {
+    height: auto;
+}
+
+.offers-listview-container-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 0;
+}
+
+.offers-listview-container-arrow {
+    display: table;
+    float: right;
+    width: 20px;
+    height: 90px;
+    text-align: right;
+}
+
+.offers-listview-container-arrow-icon {
+    display: table-cell;
+    vertical-align: bottom;
+    font-size: 22px;
+}
+
+.offers-listview-container-data {
+    display: block;
+    padding-left: 10px;
+    overflow: auto;
+}
+
+.offers-listview-container-data-title, .offers-listview-container-data-discount, .offers-listview-container-data-dates {
+    clear: left;
+    float: left;
+}
+
+.offers-listview-container-data-title {
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.offers-listview-container-data-discount {
+    color: rgb(222, 70, 48);
+    font-size: 13px;
+}
+
+.offers-listview-container-data-dates {
+    color: #989898;
+}
+
+/* FILTRO */
+
+.button-filtro {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 20px;
+    background-repeat: no-repeat;
+    background-position: -7px -7px;
+    background-size: 44px;
+    border-radius: 3px;
+}
+
+.content-filter {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    bottom: 40px;
+    width: 200px;
+    height: 200px;
+    margin-left: 10px;
+    background: #f0f0f0;
+    box-shadow: 0 0 3px #c0c0c0;
+}
+
+.input-search-friends-container {
+    clear: left;
+    float: left;
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 32px;
+    margin: 7px 5% 0 5%;
+    background: #fff;
+}
+
+.content-filter-row {
+    clear: left;
+    float: left;
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.content-filter-label {
+    float: left;
+    margin-left: 10px;
+}

@@ -5,6 +5,7 @@ require('ocLazyLoad');
 require('angular-ui-router');
 require('angular-touch');
 require('ionic');
+require('swiper');
 
 
 /* LOAD CSS */
@@ -23,8 +24,7 @@ var app = angular.module('app', [
         'oc.lazyLoad',
         'ui.router',
         'ngTouch',
-        'ngLocale',
-        'ionic'
+        'ngLocale'
     ]
 );
 

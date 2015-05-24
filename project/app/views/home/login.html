@@ -17,3 +17,8 @@
 <button align="center" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="login()">
 LOGIN
 </button>
+<div class="spacer-20"></div>
+
+<h2 align="center" ng-if="message!==''" ng-bind="message"> </h2>
+
+<div class="col col-33 col-offset-33"> <ion-spinner ng-show="carica == true" icon="bubbles"></ion-spinner></div>

@@ -1,15 +1,10 @@
 'use strict';
 
-var app = angular.module('app.prehome', []);
+var app = angular.module('app.userArea', [])
 
 .controller('UserAreaController', [
     '$rootScope', '$scope', '$state',
     require('./UserAreaController')
-])
-
-.controller('PersonController', [
-    '$rootScope', '$scope', '$state',
-    require('./PersonController')
 ]);
 
 

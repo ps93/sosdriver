@@ -14,6 +14,7 @@ require('css/views/splashscreen.css');
 require('css/views/prehome.css');
 require('css/lib/ionic/css/ionicons.css');
 require('css/lib/ionic/css/ionic.css');
+require('css/tabs.css');
 
 
 

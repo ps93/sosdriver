@@ -12,6 +12,15 @@ module.exports = function (app) {
 
 
 
+                        //////////////////////////////////////////////
+                          ///////////// HEDARMENUSLIDER /////////////////
+                          ////////////////////////////////////////////
+                          .state('headermenuslider', {
+                            parent: 'base',
+                              template: require('../partials/headermenuslider.html')
+                          })
+
+
             //////////////////////////////////////////////
             ///////////////// SPLASHSCREEN //////////////
             ////////////////////////////////////////////
@@ -80,14 +89,6 @@ module.exports = function (app) {
 
 
 
-            //////////////////////////////////////////////
-              /////////////////// HEADERS /////////////////
-              ////////////////////////////////////////////
-              .state('headermenuslider', {
-                parent: 'base',
-                  template: require('../partials/headermenuslider.html')
-              })
-
 
               .state('base', {
                     template: '<ui-view></ui-view>',
@@ -116,35 +117,14 @@ module.exports = function (app) {
                   })
 
 
-
-                  //////////////////////////////////////////////
-                    //////////////// HEADERMENU ////////////////
-                    ////////////////////////////////////////////
-                    .state('headerMenu', {
-                        url: '/myarea',
-                        template: require('../views/partials/headermenu.html'),
-                        controller: 'UserAreaController',
-                        resolve: {
-                            load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
-                                var deferred = $q.defer();
-                                require.ensure([], function () {
-                                    $ocLazyLoad.load({name: 'app.userArea'});
-                                    deferred.resolve(require('../controllers/userArea'));
-                                });
-                                return deferred.promise;
-                            }]
-                        }
-                    })
-
-
                     //////////////////////////////////////////////
-                      //////////////// HEADERMENU ////////////////
+                      //////////////// USER AREA ////////////////
                       ////////////////////////////////////////////
-                      .state('person', {
-                          url: '/person',
-                          parent:'headerMenu',
-                          template: require('../views/home/person.html'),
-                          controller: 'PersonController',
+                      .state('userArea', {
+                          url: '/userArea',
+                          parent: 'base',
+                          template: require('../views/home/userArea.html'),
+                          controller: 'UserAreaController',
                           resolve: {
                               load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
                                   var deferred = $q.defer();
@@ -155,7 +135,7 @@ module.exports = function (app) {
                                   return deferred.promise;
                               }]
                           }
-                      })
+                      });
 
 
 

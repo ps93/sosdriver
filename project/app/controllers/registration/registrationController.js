@@ -38,7 +38,10 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
           // this callback will be called asynchronously
           // when the response is available
 
-          alert(data);
+          if(status==200)
+          $state.go('userArea');
+          else
+          alert('Login fallito');
 
         }).error(function(){
            // called asynchronously if an error occurs

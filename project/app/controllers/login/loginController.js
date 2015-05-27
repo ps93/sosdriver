@@ -20,10 +20,11 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
     if(data=='200')
       {
         console.log('login con successo');
-        $state.go('person');
+        $state.go('userArea');
       }
     else {
       $scope.message='Login fallito';
+      console.log('login fallito');
 
     }
 

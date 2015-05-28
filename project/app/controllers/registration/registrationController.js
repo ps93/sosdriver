@@ -15,11 +15,12 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
 
        Nome : $scope.name,
        Cognome : $scope.surname,
+       Nascita : $scope.birthday,
+       Sesso : $scope.sex,
+       Email : $scope.email,
+       Telefono : $scope.number,
        Username : $scope.username,
        Password : $scope.password,
-       Email : $scope.email,
-       Telefono : $scope.number
-
      };
 
 

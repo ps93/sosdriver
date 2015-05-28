@@ -5,36 +5,55 @@
 <br><br>
 
 <div class="list">
-<label class="item item-input item-floating-label item-stable">
-  <span class="input-label">Nome</span>
-  <input type="text" placeholder="Nome" ng-model="name">
-</label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Nome</span>
+    <input type="text" placeholder="Nome" ng-model="name">
+  </label>
 
-<label class="item item-input item-floating-label item-stable">
-  <span class="input-label  item-royal">Cognome</span>
-  <input type="text" placeholder="Cognome" ng-model="surname">
-</label>
+  <label class="item item-input item-floating-label ">
+    <span class="input-label  item-royal">Cognome</span>
+    <input type="text" placeholder="Cognome" ng-model="surname">
+  </label>
 
-<label class="item item-input item-floating-label item-stable">
-<span class="input-label">Username</span>
-<input class="item-royal" name="username" type="text" placeholder="Username" ng-model="username">
-</label>
+  <label class="item item-input item-floating-label ">
+    <span class="input-label  item-royal">Data di Nascita</span>
+    <input type="date" placeholder="Data di Nascita" ng-model="birthday">
+  </label>
 
-<label class="item item-input item-floating-label item-stable">
-<span class="input-label">Password</span>
-<input class="item-royal" name="password" type="text" placeholder="Password" ng-model="password">
-</label>
+<table class="item item-input item-floating-label">
+  <span class="input-label  item-royal">Sesso</span>
+  <label class="item item-radio">
+  <input type="radio" name="sex" ng-model="sex" value="m">
+    <div class="item-content">Male</div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
 
- <label class="item item-input item-floating-label item-stable">
-  <span class="input-label">email</span>
-  <input class="item-royal" name="Partenza" type="text" placeholder="email" ng-model="email" >
-</label>
-   <label class="item item-input item-floating-label item-stable">
-  <span class="input-label">numero di telefono</span>
-  <input class="item-royal" name="destinazione" type="text" placeholder="numero di telefono" ng-model="number" >
-</label>
+  <label class="item item-radio">
+    <input type="radio" name="sex" ng-model="sex" value="f">
+    <div class="item-content">Female</div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+</table>
 
-</div>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">E-mail</span>
+    <input class="item-royal" name="email" type="email" placeholder="E-mail" ng-model="email" >
+  </label>
+
+  <label class="item item--input item-floating-label">
+    <span class="input-label">Numero di Cellulare</span>
+    <input class="item-royal" name="cellphone" placeholder="Numero di Cellulare" ng-model="cellphone">
+  </label>
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Username</span>
+    <input class="item-royal" name="username" type="text" placeholder="Username" ng-model="username">
+  </label>
+
+  <label class="item item-input item-floating-label item-stable">
+    <span class="input-label">Password</span>
+    <input class="item-royal" name="password" type="text" placeholder="Password" ng-model="password">
+  </label>
 
  <button align="center" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="registration()">
 REGISTRA

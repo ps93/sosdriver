@@ -17,5 +17,8 @@
     "type": "git",
     "url": ""
   },
-  "private": true
+  "private": true,
+  "resolutions": {
+    "angular": ">=1.2.0 <=1.4.0"
+  }
 }

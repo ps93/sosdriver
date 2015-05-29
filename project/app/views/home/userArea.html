@@ -5,45 +5,51 @@
 
 <div class="tabs-striped tabs-top tabs-background-balanced tabs-color-dark">
     <div class="tabs">
-      <a class="tab-item" ng-click="goToTab(1)">
+      <a class="tab-item" ng-click="changeTab(0)">
         <i class="icon ion-person"> </i>
         Person
       </a>
-      <a class="tab-item" ng-click="goToTab(2)">
+      <a class="tab-item" ng-click="changeTab(1)">
         <i class="icon ion-earth">  </i>
         Map
       </a>
-      <a class="tab-item" ng-click="goToTab(3)">
+      <a class="tab-item" ng-click="changeTab(2)">
         <i class="icon ion-ios-list-outline"></i>
         Cronology
       </a>
-      <a class="tab-item"  ng-click="goToTab(4)">
+
+      <a class="tab-item"  ng-click="changeTab(3)">
         <i class="icon ion-gear-a"></i>
         Settings
       </a>
     </div>
   </div>
-  <div>
 
-          <!-- TAB1 -->
-          <div ng-if="tab==1" class="swiper-slide backgrond-white">
-              <load-template url="../views/home/user.html"></load-template>
+
+      <tabs class="swiper-container">
+
+          <!-- TAB CONTENT -->
+          <div class="swiper-wrapper">
+
+              <!-- TAB1 -->
+              <div when-scrolled class="swiper-slide" ng-controller="UserController">
+                  <load-template url="../views/home/user.html"></load-template>
+              </div>
+
+              <!-- TAB2 -->
+              <div  when-scrolled class="swiper-slide" >
+                  <load-template url="../views/home/geolocalization.html"></load-template>
+              </div>
+
+              <!-- TAB3 -->
+              <div when-scrolled class="swiper-slide">
+                  <load-template url="../views/home/history.html"></load-template>
+              </div>
+
+              <!-- TAB4 -->
+              <div when-scrolled class="swiper-slide">
+                  <load-template url="../views/home/settings.html"></load-template>
+              </div>
+
           </div>
-
-          <!-- TAB2 -->
-          <div ng-show="tab==2" class="swiper-slide backgrond-white">
-              <load-template url="../views/home/geolocalization.html"></load-template>
-          </div>
-
-          <!-- TAB3 -->
-          <div ng-if="tab==3" class="swiper-slide backgrond-white">
-              <load-template url="../views/home/user.html"></load-template>
-          </div>
-
-          <!-- TAB4 -->
-          <div ng-if="tab==4" class="swiper-slide backgrond-white">
-              <load-template url="../views/home/user.html"></load-template>
-          </div>
-
-</div>
-</div>
+      </tabs>

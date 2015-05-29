@@ -1,11 +1,10 @@
 'use strict';
 
 module.exports = function (app) {
-  var a =5;
+
     app.config(['$stateProvider', '$urlRouterProvider',
         function ($stateProvider, $urlRouterProvider) {
-          console.log("sisisisisisisisisisisisi");
- a =6;
+
             $urlRouterProvider.otherwise('/');
 
             $stateProvider

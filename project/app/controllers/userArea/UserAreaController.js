@@ -5,7 +5,9 @@ module.exports = function ($rootScope, $scope, $state) {
 
 
  console.log('sono area controller');
+ $scope.tab=1;
 
+ $scope.template = "../views/home/user.html";
 
   $scope.goToTab = function(tab){
 
@@ -32,6 +34,22 @@ module.exports = function ($rootScope, $scope, $state) {
 
 
   };
+
+  $scope.change = function(tab){
+
+console.log(tab);
+    if(tab==1)
+      $scope.template = "../views/home/user.html";
+    if(tab==2)
+      $scope.template = "../views/home/geolocalization.html";
+    if(tab==3)
+      $scope.template = "../views/home/user.html";
+    if(tab==4)
+      $scope.template = "../views/home/user.html";
+
+
+  };
+
 
 
 };

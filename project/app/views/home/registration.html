@@ -5,56 +5,450 @@
 <br><br>
 
 <div class="list">
-  <label class="item item-input item-floating-label">
+
+  <fieldset ng-hide="step">
+
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label">Nome</span>
+    <input type="text"  ng-model="name">
+  </label>
+
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label  item-royal">Cognome</span>
+    <input type="text"  ng-model="surname">
+  </label>
+
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label  item-royal">Data di Nascita</span>
+    <div class="row">
+      <div class="col col-bottom">
+        <input type="date"  ng-model="birthday">
+      </div>
+    </div>
+
+  </label>
+
+
+  <label class="item item-input item-select item-stacked-label item-stable">
+    <div class="input-label">Sesso</div>
+    <select ng-model="gender">
+      <option value="m">Male</option>
+      <option value="f">Female</option>
+    </select>
+  </label>
+
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label">E-mail</span>
+    <input class="item-royal" name="Partenza" type="text" ng-model="email">
+  </label>
+
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label">Numero di Telefono</span>
+    <input class="item-royal" name="numero" type="text"  ng-model="number" >
+  </label>
+
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label">Username</span>
+    <input class="item-royal" name="username" type="text"  ng-model="username">
+  </label>
+
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label">Password</span>
+    <input class="item-royal" name="password" type="password"  ng-model="password">
+  </label>
+
+  <label class="item item-input item-select">
+    <div class="input-label">Residenza</div>
+    <select ng-model="city">
+      <option value="AG">AGRIGENTO</option>
+  <option value="AL">ALESSANDRIA</option>
+  <option value="AN">ANCONA</option>
+  <option value="AO">AOSTA</option>
+  <option value="AR">AREZZO</option>
+  <option value="AP">ASCOLI PICENO</option>
+  <option value="AT">ASTI</option>
+  <option value="AQ">AQUILA</option>
+  <option value="AV">AVELLINO</option>
+  <option value="BA">BARI</option>
+  <option value="BL">BELLUNO</option>
+  <option value="BN">BENEVENTO</option>
+  <option value="BG">BERGAMO</option>
+  <option value="BI">BIELLA</option>
+  <option value="BO">BOLOGNA</option>
+  <option value="BZ">BOLZANO</option>
+  <option value="BS">BRESCIA</option>
+  <option value="BR">BRINDISI</option>
+  <option value="CA">CAGLIARI</option>
+  <option value="CL">CALTANISSETTA</option>
+  <option value="CB">CAMPOBASSO</option>
+  <option value="CE">CASERTA</option>
+  <option value="CT">CATANIA</option>
+  <option value="CZ">CATANZARO</option>
+  <option value="CS">CESENA</option>
+  <option value="CH">CHIETI</option>
+  <option value="CO">COMO</option>
+  <option value="CS">COSENZA</option>
+  <option value="CR">CREMONA</option>
+  <option value="KR">CROTONE</option>
+  <option value="CN">CUNEO</option>
+  <option value="EN">ENNA</option>
+  <option value="FE">FERRARA</option>
+  <option value="FI">FIRENZE</option>
+  <option value="FG">FOGGIA</option>
+  <option value="FO">FORLI</option>
+  <option value="FR">FROSINONE</option>
+  <option value="GE">GENOVA</option>
+  <option value="GO">GORIZIA</option>
+  <option value="GR">GROSSETO</option>
+  <option value="IM">IMPERIA</option>
+  <option value="IS">ISERNIA</option>
+  <option value="SP">LA SPEZIA</option>
+  <option value="LT">LATINA</option>
+  <option value="LE">LECCE</option>
+  <option value="LC">LECCO</option>
+  <option value="LI">LIVORNO</option>
+  <option value="LO">LODI</option>
+  <option value="LU">LUCCA</option>
+  <option value="MC">MACERATA</option>
+  <option value="MN">MANTOVA</option>
+  <option value="MS">MASSA-CARRARA</option>
+  <option value="MT">MATERA</option>
+  <option value="ME">MESSINA</option>
+  <option value="MI">MILANO</option>
+  <option value="MO">MODENA</option>
+  <option value="NA">NAPOLI</option>
+  <option value="NO">NOVARA</option>
+  <option value="NU">NUORO</option>
+  <option value="OR">ORISTANO</option>
+  <option value="PD">PADOVA</option>
+  <option value="PA">PALERMO</option>
+  <option value="PR">PARMA</option>
+  <option value="PV">PAVIA</option>
+  <option value="PG">PERUGIA</option>
+  <option value="PS">PESARO-URBINO</option>
+  <option value="PE">PESCARA</option>
+  <option value="PC">PIACENZA</option>
+  <option value="PI">PISA</option>
+  <option value="PT">PISTOIA</option>
+  <option value="PN">PORDENONE</option>
+  <option value="PZ">POTENZA</option>
+  <option value="PO">PRATO</option>
+  <option value="RG">RAGUSA</option>
+  <option value="RA">RAVENNA</option>
+  <option value="RC">REGGIO CALABRIA</option>
+  <option value="RE">REGGIO EMILIA</option>
+  <option value="RI">RIETI</option>
+  <option value="RN">RIMINI</option>
+  <option value="RM">ROMA</option>
+  <option value="RO">ROVIGO</option>
+  <option value="SA">SALERNO</option>
+  <option value="SS">SASSARI</option>
+  <option value="SV">SAVONA</option>
+  <option value="SI">SIENA</option>
+  <option value="SR">SIRACUSA</option>
+  <option value="SO">SONDRIO</option>
+  <option value="TA">TARANTO</option>
+  <option value="TE">TERAMO</option>
+  <option value="TR">TERNI</option>
+  <option value="TO">TORINO</option>
+  <option value="TP">TRAPANI</option>
+  <option value="TN">TRENTO</option>
+  <option value="TV">TREVISO</option>
+  <option value="TS">TRIESTE</option>
+  <option value="UD">UDINE</option>
+  <option value="VA">VARESE</option>
+  <option value="VE">VENEZIA</option>
+  <option value="VB">VERBANO-CUSIO-OSSOLA</option>
+  <option value="VC">VERCELLI</option>
+  <option value="VR">VERONA</option>
+  <option value="VV">VIBO VALENTIA</option>
+  <option value="VI">VICENZA</option>
+  <option value="VT">VITERBO</option>
+    </select>
+  </label>
+
+
+      <label class="item item-input item-stacked-label item-stable">
+        <span class="input-label">Via</span>
+        <input class="item-royal" name="via" type="text"  ng-model="street">
+      </label>
+
+
+<button align="center" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="gotostep2()">
+Avanti
+</button>
+</fieldset>
+
+<fieslset ng-show="step">
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label">Numero di Patente</span>
+    <input class="item-royal" name="numereopatente" type="text"  ng-model="license">
+  </label>
+
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label  item-royal">Data di Emissione</span>
+    <div class="row">
+      <div class="col col-bottom">
+        <input type="date"  ng-model="dateofissue">
+      </div>
+    </div>
+
+  </label>
+
+
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label  item-royal">Data di Scadenza</span>
+    <div class="row">
+      <div class="col col-bottom">
+        <input type="date"  ng-model="dateofexpiration">
+      </div>
+    </div>
+
+  </label>
+
+
+  <label class="item item-input item-select">
+    <div class="input-label">Tipologia Patente</div>
+    <select ng-model="typelicense">
+      <option value="a">A</option>
+      <option value="b">B</option>
+      <option value="ab">AB</option>
+    </select>
+  </label>
+
+  <button align="center" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="registration()">
+  Registrati
+  </button>
+
+</fieldset>
+
+
+</div>
+
+
+<!--<div class="bar bar-header bar-balanced">
+  <a ng-click="goToPrehome()" class="button icon-left ion-chevron-left button-clear "></a>
+  <h1 class="title">REGISTRAZIONE</h1>
+</div>
+<br><br>
+
+<div class="list">
+
+  <fieldset ng-hide="step">
+
+  <label class="item item-input item-stacked-label item-stable">
     <span class="input-label">Nome</span>
     <input type="text" placeholder="Nome" ng-model="name">
   </label>
 
-  <label class="item item-input item-floating-label ">
+  <label class="item item-input item-stacked-label item-stable">
     <span class="input-label  item-royal">Cognome</span>
     <input type="text" placeholder="Cognome" ng-model="surname">
   </label>
 
-  <label class="item item-input item-floating-label ">
+  <label class="item item-input item-stacked-label item-stable">
     <span class="input-label  item-royal">Data di Nascita</span>
-    <input type="date" placeholder="Data di Nascita" ng-model="birthday">
+    <div class="row">
+      <div class="col col-bottom">
+        <input type="date" placeholder="Data di Nascita" ng-model="birthday">
+      </div>
+    </div>
+
   </label>
 
-<table class="item item-input item-floating-label">
-  <span class="input-label  item-royal">Sesso</span>
-  <label class="item item-radio">
-  <input type="radio" name="sex" ng-model="sex" value="m">
-    <div class="item-content">Male</div>
-    <i class="radio-icon ion-checkmark"></i>
+
+  <label class="item item-input item-select item-stacked-label item-stable">
+    <div class="input-label">Sesso</div>
+    <select ng-model="gender">
+      <option value="m">Male</option>
+      <option value="f">Female</option>
+    </select>
   </label>
 
-  <label class="item item-radio">
-    <input type="radio" name="sex" ng-model="sex" value="f">
-    <div class="item-content">Female</div>
-    <i class="radio-icon ion-checkmark"></i>
-  </label>
-</table>
-
-  <label class="item item-input item-floating-label">
-    <span class="input-label">E-mail</span>
-    <input class="item-royal" name="email" type="email" placeholder="E-mail" ng-model="email" >
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label">email</span>
+    <input class="item-royal" name="Partenza" type="text" placeholder="email" ng-model="email">
   </label>
 
-  <label class="item item--input item-floating-label">
-    <span class="input-label">Numero di Cellulare</span>
-    <input class="item-royal" name="cellphone" placeholder="Numero di Cellulare" ng-model="cellphone">
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label">numero di telefono</span>
+    <input class="item-royal" name="destinazione" type="text" placeholder="numero di telefono" ng-model="number" >
   </label>
 
-  <label class="item item-input item-floating-label">
+  <label class="item item-input item-stacked-label item-stable">
     <span class="input-label">Username</span>
     <input class="item-royal" name="username" type="text" placeholder="Username" ng-model="username">
   </label>
 
-  <label class="item item-input item-floating-label item-stable">
+  <label class="item item-input item-stacked-label item-stable">
     <span class="input-label">Password</span>
     <input class="item-royal" name="password" type="text" placeholder="Password" ng-model="password">
   </label>
 
- <button align="center" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="registration()">
-REGISTRA
+  <label class="item item-input item-select">
+    <div class="input-label">Residenza</div>
+    <select ng-model="city">
+      <option value="AG">AGRIGENTO</option>
+  <option value="AL">ALESSANDRIA</option>
+  <option value="AN">ANCONA</option>
+  <option value="AO">AOSTA</option>
+  <option value="AR">AREZZO</option>
+  <option value="AP">ASCOLI PICENO</option>
+  <option value="AT">ASTI</option>
+  <option value="AQ">AQUILA</option>
+  <option value="AV">AVELLINO</option>
+  <option value="BA">BARI</option>
+  <option value="BL">BELLUNO</option>
+  <option value="BN">BENEVENTO</option>
+  <option value="BG">BERGAMO</option>
+  <option value="BI">BIELLA</option>
+  <option value="BO">BOLOGNA</option>
+  <option value="BZ">BOLZANO</option>
+  <option value="BS">BRESCIA</option>
+  <option value="BR">BRINDISI</option>
+  <option value="CA">CAGLIARI</option>
+  <option value="CL">CALTANISSETTA</option>
+  <option value="CB">CAMPOBASSO</option>
+  <option value="CE">CASERTA</option>
+  <option value="CT">CATANIA</option>
+  <option value="CZ">CATANZARO</option>
+  <option value="CS">CESENA</option>
+  <option value="CH">CHIETI</option>
+  <option value="CO">COMO</option>
+  <option value="CS">COSENZA</option>
+  <option value="CR">CREMONA</option>
+  <option value="KR">CROTONE</option>
+  <option value="CN">CUNEO</option>
+  <option value="EN">ENNA</option>
+  <option value="FE">FERRARA</option>
+  <option value="FI">FIRENZE</option>
+  <option value="FG">FOGGIA</option>
+  <option value="FO">FORLI</option>
+  <option value="FR">FROSINONE</option>
+  <option value="GE">GENOVA</option>
+  <option value="GO">GORIZIA</option>
+  <option value="GR">GROSSETO</option>
+  <option value="IM">IMPERIA</option>
+  <option value="IS">ISERNIA</option>
+  <option value="SP">LA SPEZIA</option>
+  <option value="LT">LATINA</option>
+  <option value="LE">LECCE</option>
+  <option value="LC">LECCO</option>
+  <option value="LI">LIVORNO</option>
+  <option value="LO">LODI</option>
+  <option value="LU">LUCCA</option>
+  <option value="MC">MACERATA</option>
+  <option value="MN">MANTOVA</option>
+  <option value="MS">MASSA-CARRARA</option>
+  <option value="MT">MATERA</option>
+  <option value="ME">MESSINA</option>
+  <option value="MI">MILANO</option>
+  <option value="MO">MODENA</option>
+  <option value="NA">NAPOLI</option>
+  <option value="NO">NOVARA</option>
+  <option value="NU">NUORO</option>
+  <option value="OR">ORISTANO</option>
+  <option value="PD">PADOVA</option>
+  <option value="PA">PALERMO</option>
+  <option value="PR">PARMA</option>
+  <option value="PV">PAVIA</option>
+  <option value="PG">PERUGIA</option>
+  <option value="PS">PESARO-URBINO</option>
+  <option value="PE">PESCARA</option>
+  <option value="PC">PIACENZA</option>
+  <option value="PI">PISA</option>
+  <option value="PT">PISTOIA</option>
+  <option value="PN">PORDENONE</option>
+  <option value="PZ">POTENZA</option>
+  <option value="PO">PRATO</option>
+  <option value="RG">RAGUSA</option>
+  <option value="RA">RAVENNA</option>
+  <option value="RC">REGGIO CALABRIA</option>
+  <option value="RE">REGGIO EMILIA</option>
+  <option value="RI">RIETI</option>
+  <option value="RN">RIMINI</option>
+  <option value="RM">ROMA</option>
+  <option value="RO">ROVIGO</option>
+  <option value="SA">SALERNO</option>
+  <option value="SS">SASSARI</option>
+  <option value="SV">SAVONA</option>
+  <option value="SI">SIENA</option>
+  <option value="SR">SIRACUSA</option>
+  <option value="SO">SONDRIO</option>
+  <option value="TA">TARANTO</option>
+  <option value="TE">TERAMO</option>
+  <option value="TR">TERNI</option>
+  <option value="TO">TORINO</option>
+  <option value="TP">TRAPANI</option>
+  <option value="TN">TRENTO</option>
+  <option value="TV">TREVISO</option>
+  <option value="TS">TRIESTE</option>
+  <option value="UD">UDINE</option>
+  <option value="VA">VARESE</option>
+  <option value="VE">VENEZIA</option>
+  <option value="VB">VERBANO-CUSIO-OSSOLA</option>
+  <option value="VC">VERCELLI</option>
+  <option value="VR">VERONA</option>
+  <option value="VV">VIBO VALENTIA</option>
+  <option value="VI">VICENZA</option>
+  <option value="VT">VITERBO</option>
+    </select>
+  </label>
+
+
+      <label class="item item-input item-stacked-label item-stable">
+        <span class="input-label">Via</span>
+        <input class="item-royal" name="via" type="text" placeholder="Via" ng-model="street">
+      </label>
+
+
+<button align="center" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="gotostep2()">
+Avanti
 </button>
+</fieldset>
+
+<fieslset ng-show="step">
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label">Numero di Patente</span>
+    <input class="item-royal" name="numereopatente" type="text" placeholder="Numero di Patente" ng-model="license">
+  </label>
+
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label  item-royal">Data di Emissione</span>
+    <div class="row">
+      <div class="col col-bottom">
+        <input type="date" placeholder="Data di Emissione" ng-model="dateofissue">
+      </div>
+    </div>
+
+  </label>
+
+
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label  item-royal">Data di Scadenza</span>
+    <div class="row">
+      <div class="col col-bottom">
+        <input type="date" placeholder="Data di Scadenza" ng-model="dateofexpiration">
+      </div>
+    </div>
+
+  </label>
+
+
+  <label class="item item-input item-select">
+    <div class="input-label">Tipologia Patente</div>
+    <select ng-model="typelicense">
+      <option value="a">A</option>
+      <option value="b">B</option>
+      <option value="ab">AB</option>
+    </select>
+  </label>
+
+  <button align="center" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="registration()">
+  Registrati
+  </button>
+
+</fieldset>
+
+</div>
+-->

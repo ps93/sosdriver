@@ -15,13 +15,19 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
 
        Nome : $scope.name,
        Cognome : $scope.surname,
+       Sesso : $scope.gender,
        Nascita : $scope.birthday,
-       Sesso : $scope.sex,
-       Email : $scope.email,
-       Telefono : $scope.number,
        Username : $scope.username,
        Password : $scope.password,
-     };
+       Email : $scope.email,
+       Telefono : $scope.number,
+       Citta : $scope.city,
+       Via : $scope.street,
+       Patente : $scope.license,
+       Emissione : $scope.dateofissue,
+       Scadenza : $scope.dateofexpiration,
+       Tipopatente : $scope.typelicense,
+   };
 
 
       var request = {
@@ -39,21 +45,24 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
           // this callback will be called asynchronously
           // when the response is available
 
-          if(status==200)
-          $state.go('userArea');
-          else
-          alert('Login fallito');
+          alert(data);
 
         }).error(function(){
            // called asynchronously if an error occurs
            // or server returns response with an error status.
            alert("errore");
          });
-
-
   };
 
   $scope.goToPrehome = function () {
     $state.go('prehome');
   };
+
+  $scope.gotostep2 = function ()
+  {
+    $scope.step='false';
+  };
+
+
+
 };

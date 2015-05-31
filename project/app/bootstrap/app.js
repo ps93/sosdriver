@@ -58,7 +58,7 @@ app.constant('COMPONENTS_VALUES', {
     withHeaderButtonFooter: heightDevice - 94
 });
 
-app.constant('SANITRANSPORT',"http://sanitrasport.esy.es/");
+app.constant('SANITRANSPORT',"http://sosdriver.esy.es/");
 
 
 require('../config')(app);

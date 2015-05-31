@@ -42,9 +42,8 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
 
       $http(request).success(function(data, status, headers, config)
         {
-          // this callback will be called asynchronously
-          // when the response is available
-
+          if(status==200)
+            $state.go('userArea');
           alert(data);
 
         }).error(function(){

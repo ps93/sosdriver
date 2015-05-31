@@ -99,3 +99,25 @@
   margin-top: -40%;
   margin-left: -80px;
 }
+
+#NamespacePreHome .box-logo-sosdriver img {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 160px;
+  height: 62px;
+  margin-top: -40%;
+  margin-left: -80px;
+}
+
+
+#NamespacePreHome .box-registration-sosdriver {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  margin-top: -8%;
+  margin-left:  -38%;
+
+}

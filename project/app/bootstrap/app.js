@@ -15,6 +15,10 @@ require('css/views/prehome.css');
 require('css/lib/ionic/css/ionicons.css');
 require('css/lib/ionic/css/ionic.css');
 require('css/tabs.css');
+require('css/lib/inputEffects/css/demo.css');
+require('css/lib/inputEffects/css/normalize.css');
+require('css/lib/inputEffects/css/set1.css');
+require('css/lib/inputEffects/fonts/font-awesome-4.2.0/css/font-awesome.min.css');
 
 
 

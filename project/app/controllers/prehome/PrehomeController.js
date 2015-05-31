@@ -1,24 +1,49 @@
 'use strict';
 
-module.exports = function ($rootScope, $scope, $state) {
+module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
 
 
-    $scope.goToLogin = function () {
+  $scope.carica=false;
 
-      //  vai login
 
-      console.log('logga');
-      $state.go('login');
-    };
+  $scope.login = function ()
+  {
+    $scope.carica=true;
+    $scope.message = '';
+    //   alert("hai inserito  " + $scope.name + " "+ $scope.surname+ " ! ");
+    var url= SANITRANSPORT+"authentication?username="+$scope.username+"&password="+$scope.password;
 
-    $scope.goToRegistration = function ()
-    {
-          console.log('registra');
-          $state.go('registration');
-    };
-    $scope.goToSettings = function () {
-        //vai impostazioni
-        console.log('settings');
-    };
+
+       $http.get(url).
+  success(function(data, status, headers, config) {
+    $scope.carica=false;
+    if(status=='200')
+      {
+        console.log('login con successo');
+        $state.go('userArea');
+      }
+    else {
+      $scope.message='Login fallito';
+      console.log('login fallito');
+
+    }
+
+  }).
+  error(function(data, status, headers, config) {
+    $scope.carica=false;
+    $scope.message='Login fallito';
+
+  });
+
+
+  };
+
+
+
+  $scope.goToRegistration = function ()
+  {
+        console.log('registra');
+        $state.go('registration');
+  };
 
 };

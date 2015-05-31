@@ -17,7 +17,7 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
        $http.get(url).
   success(function(data, status, headers, config) {
     $scope.carica=false;
-    if(data=='200')
+    if(status=='200')
       {
         console.log('login con successo');
         $state.go('userArea');

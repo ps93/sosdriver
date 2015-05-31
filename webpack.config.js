@@ -37,8 +37,8 @@ module.exports = {
           _: 'lodash',
           Spinner: 'spin',
           Swiper: 'swiper'
-      })
-  /*      new NgAnnotatePlugin({
+      }),
+        new NgAnnotatePlugin({
             add: true
         }),
         new Webpack.optimize.UglifyJsPlugin({
@@ -46,7 +46,7 @@ module.exports = {
             compress: {
                 warnings: false
             }
-        })*/
+        })
     ]
 
 };

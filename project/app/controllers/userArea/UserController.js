@@ -1,7 +1,15 @@
 'use strict';
 
-module.exports = function ($rootScope, $scope, $state) {
 
-  $scope.titolo = "USER";
+
+module.exports = function ($rootScope, $scope, $state, $http) {
+
+
+
+$scope.prova = function (){
+
+
+
+};
 
 };

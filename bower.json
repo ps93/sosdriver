@@ -10,6 +10,7 @@
     "angular-local-storage": "latest",
     "swiper": "latest",
     "angular-translate": "~2.6.1",
+    "angular-dynamic-locale": "~0.1.27",
     "oclazyload": "~0.6.3",
     "lodash": "~3.8.0"
   },
@@ -17,8 +18,5 @@
     "type": "git",
     "url": ""
   },
-  "private": true,
-  "resolutions": {
-    "angular": ">=1.2.0 <=1.4.0"
-  }
+  "private": true
 }

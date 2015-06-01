@@ -24,29 +24,26 @@ module.exports = {
         alias: {
             'angular': 'angular/angular.js',
             'angular-ui-router': 'angular-ui-router/release/angular-ui-router.js',
+            'angular-local-storage': 'angular-local-storage/dist/angular-local-storage.js',
             'css': 'css',
             'angular-touch': 'angular-touch/angular-touch.js',
+            'spin': 'lib/spin.js',
             'ocLazyLoad': 'ocLazyLoad/dist/ocLazyLoad.min.js',
             'swiper': 'swiper/dist/js/swiper.js',
             'ionic' : 'css/lib/ionic/js/ionic.bundle.js'
         }
     },
     plugins: [
-        new ExtractTextPlugin('app.css'),
-        new Webpack.ProvidePlugin({
-          _: 'lodash',
-          Spinner: 'spin',
-          Swiper: 'swiper'
-      }),
-        new NgAnnotatePlugin({
+        new ExtractTextPlugin('app.css')
+        /*  new NgAnnotatePlugin({
             add: true
-        }),
+        })
         new Webpack.optimize.UglifyJsPlugin({
             mangle: true,
             compress: {
                 warnings: false
             }
-        })
+        })*/
     ]
 
 };

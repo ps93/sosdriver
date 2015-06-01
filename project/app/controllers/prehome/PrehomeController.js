@@ -20,6 +20,9 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
     if(status=='200')
       {
         console.log('login con successo');
+
+        $rootScope.user = data;
+
         $state.go('userArea');
       }
     else {

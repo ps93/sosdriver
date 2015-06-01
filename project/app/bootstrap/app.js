@@ -6,6 +6,9 @@ require('angular-ui-router');
 require('angular-touch');
 require('ionic');
 require('swiper');
+require('angular-local-storage');
+require('../../lib/ui-bootstrap-custom-tpls-0.12.0');
+require('../../../bower_components/angular-dynamic-locale/dist/tmhDynamicLocale');
 
 
 /* LOAD CSS */
@@ -30,7 +33,10 @@ var app = angular.module('app', [
         'ui.router',
         'ngTouch',
         'ngLocale',
-        'ionic'
+        'ionic',
+        'LocalStorageModule',
+      'tmh.dynamicLocale',
+      'ui.bootstrap'
     ]
 );
 

@@ -28,6 +28,7 @@ module.exports = {
             'css': 'css',
             'angular-touch': 'angular-touch/angular-touch.js',
             'spin': 'lib/spin.js',
+            'angular-i18n': 'angular-i18n/it-it.js',
             'ocLazyLoad': 'ocLazyLoad/dist/ocLazyLoad.min.js',
             'swiper': 'swiper/dist/js/swiper.js',
             'ionic' : 'css/lib/ionic/js/ionic.bundle.js'

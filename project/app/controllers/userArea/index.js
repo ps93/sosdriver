@@ -13,7 +13,13 @@ var app = angular.module('app.userArea', [])
 .controller('UserController', [
     '$rootScope', '$scope', '$state',
     require('./UserController')
-]);
+])
 
+
+//controller del primo tab che richiama file UserController.js
+.controller('GeolocalizationController', [
+    '$rootScope', '$scope', '$state','$http','SANITRANSPORT',
+    require('./GeolocalizationController')
+]);
 
 module.exports = app;

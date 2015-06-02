@@ -1,4 +1,4 @@
-<div id="full-page">
+<div class="mioDiv">
 <div class="bar bar-header bar-dark">
   <h1 class="title">Header</h1>
 </div>
@@ -25,6 +25,8 @@
     </div>
   </div>
 
+</div>
+  <div define-area type-area="withHeaderFooterTabHome">
 
       <tabs class="swiper-container">
 
@@ -38,7 +40,7 @@
               </div>
 
               <!-- TAB2 -->
-              <div  when-scrolled class="swiper-slide" >
+              <div  when-scrolled class="swiper-slide" ng-controller="GeolocalizationController" >
                   <load-template url="../views/home/geolocalization.html"></load-template>
               </div>
 
@@ -54,3 +56,4 @@
 
           </div>
       </tabs>
+    </div>

@@ -69,6 +69,6 @@ app.constant('SANITRANSPORT',"http://sosdriver.esy.es/");
 
 require('../config')(app);
 require('../directives')(app);
-
+require('../services')(app);
 
 angular.bootstrap(document.body, ['app']);

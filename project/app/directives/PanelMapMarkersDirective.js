@@ -33,7 +33,7 @@ module.exports = function (app) {
                                         disableDefaultUI: false
                                     };
 
-                                    var map = new google.maps.Map(document.querySelector('.swiper-slide'), mapOptions);
+                                    var map = new google.maps.Map(document.querySelector('#map'), mapOptions);
                                     var markers = [];
 
 

@@ -1,4 +1,66 @@
 
 <div class="spacer-50"></div>
-<h1>prova</h1>
-  <h1> {{user.cognome}} </h1>
+
+<br> <br> <br> <br> <br>
+
+<div class="list list-inset">
+
+
+  <div class="head">
+
+    <div class="item item-text-wrap item-thumbnail-left">
+     <img src="prova.jpg" ng-click="changepicture()">
+     <h1><p1>{{user.nome + " " + user.cognome}}</p></h1>
+     <p>DATA ORA</p>
+     <label class="toggle toggle-assertive">
+      <input type="checkbox">
+      <div class="track"></div>
+      <div class="handle"> </div>
+
+    <h3> {{vardriver}}  </h3>
+  </div>
+
+
+  <ion-slide-box on-slide-changed="slideHasChanged($index)">
+  <ion-slide>
+    <div class="datauser">
+      <div class="item item-divider">
+          Contatti
+      </div>
+          <div class="item">
+            <p1>{{user.email}}</p>
+          </div>
+          <div class="item">
+            <p1>{{user.cellulare}}</p>
+          </div>
+      <div class="item item-divider">
+          Residenza
+      </div>
+          <div class="item">
+            <p1>{{user.citta}}</p>
+          </div>
+          <div class="item">
+            <p1>{{user.via}}</p>
+          </div>
+      <div class="item item-divider">
+          Patente
+      </div>
+          <div class="item">
+            <p1>{{user.codicepatente}}</p>
+          </div>
+          <div class="item">
+            <p1>{{user.emissione}}</p>
+          </div>
+          <div class="item">
+            <p1>{{user.scadenza}}</p>
+          </div>
+          <div class="item">
+            <p1>{{user.tipopatente}}</p>
+          </div>
+    </div>
+  </ion-slide>
+  <ion-slide>
+    <div class="driveruser"><h1></h1></div>
+  </ion-slide>
+
+</ion-slide-box>

@@ -1,15 +1,16 @@
 'use strict';
 
 
+module.exports = function ($rootScope, $scope, $state, $data) {}
 
-module.exports = function ($rootScope, $scope, $state, $http) {
+
+
+module.exports = function ($rootScope, $scope, $state, $http) {}
 
 
 
 $scope.prova = function (){
 
 
-
-};
 
 };

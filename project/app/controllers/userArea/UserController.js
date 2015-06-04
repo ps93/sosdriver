@@ -1,16 +1,14 @@
 'use strict';
 
 
-module.exports = function ($rootScope, $scope, $state, $data) {}
+module.exports = function ($rootScope, $scope, $state, $data) {
+
+
+$scope.changepicture = function (){
 
 
 
-module.exports = function ($rootScope, $scope, $state, $http) {}
-
-
-
-$scope.prova = function (){
-
+}
 
 
 };

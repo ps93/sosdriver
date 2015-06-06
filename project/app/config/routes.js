@@ -64,27 +64,6 @@ module.exports = function (app) {
 
 
 
-            //////////////////////////////////////////////
-            ///////////////// LOGIN ////////////////////
-              ////////////////////////////////////////////
-
-
-            .state('login', {
-                url: '/login',
-                template: require('../views/home/login.html'),
-                controller: 'loginController',
-                resolve: {
-                        load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
-                            var deferred = $q.defer();
-                            require.ensure([], function () {
-                                $ocLazyLoad.load({name: 'starter'});
-                                deferred.resolve(require('../controllers/login'));
-                            });
-                            return deferred.promise;
-                        }]
-                    }
-            })
-
 
 
 

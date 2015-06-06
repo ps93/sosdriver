@@ -31,11 +31,19 @@ module.exports = {
             'angular-i18n': 'angular-i18n/it-it.js',
             'ocLazyLoad': 'ocLazyLoad/dist/ocLazyLoad.min.js',
             'swiper': 'swiper/dist/js/swiper.js',
-            'ionic' : 'css/lib/ionic/js/ionic.bundle.js'
+            'ionic' : 'css/lib/ionic/js/ionic.bundle.js',
+            'lodash': 'lodash/lodash.js',
+            'js-marker-clusterer': 'lib/js-marker-clusterer.js',
         }
     },
     plugins: [
-        new ExtractTextPlugin('app.css')
+        new ExtractTextPlugin('app.css'),
+          new Webpack.ProvidePlugin({
+            _: 'lodash',
+            Spinner: 'spin',
+            Swiper: 'swiper',
+            accounting: 'accounting'
+        })
         /*  new NgAnnotatePlugin({
             add: true
         })

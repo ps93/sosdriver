@@ -12,7 +12,9 @@
     "angular-translate": "~2.6.1",
     "angular-dynamic-locale": "~0.1.27",
     "oclazyload": "~0.6.3",
-    "lodash": "~3.8.0"
+    "lodash": "~3.8.0",
+    "angular-google-maps" : "latest",
+    "lodash": "~3.9.2"
   },
   "repository": {
     "type": "git",

@@ -8,7 +8,7 @@ module.exports = function (app) {
             var CONFIG = {
                 URL: 'https://maps.googleapis.com/maps/api/js',
                 VERSION: 'v=3.exp',
-                KEY: 'AIzaSyDcJMN_DMnXSur4fhXRupMZVuEDbC2Z2dk',
+                KEY: 'AIzaSyAa_T3lkyGhDY5B2ZjQ1yMD9AWfxf4Gx3s',
                 SENSOR: false,
                 LIBRARIES: 'places',
                 CALLBACK: 'init'

@@ -9,7 +9,7 @@ require('swiper');
 require('angular-local-storage');
 require('../../lib/ui-bootstrap-custom-tpls-0.12.0');
 require('../../../bower_components/angular-dynamic-locale/dist/tmhDynamicLocale');
-
+require('angular-google-maps/dist/angular-google-maps');
 
 /* LOAD CSS */
 require('css/common.css');
@@ -27,6 +27,7 @@ require('css/lib/inputEffects/fonts/font-awesome-4.2.0/css/font-awesome.min.css'
 
 /* WIDGETS */
 require('css/widgets/swiper.css');
+require('css/widgets/panel.css');
 
 var app = angular.module('app', [
         'oc.lazyLoad',
@@ -70,5 +71,6 @@ app.constant('SANITRANSPORT',"http://sosdriver.esy.es/");
 require('../config')(app);
 require('../directives')(app);
 require('../services')(app);
+
 
 angular.bootstrap(document.body, ['app']);

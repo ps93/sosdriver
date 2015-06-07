@@ -32,8 +32,7 @@ module.exports = {
             'ocLazyLoad': 'ocLazyLoad/dist/ocLazyLoad.min.js',
             'swiper': 'swiper/dist/js/swiper.js',
             'ionic' : 'css/lib/ionic/js/ionic.bundle.js',
-            'lodash': 'lodash/lodash.js',
-            'js-marker-clusterer': 'lib/js-marker-clusterer.js'
+            'lodash': 'lodash/lodash.js'
         }
     },
     plugins: [

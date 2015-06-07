@@ -2,7 +2,6 @@
 
 module.exports = function (app) {
 
-  require('js-marker-clusterer');
 
     app.directive('panelMapMarkers', ['$rootScope', 'GoogleMapInitService',
         function ($rootScope, GoogleMapInitService) {
@@ -49,8 +48,7 @@ module.exports = function (app) {
 
                                     for (var a = 0; a < drivers.length; a++) addMarker(drivers[a], Icon);
 
-                                    var markerCluster = new MarkerClusterer(map, markers, {gridSize: 20});
-
+                        
 
                                     function addMarker(data, icon) {
 

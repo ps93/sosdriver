@@ -9,7 +9,7 @@ require('swiper');
 require('angular-local-storage');
 require('../../lib/ui-bootstrap-custom-tpls-0.12.0');
 require('../../../bower_components/angular-dynamic-locale/dist/tmhDynamicLocale');
-require('angular-google-maps/dist/angular-google-maps');
+
 
 /* LOAD CSS */
 require('css/common.css');

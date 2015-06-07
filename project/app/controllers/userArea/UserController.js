@@ -1,14 +1,16 @@
 'use strict';
 
 
-module.exports = function ($rootScope, $scope, $state, $data, SANITRANSPORT) {
+module.exports = function ($rootScope, $scope, $state, $data, $cordovaCamera, SANITRANSPORT) {
 
 
     $scope.clock = new Date();
 
-    var url= SANITRANSPORT+"modification";
+
 
 $scope.salva = function(){
+
+  var url= SANITRANSPORT+"modification";
     var user = {
 
                 Email : $scope.email,
@@ -41,7 +43,42 @@ $scope.salva = function(){
           // or server returns response with an error status.
           alert("Errore Salvataggio");
         });
- };
+   };  //end of function salva()
+
+
+$scope.disponibile = function (){
+
+  var url= SANITRANSPORT+"availability";
+  var user = {
+
+              datainizio : $scope.datestart,
+              orainizio : $scope.timestart,
+              datafine : $scope.datefinish,
+              orafine : $scope.timefinish,
+
+            };
+
+
+            var request = {
+                           'method' : 'GET',
+                           'url' : url ,
+                           'headers' : {  'Content-Type': 'application/json' },
+                           'data' : user
+                           };
+
+
+            $http(request).success(function(data, status, headers, config)
+              {
+                if(status==200)
+
+                alert('Salvato con Successo');
+
+              }).error(function(){
+                 // called asynchronously if an error occurs
+                 // or server returns response with an error status.
+                 alert("Errore Salvataggio");
+               });
+          };  //end of function salva()
 
 
   $scope.camera = function () {
@@ -67,4 +104,4 @@ $scope.salva = function(){
 
   };
 
-};
+};// end of all

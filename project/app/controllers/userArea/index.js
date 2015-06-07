@@ -16,6 +16,7 @@ var app = angular.module('app.userArea', [])
 ])
 
 
+
 //controller del primo tab che richiama file UserController.js
 .controller('GeolocalizationController', [
     '$rootScope', '$scope', '$state','$http','SANITRANSPORT',

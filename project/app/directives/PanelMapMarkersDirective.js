@@ -2,6 +2,7 @@
 
 module.exports = function (app) {
 
+  require('js-marker-clusterer');
 
     app.directive('panelMapMarkers', ['$rootScope', 'GoogleMapInitService',
         function ($rootScope, GoogleMapInitService) {
@@ -10,33 +11,24 @@ module.exports = function (app) {
                 scope: {
                     drivers: '='
                 },
-                template: '<div id="google-map"></div>',
                 link: function (scope, element) {
 
                     element.ready(function () {
 
-                        var myMarker = require('../../images/sosMarker.png');
-
+                        var Icon = require('../../images/sosMarker.png');
                         scope.$watch('drivers', function (value) {
-
                             if (value !== undefined) {
-
-
                                 GoogleMapInitService.then(function () {
-
-                                  var drivers = value;
-                                  var centerLat = value[1].at;
-                                  var centerLong = value[1].long;
                                     var mapOptions = {
-                                        zoom: 12,
-                                        center: new google.maps.LatLng(45.473127,9.1888361),
+                                        zoom: 13,
+                                        center: new google.maps.LatLng(45.4822,9.21405),
                                         disableDefaultUI: false
                                     };
 
                                     var map = new google.maps.Map(document.querySelector('#map'), mapOptions);
+
+                                    var drivers = value;
                                     var markers = [];
-
-
 
                                     var content = document.createElement("div");
                                     var title = document.createElement("div");
@@ -50,31 +42,26 @@ module.exports = function (app) {
                                         content: content
                                     });
 
-                                    for (var a = 0; a < drivers.length; a++) addMarker(drivers[a], myMarker);
+                                    for (var a = 0; a < drivers.length; a++) addMarker(drivers[a], Icon);
 
+                                    var markerCluster = new MarkerClusterer(map, markers, {gridSize: 20});
 
 
                                     function addMarker(data, icon) {
-
                                         var marker = new google.maps.Marker({
-                                            position: new google.maps.LatLng(data.lat,data.long),
+                                            position: new google.maps.LatLng(data.lat, data.long),
                                             icon: icon,
                                             map: map,
                                             title: data.nome
                                         });
-                                        alert("gna");
+
                                         markers.push(marker);
 
-                                        google.maps.event.addListener(marker, 'click', function (event) {
-
-                                          console.log("entra");
-                                          alert("entra");
+                                        google.maps.event.addListener(marker, "click", function () {
                                             marker.setAnimation(google.maps.Animation.BOUNCE);
                                             openInfoWindow(marker);
                                             stopAnimation(marker);
                                         });
-
-
                                     }
 
                                     function stopAnimation(marker) {

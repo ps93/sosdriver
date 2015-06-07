@@ -21,6 +21,11 @@ var app = angular.module('app.userArea', [])
 .controller('GeolocalizationController', [
     '$rootScope', '$scope', '$state','$http','SANITRANSPORT',
     require('./GeolocalizationController')
+])
+
+.controller('SettingsController', [
+    '$rootScope', '$scope', '$state','$http','SANITRANSPORT',
+    require('./SettingsController')
 ]);
 
 module.exports = app;

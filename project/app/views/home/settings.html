@@ -2,18 +2,17 @@
     <div class="margin-lateral">
         <div class="spacer-30"></div>
 
-        <h1>Select language</h1>
+        <h1 ng-bind=" 'SELECT_LANGUAGE' | translate">Select language</h1>
 
         <div class="spacer-5"></div>
-        <div class="booking-panel-arrow"><i class="booking-arrow-select"></i></div>
-        <select class="select-xxl" >
+        <select class="sosdriver-select" ng-model="settings.language">
             <option value="gb">English</option>
-            <option value="fr">Français</option>
             <option value="it">Italiano</option>
         </select>
 
+        <div class="spacer-20"></div>
 
-        <button ng-click="saveSettings()" class="btn-xxl btn-sosDriver" >
+        <button ng-click="saveSettings($event)" class="btn-xxl btn-sosDriver" >
             Salva
         </button>
     </div>

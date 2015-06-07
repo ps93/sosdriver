@@ -12,7 +12,7 @@ module.exports = function (app) {
                 $rootScope.userSettings = localStorageService.get('userSettings') || {};
 
                 $rootScope.deviceData = COMPONENTS_VALUES;
-
+                
 
 
 

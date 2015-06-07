@@ -1,19 +1,18 @@
 
 <div class="spacer-50"></div>
 
-<br> <br> <br> <br> <br>
-
+<br> <br> <br>
 <div class="list list-inset">
 
 
   <div class="head">
 
     <div class="item item-text-wrap item-thumbnail-left">
-     <img src="prova.jpg" ng-click="changepicture()">
+     <img src="prova.jpg" >
      <h3>{{user.nome + " " + user.cognome}}</h3>
      <p>{{clock}}</p>
      <label class="toggle toggle-assertive">
-      <input type="checkbox">
+      <input type="checkbox" ng-ngit="chooseDriver = true" ng-click="chooseDriver = !chooseDriver"  >
       <div class="track">
       <div class="handle"> </div>
     </div>
@@ -22,9 +21,7 @@
 
 
 
-  <ion-slide-box on-slide-changed="slideHasChanged($index)">
-  <ion-slide>
-    <div class="list list-inset">
+    <div class="list" ng-hide="chooseDriver" >
         <div class="item item-divider">
           <strong>Contatti</strong>
         </div>
@@ -92,14 +89,39 @@
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifytipo =true" ng-click="modifytipo = !modifytipo"></i></div>
           </div>
 
-
+        <button class="button button-outline button-balanced col col-33 col-offset-33" ng-ngit="shouldShow = true"  ng-click="shouldShow = !shouldShow" ng-hide="shouldShow">Modifica</button>
+        <button  class="button button-outline button-balanced col col-33 col-offset-33" ng-show="shouldShow" ng-click="salva()">Salva</button>
    </div>
-  </ion-slide>
-</ion-slide-box>
 
-<button class="button button-outline button-balanced col col-33 col-offset-33" ng-ngit="shouldShow = true"  ng-click="shouldShow = !shouldShow" ng-hide="shouldShow">Modifica</button>
 
-<button  class="button button-outline button-balanced col col-33 col-offset-33" ng-show="shouldShow" ng-click="salva()">
-Salva
-</button>
+
+
+
+<div class="autista" ng-show="chooseDriver">
+
+  <div class="item item-divider">
+    <strong>Autista</strong>
+
+    <label class="item item-input">
+    <span class="input-label">Data inizio</span>
+    <input type="date" ng-model="datestart">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Ora Inizio</span>
+    <input type="time" ng-model="timestart">
+  </label>
+
+  <label class="item item-input">
+  <span class="input-label">Data Fine</span>
+  <input type="date" ng-model="datefinish">
+</label>
+<label class="item item-input">
+  <span class="input-label">Ora Fine</span>
+  <input type="time" ng-model="timestart">
+</label>
+  </div>
+  <button  class="button button-outline button-balanced col col-33 col-offset-33"  ng-click="disponibile()">Salva</button>
+</div>
+
+
 </div>

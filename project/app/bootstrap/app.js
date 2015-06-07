@@ -22,7 +22,7 @@ require('css/lib/inputEffects/css/demo.css');
 require('css/lib/inputEffects/css/normalize.css');
 require('css/lib/inputEffects/css/set1.css');
 require('css/lib/inputEffects/fonts/font-awesome-4.2.0/css/font-awesome.min.css');
-
+require('css/views/map.css');
 
 
 /* WIDGETS */

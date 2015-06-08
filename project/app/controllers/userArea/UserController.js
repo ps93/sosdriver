@@ -12,7 +12,7 @@ $scope.salva = function(){
 
   var url= SANITRANSPORT+"modification";
     var user = {
-
+                Username : $rootScope.user.username,
                 Email : $scope.email,
                 Telefono : $scope.number,
                 Citta : $scope.city,
@@ -51,6 +51,7 @@ $scope.disponibile = function (){
   var url= SANITRANSPORT+"availability";
   var user = {
 
+              username : $rootScope.user.username,
               datainizio : $scope.datestart,
               orainizio : $scope.timestart,
               datafine : $scope.datefinish,
@@ -60,7 +61,7 @@ $scope.disponibile = function (){
 
 
             var request = {
-                           'method' : 'GET',
+                           'method' : 'POST',
                            'url' : url ,
                            'headers' : {  'Content-Type': 'application/json' },
                            'data' : user

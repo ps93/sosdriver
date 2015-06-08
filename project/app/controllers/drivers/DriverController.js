@@ -1,12 +1,30 @@
 'use strict';
 
 
-module.exports = function ($rootScope, $scope, $state, $data, $cordovaCamera, SANITRANSPORT) {
+module.exports = function ($rootScope, $scope, $state,$translate, $http , SANITRANSPORT) {
+
+  var requestDriverDetail = $state.params.id;
+  var url = SANITRANSPORT+'details?id='+requestDriverDetail;
 
 
-    $scope.clock = new Date();
+  $http.get(url).
+  success(function(data, status, headers, config) {
+    $scope.driver = data;
+  }).
+  error(function(data, status, headers, config) {
 
+ var a =5;
+  });
 
+  $scope.goToDrivers = function()
+  {
+    $state.go('userArea');
+  }
+
+  $scope.selectDriver = function(id)
+  {
+    $state.go('booking',{id:id});
+  }
 
 $scope.salva = function(){
 

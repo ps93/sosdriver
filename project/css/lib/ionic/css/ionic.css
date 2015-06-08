@@ -4900,10 +4900,11 @@ a.item-content {
   min-width: 30px;
   min-height: 30px;
   font-size: 28px; }
-
+/*sosdriver icon driver */
 .item-icon-left {
   padding-left: 54px; }
   .item-icon-left .icon {
+    color: #4B47B8;
     left: 11px; }
 
 .item-complex.item-icon-left {
@@ -5010,7 +5011,7 @@ a.item-content {
     line-height: 32px; }
 
 .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
-  padding-left: 72px;
+  padding-left: 0px;
   min-height: 72px; }
   .item-avatar > img:first-child, .item-avatar .item-image, .item-avatar .item-content > img:first-child, .item-avatar .item-content .item-image, .item-avatar-left > img:first-child, .item-avatar-left .item-image, .item-avatar-left .item-content > img:first-child, .item-avatar-left .item-content .item-image {
     position: absolute;
@@ -5320,19 +5321,31 @@ a.item-content {
  */
 .card, .list-inset {
   overflow: hidden;
-  margin: 20px 10px;
+  margin: 0px 0px;
   border-radius: 2px;
   background-color: #fff; }
 
 .card {
   padding-top: 1px;
   padding-bottom: 1px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
   .card .item {
     border-left: 0;
     border-right: 0; }
   .card .item:first-child {
+    background-color: #621A85;
     border-top: 0; }
+
+    .title-driver-sosdriver{
+
+      font: normal 45px/1 "Audiowide";
+      color: #fff;
+      font-size: 23px;
+      margin-bottom: 3px;
+    }
+
+
   .card .item:last-child {
     border-bottom: 0; }
 
@@ -6524,6 +6537,9 @@ progress {
   .button.button-block, .button.button-full {
     margin-top: 10px;
     margin-bottom: 10px; }
+    .button.buttonsosdriver-full {
+      margin-top: 0px;
+      margin-bottom: 0px; }
   .button.button-light {
     border-color: #ddd;
     background-color: #fff;
@@ -6855,7 +6871,7 @@ progress {
   border-left-width: 0;
   border-radius: 0; }
 
-button.button-block, button.button-full, .button-full > button.button, input.button.button-block {
+button.button-block, button.button-full, .button-full > button.button, input.button.button-block ,button.buttonsosdriver-full{
   width: 100%; }
 
 a.button {
@@ -7423,6 +7439,13 @@ a.button {
 
 .dark-border {
   border-color: #111; }
+
+  .sosdriver {
+    background-color: #394C96; }
+
+    .sosdriver, a.sosdriver {
+      color: #FFF; }
+
 
 [collection-repeat] {
   /* Position is set by transforms */

@@ -19,7 +19,7 @@ module.exports = function (app) {
                             if (value !== undefined) {
                                 GoogleMapInitService.then(function () {
                                     var mapOptions = {
-                                        zoom: 13,
+                                        zoom: 9,
                                         center: new google.maps.LatLng(45.4822,9.21405),
                                         disableDefaultUI: false
                                     };
@@ -35,9 +35,9 @@ module.exports = function (app) {
 
 
 
-                                    scope.driverDetail = function()
+                                    scope.driverDetail = function(id)
                                     {
-                                      $state.go('driver',{id:1});
+                                      $state.go('driver',{id:id});
 
                                     }
 
@@ -49,7 +49,7 @@ module.exports = function (app) {
             '<div                     class="popup">'+
             '<h2 >'+data.nome+' '+  data.cognome+'</h2>'+
             ' <div class="row"> <div class="col col-50"><img src="http://img4.wikia.nocookie.net/__cb20130920142351/simpsons/images/e/e9/Pic_1187696292_8.jpg" style="max-width:100%;" /> </div>'+
-            '<div class="col col-50"> <button id="detailButton" class="button button-outline button-dark" ng-click="driverDetail()"> Dettagli </button><div class="spacer-5"></div><button class="button button-outline button-dark"> Prenota </button> </div> </div>'+
+            '<div class="col col-50"> <button id="detailButton" class="button button-outline button-dark" ng-click="driverDetail('+data.idautista+')"> Dettagli </button><div class="spacer-5"></div><button class="button button-outline button-dark"> Prenota </button> </div> </div>'+
             '</div>';
 
             var compiled = $compile(content)(scope);

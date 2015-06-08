@@ -14,7 +14,9 @@
     "oclazyload": "~0.6.3",
     "lodash": "~3.8.0",
     "angular-google-maps" : "latest",
-    "lodash": "~3.9.2"
+    "lodash": "~3.9.2",
+    "angular-ui-clock" : "latest",
+    "angular-eha.cordova.camera" : "latest"
   },
   "repository": {
     "type": "git",

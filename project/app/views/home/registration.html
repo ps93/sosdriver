@@ -9,17 +9,17 @@
   <fieldset ng-hide="step">
 
   <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label">Nome</span>
+    <span class="input-label" ng-bind="'NAME_REG'|translate">Nome</span>
     <input type="text"  ng-model="name">
   </label>
 
   <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label  item-royal">Cognome</span>
+    <span class="input-label  item-royal" ng-bind="'SURNAME_REG'|translate">Cognome</span>
     <input type="text"  ng-model="surname">
   </label>
 
   <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label  item-royal">Data di Nascita</span>
+    <span class="input-label  item-royal" ng-bind="'BIRTHDAY_REG'|translate">Data di Nascita</span>
     <div class="row">
       <div class="col col-bottom">
         <input type="date"  ng-model="birthday">
@@ -30,7 +30,7 @@
 
 
   <label class="item item-input item-select item-stacked-label item-stable">
-    <div class="input-label">Sesso</div>
+    <div class="input-label" ng-bind="'SEX_REG'|translate">Sesso</div>
     <select ng-model="gender">
       <option value="m">Male</option>
       <option value="f">Female</option>
@@ -43,7 +43,7 @@
   </label>
 
   <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label">Numero di Telefono</span>
+    <span class="input-label" ng-bind="'CEL_NUMBER_REG'|translate">Numero di Telefono</span>
     <input class="item-royal" name="numero" type="text"  ng-model="number" >
   </label>
 
@@ -58,7 +58,7 @@
   </label>
 
   <label class="item item-input item-select">
-    <div class="input-label">Residenza</div>
+    <div class="input-label" ng-bind="'RESIDENCE_REG'|translate">Residenza</div>
     <select ng-model="city">
       <option value="AG">AGRIGENTO</option>
   <option value="AL">ALESSANDRIA</option>
@@ -169,7 +169,7 @@
 
 
       <label class="item item-input item-stacked-label item-stable">
-        <span class="input-label">Via</span>
+        <span class="input-label" ng-bind="'STREET_REG'|translate">Via</span>
         <input class="item-royal" name="via" type="text"  ng-model="street">
       </label>
 
@@ -181,12 +181,12 @@ Avanti
 
 <fieslset ng-show="step">
   <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label">Numero di Patente</span>
+    <span class="input-label" ng-bind="'LICENSE_REG'|translate">Numero di Patente</span>
     <input class="item-royal" name="numereopatente" type="text"  ng-model="license">
   </label>
 
   <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label  item-royal">Data di Emissione</span>
+    <span class="input-label  item-royal" ng-bind="'DATE_ISSUE_REG'|translate">Data di Emissione</span>
     <div class="row">
       <div class="col col-bottom">
         <input type="date"  ng-model="dateofissue">
@@ -197,7 +197,7 @@ Avanti
 
 
   <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label  item-royal">Data di Scadenza</span>
+    <span class="input-label  item-royal" ng-bind="'DATE_EXPIRY_REG'|translate">Data di Scadenza</span>
     <div class="row">
       <div class="col col-bottom">
         <input type="date"  ng-model="dateofexpiration">
@@ -208,7 +208,7 @@ Avanti
 
 
   <label class="item item-input item-select">
-    <div class="input-label">Tipologia Patente</div>
+    <div class="input-label" ng-bind="'TYPE_LICENSE_REG'|translate">Tipologia Patente</div>
     <select ng-model="typelicense">
       <option value="a">A</option>
       <option value="b">B</option>
@@ -216,7 +216,7 @@ Avanti
     </select>
   </label>
 
-  <button align="center" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="registration()">
+  <button align="center" ng-bind="'SIGN_REG'|translate" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="registration()">
   Registrati
   </button>
 

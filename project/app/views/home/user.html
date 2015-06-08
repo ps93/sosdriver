@@ -23,7 +23,7 @@
 
     <div class="list" ng-hide="chooseDriver" >
         <div class="item item-divider">
-          <strong>Contatti</strong>
+          <strong ng-bind="'CONTACTS_USER'|translate">Contatti</strong>
         </div>
 
 
@@ -44,7 +44,7 @@
 
 
       <div class="item item-divider">
-        <strong>Residenza</strong>
+        <strong ng-bind="'RESIDENCE_USER'|translate">Residenza</strong>
       </div>
 
           <div class="item">
@@ -61,7 +61,7 @@
 
 
       <div class="item item-divider">
-        <strong>Patente</strong>
+        <strong ng-bind="'LICENSE_USER'|translate">Patente</strong>
       </div>
 
           <div class="item">
@@ -72,13 +72,13 @@
 
           <div class="item">
               <p1  ng-hide="modifyissue">{{user.emissione}}</p1>
-              <div align="center" ng-show="modifyissue">Data Emissione<input name="dateofissue" type="date" ng-model="dateofissue" placeholder="Data Emissione"/></div>
+              <div align="center" ng-show="modifyissue" ng-bind="'DATE_ISSUE_USER'|translate">Data Emissione<input name="dateofissue" type="date" ng-model="dateofissue" placeholder="Data Emissione"/></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifyissue=true" ng-click="modifyissue = !modifyissue"></i></div>
           </div>
 
           <div class="item">
               <p1  ng-hide="modifyexpire">{{user.scadenza}}</p1>
-              <div align="center" ng-show="modifyexpire">Data Scadenza<input name="dateofexpiration" type="date" ng-model="dateofexpiratio" placeholder="Data Scadenza" /></div>
+              <div align="center" ng-show="modifyexpire" ng-bind="'DATE_EXPIRY_USER'|translate">Data Scadenza<input name="dateofexpiration" type="date" ng-model="dateofexpiratio" placeholder="Data Scadenza" /></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifyexpire=true" ng-click="modifyexpire = !modifyexpire"></i></div>
           </div>
 
@@ -89,8 +89,8 @@
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifytipo =true" ng-click="modifytipo = !modifytipo"></i></div>
           </div>
 
-        <button class="button button-outline button-balanced col col-33 col-offset-33" ng-ngit="shouldShow = true"  ng-click="shouldShow = !shouldShow" ng-hide="shouldShow">Modifica</button>
-        <button  class="button button-outline button-balanced col col-33 col-offset-33" ng-show="shouldShow" ng-click="salva()">Salva</button>
+        <button class="button button-outline button-balanced col col-33 col-offset-33" ng-ngit="shouldShow = true"  ng-click="shouldShow = !shouldShow" ng-hide="shouldShow" ng-bind="'CHANGE_USER'|translate">Modifica</button>
+        <button  class="button button-outline button-balanced col col-33 col-offset-33" ng-show="shouldShow" ng-bind="'SAVE_USER'|translate" ng-click="salva()">Salva</button>
    </div>
 
 
@@ -100,24 +100,24 @@
 <div class="autista" ng-show="chooseDriver">
 
   <div class="item item-divider">
-    <strong>Autista</strong>
+    <strong ng-bind="'DRIVER_USER'|translate">Autista</strong>
 
     <label class="item item-input">
-    <span class="input-label">Data inizio</span>
+    <span class="input-label" ng-bind="'START_DATE_USER'|translate">Data inizio</span>
     <input type="date" ng-model="datestart">
   </label>
   <label class="item item-input">
-    <span class="input-label">Ora Inizio</span>
+    <span class="input-label" ng-bind="'START_TIME_USER'|translate">Ora Inizio</span>
     <input type="time" ng-model="timestart">
   </label>
 
   <label class="item item-input">
-  <span class="input-label">Data Fine</span>
+  <span class="input-label" ng-bind="'END_DATE_USER'|translate">Data Fine</span>
   <input type="date" ng-model="datefinish">
 </label>
 <label class="item item-input">
-  <span class="input-label">Ora Fine</span>
-  <input type="time" ng-model="timestart">
+  <span class="input-label" ng-bind="'END_TIME_USER'|translate">Ora Fine</span>
+  <input type="time" ng-model="timefinish">
 </label>
   </div>
   <button  class="button button-outline button-balanced col col-33 col-offset-33"  ng-click="disponibile()">Salva</button>

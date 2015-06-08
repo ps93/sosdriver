@@ -11,6 +11,7 @@ require('../../lib/ui-bootstrap-custom-tpls-0.12.0');
 require('../../../bower_components/angular-dynamic-locale/dist/tmhDynamicLocale');
 require('angular-translate');
 require('angular-ui-clock');
+require('camera');
 
 
 /* LOAD CSS */
@@ -41,7 +42,9 @@ var app = angular.module('app', [
       'tmh.dynamicLocale',
       'ui.bootstrap',
       'pascalprecht.translate',
-      'ds.clock'
+      'ds.clock',
+      'eha.cordova.service.camera',
+
     ]
 );
 

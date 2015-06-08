@@ -43,7 +43,7 @@ var app = angular.module('app', [
       'ui.bootstrap',
       'pascalprecht.translate',
       'ds.clock',
-      'eha.cordova.service.camera',
+      'eha.cordova.service.camera'
 
     ]
 );

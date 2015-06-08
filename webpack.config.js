@@ -34,7 +34,7 @@ module.exports = {
             'ionic' : 'css/lib/ionic/js/ionic.bundle.js',
             'lodash': 'lodash/lodash.js',
             'angular-translate': 'angular-translate/angular-translate.js',
-            'angular-ui-clock' : 'angular-uiclock/dist/angular-clock.js',
+            'angular-ui-clock' : 'angular-ui-clock/dist/angular-clock.js',
             'camera' : 'angular-eha.cordova.camera/dist/angular-eha.cordova.camera.js',
         }
    },

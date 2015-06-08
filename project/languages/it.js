@@ -30,5 +30,5 @@ module.exports = {
     SIGN_REG : 'Registrati',
     NEW_ACCOUNT_PREHOME : 'Nuovo Account',
     SAVE_DISPONIBILITY_USER : 'Save',
-    RESET_PASSWORD_PREHOME : 'Reimposta Password'
+    RESET_PASSWORD_PREHOME : 'Rinvio Password'
 };

@@ -32,7 +32,8 @@ module.exports = {
             'ocLazyLoad': 'ocLazyLoad/dist/ocLazyLoad.min.js',
             'swiper': 'swiper/dist/js/swiper.js',
             'ionic' : 'css/lib/ionic/js/ionic.bundle.js',
-            'lodash': 'lodash/lodash.js'
+            'lodash': 'lodash/lodash.js',
+            'angular-translate': 'angular-translate/angular-translate.js',
         }
     },
     plugins: [

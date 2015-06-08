@@ -3,8 +3,8 @@
 module.exports = function (app) {
 
 
-    app.directive('panelMapMarkers', ['$rootScope', 'GoogleMapInitService',
-        function ($rootScope, GoogleMapInitService) {
+    app.directive('panelMapMarkers', ['$rootScope', 'GoogleMapInitService','$state','$compile',
+        function ($rootScope, GoogleMapInitService,$state,$compile) {
             return {
                 restrict: 'E',
                 scope: {
@@ -29,28 +29,38 @@ module.exports = function (app) {
                                     var drivers = value;
                                     var markers = [];
 
-                                    var content = '<div id="iw-container">' +
-                    '<div class="iw-title">NOME QUI</div>' +
-                    '<div class="iw-content">' +
-                      '<img src="provafoto.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                      '<p>Founded in 1824, the Porcelain Factory of Vista Alegre was the first industrial unit dedicated to porcelain production in Portugal. For the foundation and success of this risky industrial development was crucial the spirit of persistence of its founder, José Ferreira Pinto Basto. Leading figure in Portuguese society of the nineteenth century farm owner, daring dealer, wisely incorporated the liberal ideas of the century, having become "the first example of free enterprise" in Portugal.</p>' +
-                      '<div class="iw-subTitle">Contacts</div>' +
-                      '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
-                      '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
-                    '</div>' +
-                    '<div class="iw-bottom-gradient"></div>' +
-                  '</div>';
 
-                                    var infowindow = new google.maps.InfoWindow({
-                                        content: content,
-                                        maxWidth: 350
-                                    });
 
                                     for (var a = 0; a < drivers.length; a++) addMarker(drivers[a], Icon);
 
-                        
+
+
+                                    scope.driverDetail = function()
+                                    {
+                                      $state.go('driver',{id:1});
+
+                                    }
 
                                     function addMarker(data, icon) {
+
+
+
+                                      var content =
+            '<div                     class="popup">'+
+            '<h2 >'+data.nome+' '+  data.cognome+'</h2>'+
+            ' <div class="row"> <div class="col col-50"><img src="http://img4.wikia.nocookie.net/__cb20130920142351/simpsons/images/e/e9/Pic_1187696292_8.jpg" style="max-width:100%;" /> </div>'+
+            '<div class="col col-50"> <button id="detailButton" class="button button-outline button-dark" ng-click="driverDetail()"> Dettagli </button><div class="spacer-5"></div><button class="button button-outline button-dark"> Prenota </button> </div> </div>'+
+            '</div>';
+
+            var compiled = $compile(content)(scope);
+
+            var buttonDetail = document.querySelector('#detailButton');
+
+
+                                      var infowindow = new google.maps.InfoWindow({
+                                          content: compiled[0],
+                                          maxWidth: 350
+                                      });
 
 
                                         var marker = new google.maps.Marker({
@@ -68,19 +78,24 @@ module.exports = function (app) {
                                             openInfoWindow(marker);
                                             stopAnimation(marker);
                                         });
+
+                                        function stopAnimation(marker) {
+                                            setTimeout(function () {
+                                                marker.setAnimation(null);
+                                            }, 600);
+                                        }
+
+                                        function openInfoWindow(marker) {
+
+
+                                            infowindow.open(map, marker);
+                                        }
+
+
+
+
                                     }
 
-                                    function stopAnimation(marker) {
-                                        setTimeout(function () {
-                                            marker.setAnimation(null);
-                                        }, 600);
-                                    }
-
-                                    function openInfoWindow(marker) {
-
-
-                                        infowindow.open(map, marker);
-                                    }
 
 
 

@@ -9,6 +9,7 @@ require('swiper');
 require('angular-local-storage');
 require('../../lib/ui-bootstrap-custom-tpls-0.12.0');
 require('../../../bower_components/angular-dynamic-locale/dist/tmhDynamicLocale');
+require('angular-translate');
 
 
 /* LOAD CSS */
@@ -37,7 +38,8 @@ var app = angular.module('app', [
         'ionic',
         'LocalStorageModule',
       'tmh.dynamicLocale',
-      'ui.bootstrap'
+      'ui.bootstrap',
+      'pascalprecht.translate'
     ]
 );
 

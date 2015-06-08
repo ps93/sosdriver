@@ -27,5 +27,8 @@ module.exports = {
     DATE_ISSUE_REG : 'Data di Emissione',
     DATE_EXPIRY_REG : 'Data di Scadenza',
     TYPE_LICENSE_REG : 'Tipologia Patente',
-    SIGN_REG : 'Registrati'
+    SIGN_REG : 'Registrati',
+    NEW_ACCOUNT_PREHOME : 'Nuovo Account',
+    SAVE_DISPONIBILITY_USER : 'Save',
+    RESET_PASSWORD_PREHOME : 'Reimposta Password'
 };

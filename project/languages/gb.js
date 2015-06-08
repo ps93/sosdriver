@@ -28,6 +28,9 @@ module.exports = {
     DATE_ISSUE_REG : 'Date of Issue',
     DATE_EXPIRY_REG : 'Date Expiry',
     TYPE_LICENSE_REG : 'Type of License',
-    SIGN_REG : 'Sign Up'
+    SIGN_REG : 'Sign Up',
+    NEW_ACCOUNT_PREHOME : 'New Account',
+    SAVE_DISPONIBILITY_USER : 'Save',
+    RESET_PASSWORD_PREHOME : 'Reset Password'
 
 };

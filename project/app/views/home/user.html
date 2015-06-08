@@ -9,9 +9,9 @@
 
     <div class="item item-text-wrap item-thumbnail-left">
      <img src="prova.jpg" >
-     <h3>{{user.nome + " " + user.cognome}}</h3>
-     <p>{{clock}}</p>
-     <label class="toggle toggle-assertive">
+     <h2><b>{{user.nome + " " + user.cognome}}</b></h2>
+     <p>{{clock | date:'dd-MMMM-yyyy'}}</p><ds-widget-clock show-digital theme="blue-light" digital-format="'hh:mm:ss a'"></ds-widget-clock>
+     <label class="toggle toggle-royal">
       <input type="checkbox" ng-ngit="chooseDriver = true" ng-click="chooseDriver = !chooseDriver"  >
       <div class="track">
       <div class="handle"> </div>

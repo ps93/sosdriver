@@ -1038,3 +1038,18 @@ body {
      background: url(down_arrow_select.jpg) no-repeat right #ddd;
      border: 1px solid #ccc;
      }
+
+
+/* jherome */
+
+
+@import url('http://fonts.googleapis.com/css?family=Rationale');
+/* this import should be first line in css file else add as <link> in html*/
+.widget-clock.blue-light .digital {
+  text-align: center;
+}
+.widget-clock.blue-light .time {
+  font-family: 'Rationale', sans-serif;
+  font-size: 2.0em;
+  color: #1da4eb;
+}

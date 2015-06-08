@@ -34,8 +34,9 @@ module.exports = {
             'ionic' : 'css/lib/ionic/js/ionic.bundle.js',
             'lodash': 'lodash/lodash.js',
             'angular-translate': 'angular-translate/angular-translate.js',
+            'angular-ui-clock' : 'angular-uiclock/dist/angular-clock.js',
         }
-    },
+   },
     plugins: [
         new ExtractTextPlugin('app.css'),
           new Webpack.ProvidePlugin({

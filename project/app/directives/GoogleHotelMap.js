@@ -2,8 +2,8 @@
 
 module.exports = function (app) {
 
-    app.directive('googleHotelMap', ['$rootScope','GoogleMapInitService',
-        function ($rootScope,GoogleMapInitService) {
+    app.directive('googleHotelMap', ['$rootScope','GoogleMapInitService','$timeout',
+        function ($rootScope,GoogleMapInitService,$timeout) {
             return {
                 restrict: 'E',
                 scope: {
@@ -16,7 +16,7 @@ module.exports = function (app) {
                 <div class="list">\
                 <a class="item item-icon-left" >\
                   <i class="icon ion-cash"></i>\
-                  prezzo\
+                  {{prezzo}}\
                 </a>\
                 <a class="item item-icon-left">\
                   <i class="icon ion-clock"></i>\
@@ -75,9 +75,13 @@ module.exports = function (app) {
                                  console.log("durata :" + durataMM);
                                  console.log("prezzo :" + prezzo);
                                  scope.info={};
-                                 scope.prezzo = prezzo;
-                                 scope.distanza = distanzaKM;
-                                 scope.durata = durataMM;
+
+                                 $timeout(function(){
+                                   scope.prezzo = prezzo;
+                                   scope.distanza = distanzaKM;
+                                   scope.durata = durataMM;
+                                 },200);
+
                                  directionsDisplay.setMap(map);
                                  directionsDisplay.setDirections(response);
                                } else {

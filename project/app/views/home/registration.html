@@ -7,7 +7,7 @@
 
 <div class="list">
 
-  <fieldset ng-hide="step">
+  <fieldset ng-show="step">
 
   <label class="item item-input item-stacked-label item-stable">
     <span class="input-label" ng-bind="'NAME_REG'|translate">Nome</span>
@@ -33,29 +33,9 @@
   <label class="item item-input item-select item-stacked-label item-stable">
     <div class="input-label" ng-bind="'SEX_REG'|translate">Sesso</div>
     <select ng-model="gender">
-      <option value="m">Male</option>
-      <option value="f">Female</option>
+      <option value="m">Machio</option>
+      <option value="f">Femmina</option>
     </select>
-  </label>
-
-  <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label">E-mail</span>
-    <input class="item-royal" name="Partenza" type="text" ng-model="email">
-  </label>
-
-  <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label" ng-bind="'CEL_NUMBER_REG'|translate">Numero di Telefono</span>
-    <input class="item-royal" name="numero" type="text"  ng-model="number" >
-  </label>
-
-  <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label">Username</span>
-    <input class="item-royal" name="username" type="text"  ng-model="username">
-  </label>
-
-  <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label">Password</span>
-    <input class="item-royal" name="password" type="password"  ng-model="password">
   </label>
 
   <label class="item item-input item-select">
@@ -75,54 +55,41 @@
         <input class="item-royal" name="via" type="text"  ng-model="street">
       </label>
 
-
-<button align="center" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="gotostep2()">
-Avanti
-</button>
 </fieldset>
+  <button align="center" class="button button-outline button-balanced col col-33 col-offset-33" ng-show="step" ng-init="step= true" ng-click="step = !step">
+  Avanti
+  </button>
 
-<fieslset ng-show="step">
+
+  <fieslset ng-hide="step">
   <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label" ng-bind="'LICENSE_REG'|translate">Numero di Patente</span>
-    <input class="item-royal" name="numereopatente" type="text"  ng-model="license">
+    <span class="input-label">E-mail</span>
+    <input class="item-royal" name="Partenza" type="text" ng-model="email">
   </label>
-
-  <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label  item-royal" ng-bind="'DATE_ISSUE_REG'|translate">Data di Emissione</span>
-    <div class="row">
-      <div class="col col-bottom">
-        <input type="date"  ng-model="dateofissue">
-      </div>
-    </div>
-
-  </label>
-
 
   <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label  item-royal" ng-bind="'DATE_EXPIRY_REG'|translate">Data di Scadenza</span>
-    <div class="row">
-      <div class="col col-bottom">
-        <input type="date"  ng-model="dateofexpiration">
-      </div>
-    </div>
+    <span class="input-label" ng-bind="'CEL_NUMBER_REG'|translate">Numero di Telefono</span>
+    <input class="item-royal" name="numero" type="text"  ng-model="number">
+  </label>
 
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label">Username</span>
+    <input class="item-royal" name="username" type="text"  ng-model="username">
+  </label>
+
+  <label class="item item-input item-stacked-label item-stable">
+    <span class="input-label">Password</span>
+    <input class="item-royal" name="password" type="password"  ng-model="password">
   </label>
 
 
-  <label class="item item-input item-select">
-    <div class="input-label" ng-bind="'TYPE_LICENSE_REG'|translate">Tipologia Patente</div>
-    <select ng-model="typelicense">
-      <option value="a">A</option>
-      <option value="b">B</option>
-      <option value="ab">AB</option>
-    </select>
-  </label>
+    </fieldset>
+
 
   <button align="center" ng-bind="'SIGN_REG'|translate" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="registration()">
   Registrati
   </button>
 
-</fieldset>
 
 
 </div>

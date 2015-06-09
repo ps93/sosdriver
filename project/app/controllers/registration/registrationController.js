@@ -54,11 +54,6 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
     $state.go('prehome');
   };
 
-  $scope.gotostep2 = function ()
-  {
-    $scope.step='false';
-  };
-
 
 
 };

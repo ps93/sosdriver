@@ -21,15 +21,16 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
 
                 };
 
+                var url2= SANITRANSPORT+'availability';
 
                 var request = {
-                               'method' : 'GET',
+                               'method' : 'POST',
                                'url' : url2 ,
                                'headers' : {  'Content-Type': 'application/json' },
                                'data' : user
                                };
 
-               var url2= SANITRANSPORT+'availability';
+
 
                 $http(request).success(function(data, status, headers, config)
                   {

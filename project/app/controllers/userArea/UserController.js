@@ -1,7 +1,7 @@
 'use strict';
 
 
-module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
+module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT,$filter) {
 
   $scope.email = $rootScope.user.email ;
   $scope.number = $rootScope.user.cellulare;
@@ -30,14 +30,13 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
                                    if(data==1)
                                    {
 
-
                                            var user = {
 
                                                        username : $rootScope.user.username,
                                                        datainizio : $scope.datestart,
-                                                       orainizio : $scope.timestart,
+                                                       orainizio : $filter('date')($scope.timestart, "HH:mm:ss"),
                                                        datafine : $scope.datefinish,
-                                                       orafine : $scope.timefinish,
+                                                       orafine : $filter('date')($scope.timefinish, "HH:mm:ss")
 
                                                      };
 

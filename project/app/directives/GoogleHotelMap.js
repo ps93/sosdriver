@@ -14,28 +14,29 @@ module.exports = function (app) {
                 <div class="spacer-20"></div>\
                 <div class="spacer-20"></div>\
                 <div class="list">\
-                <a class="item item-icon-left" href="#">\
+                <a class="item item-icon-left" >\
                   <i class="icon ion-cash"></i>\
-                  {{\'prezzo\'}}\
+                  prezzo\
                 </a>\
-                <a class="item item-icon-left" href="#">\
+                <a class="item item-icon-left">\
                   <i class="icon ion-clock"></i>\
-                  {{\'durata\'}}\
+                  durata\
                 </a>\
-                <a class="item item-icon-left" href="#">\
+                <a class="item item-icon-left" >\
                   <i class="icon ion-arrow-graph-up-right"></i>\
-                  {{\'partenza\'}}\
+                  partenza\
                 </a>\
-                <a class="item item-icon-left" href="#">\
+                <a class="item item-icon-left" >\
                   <i class="icon ion-arrow-graph-up-left"></i>\
                   {{\'destinazione\'}}\
                 </a>\
-                <button class="button button-block button-dark">\
-                 Conferma\
+                <button class="button button-block button-dark" >\
+                Conferma\
                 </button>\
                 </div>\
                 </div>\
                 <div id="map-canvas" style="width:100%; height:50%; top: 50%; position: absolute;">\
+                Conferma\
                 </div>',
                 link: function (scope, element) {
 
@@ -69,14 +70,14 @@ module.exports = function (app) {
 
                                  var distanzaKM = (response.routes[0].legs[0].distance.value)/1000;
                                  var durataMM =  Math.floor(((response.routes[0].legs[0].duration.value)/60)) ;
-                                 var prezzo = prezzo*1.50;
+                                 var prezzo = distanzaKM*1.50;
                                  console.log("distanza : "+distanzaKM);
                                  console.log("durata :" + durataMM);
                                  console.log("prezzo :" + prezzo);
                                  scope.info={};
                                  scope.prezzo = prezzo;
-                                 scope.info.distanza = distanzaKM;
-                                 scope.info.durata = durataMM;
+                                 scope.distanza = distanzaKM;
+                                 scope.durata = durataMM;
                                  directionsDisplay.setMap(map);
                                  directionsDisplay.setDirections(response);
                                } else {

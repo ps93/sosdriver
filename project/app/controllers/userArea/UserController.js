@@ -3,7 +3,15 @@
 
 module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
 
-
+  $scope.email = $rootScope.user.email ;
+  $scope.number = $rootScope.user.cellulare;
+  $scope.city= $rootScope.user.citta;
+  $scope.street= $rootScope.user.via;
+  $scope.license = $rootScope.user.codicepatente;
+  $scope.dateofissue = $rootScope.user.emissione;
+  $scope.dateofexpiration =  $rootScope.user.scadenza;
+  $scope.typelicense=  $rootScope.user.tipopatente;
+  
 
     $scope.clock = new Date();
 
@@ -47,17 +55,31 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
 
 $scope.salva = function(){
 
+
+
+
+
+
+
+  console.log($rootScope.user);
+
     var user = {
                 Username : $rootScope.user.username,
-                Email : $scope.email,
+                Email : $scope.email !=='undefined' ? $rootScope.user.email : $scope.email ,
                 Telefono : $scope.number,
                 Citta : $scope.city,
-                Via : $scope.street,
+                Via : $scope.street == 'undefined' ? $rootScope.user.street.via : $scope.street,
                 Patente : $scope.license,
                 Emissione : $scope.dateofissue,
                 Scadenza : $scope.dateofexpiration,
                 Tipopatente : $scope.typelicense,
               };
+
+
+
+
+
+
 
 
      var request = {

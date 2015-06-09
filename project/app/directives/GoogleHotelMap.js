@@ -16,19 +16,19 @@ module.exports = function (app) {
                 <div class="list">\
                 <a class="item item-icon-left" >\
                   <i class="icon ion-cash"></i>\
-                  {{prezzo}}\
+                  {{prezzo | limitTo:5}}\
                 </a>\
                 <a class="item item-icon-left">\
                   <i class="icon ion-clock"></i>\
-                  durata\
+                  {{durata | limitTo:5}} min\
                 </a>\
                 <a class="item item-icon-left" >\
                   <i class="icon ion-arrow-graph-up-right"></i>\
-                  partenza\
+                  {{partenzaIndirizzo}}\
                 </a>\
                 <a class="item item-icon-left" >\
                   <i class="icon ion-arrow-graph-up-left"></i>\
-                  {{\'destinazione\'}}\
+                  {{destinazioneIndirizzo}}\
                 </a>\
                 <button class="button button-block button-dark" >\
                 Conferma\
@@ -49,9 +49,11 @@ module.exports = function (app) {
                         function mia_posizione(position) {
 
 
+
+
                           var lat = position.coords.latitude;
                           var lon = position.coords.longitude;
-                          var myPosition = new google.maps.LatLng(lat, lon);
+                          var myPosition = new google.maps.LatLng(lat, lon); // my position
 
                           var destination = new google.maps.LatLng(scope.partenza.lat_partenza,scope.partenza.lon_partenza);
 
@@ -76,11 +78,51 @@ module.exports = function (app) {
                                  console.log("prezzo :" + prezzo);
                                  scope.info={};
 
+
+                                 var addressMyPosition="";
+
+                                 var geocoder = new google.maps.Geocoder();
+
+
+                                  geocoder.geocode({'latLng':myPosition},function(data,status){
+
+                                    if(status == google.maps.GeocoderStatus.OK){
+
+                                        addressMyPosition = data[0].formatted_address; //this is the full address
+
+
+                                        console.log(addressMyPosition);
+
+                                        }
+
+                                  });
+
+                                  var addressDestination="";
+
+                                  geocoder.geocode({'latLng':destination},function(data,status){
+
+                                    if(status == google.maps.GeocoderStatus.OK){
+
+                                        addressDestination = data[0].formatted_address; //this is the full address
+
+
+                                        console.log(addressDestination);
+
+                                        }
+
+                                  });
+
+
+
+
+
                                  $timeout(function(){
                                    scope.prezzo = prezzo;
                                    scope.distanza = distanzaKM;
                                    scope.durata = durataMM;
-                                 },200);
+                                   scope.partenzaIndirizzo = addressMyPosition;
+                                   scope.destinazioneIndirizzo = addressDestination;
+                                 },500);
 
                                  directionsDisplay.setMap(map);
                                  directionsDisplay.setDirections(response);

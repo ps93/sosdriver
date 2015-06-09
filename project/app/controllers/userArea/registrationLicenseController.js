@@ -10,7 +10,7 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
 
 $scope.registrationlicense = function (){
   var user = {
-
+    Username : $rootScope.user.username,
     Patente : $scope.license,
     Emissione : $scope.dateofissue,
     Scadenza : $scope.dateofexpiration,

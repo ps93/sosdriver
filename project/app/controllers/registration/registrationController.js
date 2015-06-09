@@ -23,10 +23,7 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
        Telefono : $scope.number,
        Citta : $scope.city,
        Via : $scope.street,
-       Patente : $scope.license,
-       Emissione : $scope.dateofissue,
-       Scadenza : $scope.dateofexpiration,
-       Tipopatente : $scope.typelicense,
+
    };
 
 

@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
+module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT,localStorageService) {
 
 
   $scope.carica=false;
@@ -22,7 +22,7 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
         console.log('login con successo');
 
         $rootScope.user = data;
-
+        localStorageService.set('user',$rootScope.user);
         $state.go('userArea');
       }
     else {

@@ -40,7 +40,12 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
       $http(request).success(function(data, status, headers, config)
         {
           if(status==200)
+          {
+            $rootScope.user = request.data;
+            localStorageService.set('user',user);
             $state.go('userArea');
+          }
+
           alert(data);
 
         }).error(function(){

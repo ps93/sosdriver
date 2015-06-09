@@ -11,7 +11,7 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
   $scope.dateofissue = $rootScope.user.emissione;
   $scope.dateofexpiration =  $rootScope.user.scadenza;
   $scope.typelicense=  $rootScope.user.tipopatente;
-  
+
 
     $scope.clock = new Date();
 
@@ -78,7 +78,7 @@ $scope.salva = function(){
 
 
 
-
+              var url1= SANITRANSPORT+'modification';
 
 
 
@@ -89,7 +89,7 @@ $scope.salva = function(){
                     'data' : user
                     };
 
-      var url1= SANITRANSPORT+'modification';
+
 
 
      $http(request).success(function(data, status, headers, config)

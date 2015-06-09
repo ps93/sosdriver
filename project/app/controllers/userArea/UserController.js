@@ -27,14 +27,14 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
                    $http.get(urldriver).
                    success(function(data, status, headers, config) {
 
-                                   if(data==0)
+                                   if(data.stato==0)
                                    {
-                                     $state.controllo=0;
-                                     $state.tabellapatente = !scope.tabellapatente;
+                                     $scope.controllo=0;
+                                     $scope.tabellapatente = 'false';
                                    }
                                    else {
-                                     $state.controllo=1;
-                                     $state.go('registrationlicense');
+                                     $scope.controllo=1;
+                                  //   $state.go('registrationlicense');
                                    }
 
                                  }).error(function(){
@@ -49,7 +49,7 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
 
 
 
-                                      if (controllo==1)
+                                      if ($scope.controllo==1)
                                       {
                                         var user = {
 
@@ -83,6 +83,10 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
                                                           // or server returns response with an error status.
                                                           alert("Errore Salvataggio");
                                                            });
+                                      }
+                                      else{
+                                        alert("DEVI REGISTRARE I DATI DELLA PATENTE");
+                                           $state.go('registrationlicense');
                                       }
 
                              };  //end of function salva()
@@ -143,8 +147,6 @@ $scope.annulla = function (){
   $state.go('userArea');
   $route.reload();
 }
-
-
 
 
 };// end of all

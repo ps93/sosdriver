@@ -99,6 +99,9 @@ $scope.salva = function(){
   var url1= SANITRANSPORT+'modification';
 
 
+              var url1= SANITRANSPORT+'modification';
+
+
      var request = {
                     'method' : 'POST',
                     'url' : url1 ,

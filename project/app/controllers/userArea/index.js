@@ -26,6 +26,12 @@ var app = angular.module('app.userArea', [])
 .controller('SettingsController', [
   '$rootScope', '$scope', '$state','$translate', 'localStorageService', 'tmhDynamicLocale', '$timeout',
     require('./SettingsController')
+])
+
+.controller('registrationLicenseController', [
+    '$rootScope', '$scope', '$state','$http','SANITRANSPORT',
+    require('./registrationLicenseController')
 ]);
+
 
 module.exports = app;

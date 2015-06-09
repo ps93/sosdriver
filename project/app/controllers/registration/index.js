@@ -7,4 +7,5 @@ app.controller('registrationController', [
     require('./registrationController')
 ]);
 
+
 module.exports = app;

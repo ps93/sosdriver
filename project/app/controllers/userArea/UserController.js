@@ -11,55 +11,76 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
   $scope.dateofissue = $rootScope.user.emissione;
   $scope.dateofexpiration =  $rootScope.user.scadenza;
   $scope.typelicense=  $rootScope.user.tipopatente;
-  
+
 
     $scope.clock = new Date();
 
 
     $scope.disponibile = function (){
 
-
-      var user = {
-
+      var userdriver = {
                   username : $rootScope.user.username,
-                  datainizio : $scope.datestart,
-                  orainizio : $scope.timestart,
-                  datafine : $scope.datefinish,
-                  orafine : $scope.timefinish,
+                       };
 
-                };
+                var urldriver= SANITRANSPORT+'firstTimeDriver?username='+$rootScope.user.username;
 
-                var url2= SANITRANSPORT+'availability';
-
-                var request = {
-                               'method' : 'POST',
-                               'url' : url2 ,
-                               'headers' : {  'Content-Type': 'application/json' },
-                               'data' : user
-                               };
+                   $http.get(urldriver).
+                   success(function(data, status, headers, config) {
+                                   if(status==1)
+                                   {
 
 
+                                           var user = {
 
-                $http(request).success(function(data, status, headers, config)
-                  {
-                    if(status==200)
+                                                       username : $rootScope.user.username,
+                                                       datainizio : $scope.datestart,
+                                                       orainizio : $scope.timestart,
+                                                       datafine : $scope.datefinish,
+                                                       orafine : $scope.timefinish,
 
-                    alert('Salvato con Successo');
+                                                     };
 
-                  }).error(function(){
-                     // called asynchronously if an error occurs
-                     // or server returns response with an error status.
-                     alert("Errore Salvataggio");
-                   });
-              };  //end of function salva()
+                                                     var url2= SANITRANSPORT+'availability';
+
+                                                     var request = {
+                                                                    'method' : 'POST',
+                                                                    'url' : url2 ,
+                                                                    'headers' : {  'Content-Type': 'application/json' },
+                                                                    'data' : user
+                                                                    };
+
+
+
+                                                     $http(request).success(function(data, status, headers, config)
+                                                       {
+                                                         if(status==200)
+
+                                                         alert('Salvato con Successo');
+
+                                                         }).error(function(){
+                                                          // called asynchronously if an error occurs
+                                                          // or server returns response with an error status.
+                                                          alert("Errore Salvataggio");
+                                                           });
+
+
+
+                                   }
+                                   else {
+                                     $state.go('registrationlicense');
+                                   }
+
+                                 }).error(function(){
+                                    // called asynchronously if an error occurs
+                                    // or server returns response with an error status.
+                                    alert("Errore");
+                                  });
+                             };  //end of function salva()
+
+
+
 
 $scope.salva = function(){
-
-
-
-
-
-
 
   console.log($rootScope.user);
 
@@ -75,11 +96,7 @@ $scope.salva = function(){
                 Tipopatente : $scope.typelicense,
               };
 
-
-
-
-
-
+  var url1= SANITRANSPORT+'modification';
 
 
      var request = {
@@ -89,7 +106,6 @@ $scope.salva = function(){
                     'data' : user
                     };
 
-      var url1= SANITRANSPORT+'modification';
 
 
      $http(request).success(function(data, status, headers, config)
@@ -108,6 +124,12 @@ $scope.salva = function(){
    };  //end of function salva()
 
 
+
+$scope.annulla = function (){
+  $scope.shouldShow = !$scope.shouldShow;
+  $state.go('userArea');
+  $route.reload();
+}
 
 
 

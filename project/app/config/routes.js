@@ -11,6 +11,7 @@ module.exports = function (app) {
 
 
 
+
                         //////////////////////////////////////////////
                           ///////////// HEDARMENUSLIDER /////////////////
                           ////////////////////////////////////////////
@@ -95,6 +96,8 @@ module.exports = function (app) {
                   })
 
 
+
+
                     //////////////////////////////////////////////
                       //////////////// USER AREA ////////////////
                       ////////////////////////////////////////////
@@ -114,6 +117,28 @@ module.exports = function (app) {
                               }]
                           }
                       })
+
+
+                      ///////////////////////////////////////////////////////////
+                        /////////////////// RIGISTRATION LICENSE ////////////////
+                        /////////////////////////////////////////////////////////
+                        .state('registrationlicense', {
+                            parent: '/user',
+                            url: '/userArea',
+                            template: require('../views/home/registrationlicense.html'),
+                            controller: 'registrationLicenseController',
+                            resolve: {
+                                load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
+                                    var deferred = $q.defer();
+                                    require.ensure([], function () {
+                                        $ocLazyLoad.load({name: 'app.userArea'});
+                                        deferred.resolve(require('../controllers/userArea'));
+                                    });
+                                    return deferred.promise;
+                                }]
+                            }
+                        })
+
 
 
                       //////////////////////////////////////////////

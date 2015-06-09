@@ -1,0 +1,51 @@
+<div class="bar bar-header bar-balanced">
+  <a ng-click="goToUser()" class="button icon-left ion-chevron-left button-clear "></a>
+  <h1 class="title">REGISTRAZIONE PATENTE</h1>
+</div>
+<br><br>
+
+<div class="list">
+
+
+<label class="item item-input item-stacked-label item-stable">
+  <span class="input-label" ng-bind="'LICENSE_REG'|translate">Numero di Patente</span>
+  <input class="item-royal" name="numereopatente" type="text"  ng-model="license">
+</label>
+
+<label class="item item-input item-stacked-label item-stable">
+  <span class="input-label  item-royal" ng-bind="'DATE_ISSUE_REG'|translate">Data di Emissione</span>
+  <div class="row">
+    <div class="col col-bottom">
+      <input type="date"  ng-model="dateofissue">
+    </div>
+  </div>
+
+</label>
+
+
+<label class="item item-input item-stacked-label item-stable">
+  <span class="input-label  item-royal" ng-bind="'DATE_EXPIRY_REG'|translate">Data di Scadenza</span>
+  <div class="row">
+    <div class="col col-bottom">
+      <input type="date"  ng-model="dateofexpiration">
+    </div>
+  </div>
+
+</label>
+
+
+<label class="item item-input item-select">
+  <div class="input-label" ng-bind="'TYPE_LICENSE_REG'|translate">Tipologia Patente</div>
+  <select ng-model="typelicense">
+    <option value="a">A</option>
+    <option value="b">B</option>
+    <option value="ab">AB</option>
+  </select>
+</label>
+
+<button align="center" ng-bind="'SIGN_REG'|translate" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="registrationlicense()">
+Salva
+</button>
+
+
+</div>

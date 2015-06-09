@@ -6,5 +6,5 @@ module.exports = function (app) {
     require('./LoadTemplates')(app);
     require('./PanelMapMarkersDirective')(app);
     require('./DefineAreaDirective')(app);
-    
+    require('./GoogleHotelMap')(app);
 };

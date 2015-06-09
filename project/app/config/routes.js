@@ -144,12 +144,12 @@ module.exports = function (app) {
                               url: '/booking/:id',
 
                               template: require('../views/drivers/booking.html'),
-                              controller: 'DriverController',
+                              controller: 'BookingController',
                               resolve: {
                                   load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
                                       var deferred = $q.defer();
                                       require.ensure([], function () {
-                                          $ocLazyLoad.load({name: 'app.driver'});
+                                          $ocLazyLoad.load({name: 'app.booking'});
                                           deferred.resolve(require('../controllers/drivers'));
                                       });
                                       return deferred.promise;

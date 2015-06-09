@@ -3,9 +3,13 @@
 
 module.exports = function ($rootScope, $scope, $state,$translate, $http , SANITRANSPORT) {
 
-  var requestDriverDetail = $state.params.id;
-  var url = SANITRANSPORT+'details?id='+requestDriverDetail;
 
-  var idautista = $state.params.idautista;
+$scope.partenza= {
+  lat_partenza : "45.463396",
+  lon_partenza : "9.1805647"
+  }
+
+
+  var idautista = $state.params.id;
 
 };// end of all

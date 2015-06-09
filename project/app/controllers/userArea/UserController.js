@@ -22,11 +22,12 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
                   username : $rootScope.user.username,
                        };
 
-                var urldriver= SANITRANSPORT+'firstTimeDriver?username='+$rootScope.user.username;
+                var urldriver= SANITRANSPORT+'controlLicense?username='+$rootScope.user.username;
 
                    $http.get(urldriver).
                    success(function(data, status, headers, config) {
-                                   if(status==1)
+
+                                   if(data==1)
                                    {
 
 
@@ -116,7 +117,9 @@ $scope.salva = function(){
          if(status==200)
 
          alert('Salvato con Successo');
+         $scope.shouldShow = !$scope.shouldShow;
          $state.go('userArea');
+         $route.reload();
 
 
        }).error(function(){

@@ -15,8 +15,8 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT,$fil
 
     $scope.clock = new Date();
 
+    var controllo;
 
-    $scope.disponibile = function (){
 
       var userdriver = {
                   username : $rootScope.user.username,
@@ -27,9 +27,33 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT,$fil
                    $http.get(urldriver).
                    success(function(data, status, headers, config) {
 
-                                   if(data==1)
+                                   if(data==0)
                                    {
+                                     $state.controllo=0;
+                                     $state.tabellapatente = !scope.tabellapatente;
+                                   }
+                                   else {
+                                     $state.controllo=1;
+                                     $state.go('registrationlicense');
+                                   }
 
+                                 }).error(function(){
+                                    // called asynchronously if an error occurs
+                                    // or server returns response with an error status.
+                                    alert("Errore");
+                                  });
+
+
+
+    $scope.disponibile = function (){
+
+<<<<<<< HEAD
+=======
+
+
+                                      if (controllo==1)
+                                      {
+>>>>>>> 23c84df2884806e8140bd2943877df05e8658863
                                            var user = {
 
                                                        username : $rootScope.user.username,
@@ -62,19 +86,8 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT,$fil
                                                           // or server returns response with an error status.
                                                           alert("Errore Salvataggio");
                                                            });
+                                      }
 
-
-
-                                   }
-                                   else {
-                                     $state.go('registrationlicense');
-                                   }
-
-                                 }).error(function(){
-                                    // called asynchronously if an error occurs
-                                    // or server returns response with an error status.
-                                    alert("Errore");
-                                  });
                              };  //end of function salva()
 
 
@@ -95,8 +108,6 @@ $scope.salva = function(){
                 Scadenza : $scope.dateofexpiration,
                 Tipopatente : $scope.typelicense,
               };
-
-  var url1= SANITRANSPORT+'modification';
 
 
               var url1= SANITRANSPORT+'modification';

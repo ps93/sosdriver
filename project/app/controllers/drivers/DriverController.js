@@ -19,11 +19,13 @@ module.exports = function ($rootScope, $scope, $state,$translate, $http , SANITR
   $scope.goToDrivers = function()
   {
     $state.go('userArea');
-  }
+  };
 
-  $scope.selectDriver = function(id)
+
+  $scope.selectDriver = function()
   {
-    $state.go('booking',{id:id});
+    $rootScope.driverSelected = $scope.driver;
+    $state.go('booking');
   }
 
 $scope.salva = function(){

@@ -2,12 +2,13 @@
 
 module.exports = function (app) {
 
-    app.directive('googleHotelMap', ['$rootScope','GoogleMapInitService','$timeout',
-        function ($rootScope,GoogleMapInitService,$timeout) {
+    app.directive('googleHotelMap', ['$rootScope','GoogleMapInitService','$timeout','$http','$state',
+        function ($rootScope,GoogleMapInitService,$timeout,$http) {
             return {
-                restrict: 'E',
+              restrict : 'E',
                 scope: {
-                    partenza: '='
+
+                    booking: "&"
                 },
                 template: '\
                 <div style="width:100%; height:50%; position: absolute;">\
@@ -30,12 +31,12 @@ module.exports = function (app) {
                   <i class="icon ion-arrow-graph-up-left"></i>\
                   {{destinazioneIndirizzo}}\
                 </a>\
-                <button class="button button-block button-dark" >\
+                <button class="button button-block button-dark" ng-click="booking()">\
                 Conferma\
                 </button>\
                 </div>\
                 </div>\
-                <div id="map-canvas" style="width:100%; height:50%; top: 50%; position: absolute;">\
+                <div id="map-canvas" style="width:100%; height:50%; top: 50%; position: absolute;" >\
                 Conferma\
                 </div>',
                 link: function (scope, element) {
@@ -51,11 +52,11 @@ module.exports = function (app) {
 
 
 
-                          var lat = position.coords.latitude;
-                          var lon = position.coords.longitude;
-                          var myPosition = new google.maps.LatLng(lat, lon); // my position
+                          var myLat = position.coords.latitude;
+                          var myLon = position.coords.longitude;
+                          var myPosition = new google.maps.LatLng(myLat, myLon); // my position
 
-                          var destination = new google.maps.LatLng(scope.partenza.lat_partenza,scope.partenza.lon_partenza);
+                          var destination = new google.maps.LatLng($rootScope.driverSelected.lat,$rootScope.driverSelected.lon);
 
                           var directionsDisplay = new google.maps.DirectionsRenderer();
                           var directionsService = new google.maps.DirectionsService();
@@ -122,7 +123,9 @@ module.exports = function (app) {
                                    scope.durata = durataMM;
                                    scope.partenzaIndirizzo = addressMyPosition;
                                    scope.destinazioneIndirizzo = addressDestination;
-                                 },500);
+                                   scope.myLat = myLat;
+                                   scope.myLon = myLon;
+                                 },1000);
 
                                  directionsDisplay.setMap(map);
                                  directionsDisplay.setDirections(response);
@@ -161,6 +164,39 @@ module.exports = function (app) {
 
 
                       });
+
+
+                      scope.booking = function()
+                      {
+
+                          console.log($rootScope);
+                        var data = {
+
+                          "amount": scope.prezzo,
+                          "languages": $rootScope.userSettings.language,
+                          "minutes":scope.durata,
+                          "distance":  scope.distanza,
+                          "iddriver": $rootScope.driverSelected.iddriver,
+                          "iduser": $rootScope.user.idUser,
+                          "lonpartenza": scope.myLon,
+                          "latpartenza": scope.myLat,
+                          "latarrivo": $rootScope.driverSelected.lat,
+                          "lonarrivo":$rootScope.driverSelected.lon,
+                          "name": $rootScope.user.nome,
+                          "surname": $rootScope.user.cognome
+
+                        };
+                    
+
+                        $http.post('http://sosdriver.esy.es/booking', data).success(function()
+                        {
+
+                          alert("Richiesta mandata a buon fine");
+                          $state.go('userArea');
+
+                        });
+
+                      }
 
 
 

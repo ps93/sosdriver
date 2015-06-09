@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
+module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT,localStorageService) {
 
 
   var url= SANITRANSPORT+"registration";

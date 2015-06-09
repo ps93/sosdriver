@@ -1,4 +1,3 @@
-
 <div class="spacer-50"></div>
 
 <br> <br> <br>
@@ -12,7 +11,7 @@
      <h2><b>{{user.nome + " " + user.cognome}}</b></h2>
      <p>{{clock | date:'dd-MMMM-yyyy'}}</p><ds-widget-clock show-digital theme="blue-light" digital-format="'hh:mm:ss a'"></ds-widget-clock>
      <label class="toggle toggle-royal">
-      <input type="checkbox" ng-ngit="chooseDriver = true" ng-click="chooseDriver = !chooseDriver"  >
+      <input type="checkbox" ng-ngit="chooseDriver = true" ng-click="chooseDriver = !chooseDriver">
       <div class="track">
       <div class="handle"> </div>
     </div>
@@ -59,7 +58,7 @@
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifyvia=true" ng-click="modifyvia = !modifyvia"></i></div>
           </div>
 
-
+   <div ng-hide="tabellapatente" >
       <div class="item item-divider">
         <strong ng-bind="'LICENSE_USER'|translate">Patente</strong>
       </div>
@@ -88,18 +87,15 @@
               <div align="center"><input name="typelicense" type="text" ng-model="typelicense" placeholder="Tipo Patente" ng-show="modifytipo"/></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifytipo =true" ng-click="modifytipo = !modifytipo"></i></div>
           </div>
-
+    </div>
       <div>
         <button class="button button-outline button-balanced col col-33 col-offset-33" ng-show="shouldShow"  ng-click="annulla()" >Annulla</button>
 
         <button class="button button-outline button-balanced col col-33 col-offset-33" ng-ngit="shouldShow = true"  ng-click="shouldShow = !shouldShow" ng-hide="shouldShow" ng-bind="'CHANGE_USER'|translate">Modifica</button>
 
         <button  class="button button-outline button-balanced col col-33 col-offset-33" ng-show="shouldShow" ng-bind="'SAVE_USER'|translate" ng-click="salva()">Salva</button>
-      
-   </div>
-
-
-
+      </div>
+</div>
 
 
 <div class="autista" ng-show="chooseDriver">
@@ -125,7 +121,4 @@
 </label>
   </div>
   <button  class="button button-outline button-balanced col col-33 col-offset-33" ng-bind="'SAVE_DISPONIBILITY_USER'|translate" ng-click="disponibile()">Salva</button>
-</div>
-
-
 </div>

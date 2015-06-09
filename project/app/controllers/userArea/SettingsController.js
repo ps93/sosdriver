@@ -4,6 +4,8 @@ module.exports = function ($rootScope, $scope, $state, $translate, localStorageS
 
   $scope.settings = {};
   $scope.settings.language = ($rootScope.userSettings && $rootScope.userSettings.language) || 'it';
+  $rootScope.userSettings= {};
+  $rootScope.userSettings.language = $scope.settings.language;
 
       $scope.saveSettings = function ($event) {
 

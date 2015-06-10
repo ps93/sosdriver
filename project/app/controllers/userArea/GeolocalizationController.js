@@ -2,7 +2,7 @@
 
 module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT) {
 
-
+  $rootScope.title="geolocalization";
     var url = SANITRANSPORT+'drivers';
 
     $http.get(url).

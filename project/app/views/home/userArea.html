@@ -42,7 +42,7 @@
               </div>
 
               <!-- TAB2 -->
-              <div  id="map-canvas" when-scrolled class="swiper-slide" ng-controller="GeolocalizationController" >
+              <div  class="swiper-slide" id="google-map" ng-controller="GeolocalizationController" >
                   <load-template url="../views/home/geolocalization.html"></load-template>
               </div>
 
@@ -58,5 +58,12 @@
 
           </div>
       </tabs>
+
+
     </div>
+
 </div>
+
+<div  ng-show = "title=='geolocalization'" class="search-bottom">
+  <i ng-click="" class="search-bottom-icon ion-ios-search"></i>
+   </div>

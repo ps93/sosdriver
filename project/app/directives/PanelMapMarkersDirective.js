@@ -24,7 +24,7 @@ module.exports = function (app) {
                                         disableDefaultUI: false
                                     };
 
-                                    var map = new google.maps.Map(document.querySelector('#map-canvas'), mapOptions);
+                                    var map = new google.maps.Map(document.querySelector('#google-map'), mapOptions);
 
                                     var drivers = value;
                                     var markers = [];

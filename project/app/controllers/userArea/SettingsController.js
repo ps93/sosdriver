@@ -2,6 +2,7 @@
 
 module.exports = function ($rootScope, $scope, $state, $translate, localStorageService, tmhDynamicLocale, $timeout) {
 
+  $rootScope.title="settings";
   $scope.settings = {};
   $scope.settings.language = ($rootScope.userSettings && $rootScope.userSettings.language) || 'it';
   $rootScope.userSettings= {};

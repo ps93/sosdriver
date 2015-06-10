@@ -1040,6 +1040,50 @@ body {
      }
 
 
+
+     .search-bottom {
+     position: absolute;
+     display: block;
+     z-index: 110;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     height: 80px;
+     background: rgba(7, 29, 193, 0.38);
+   }
+
+.search-bottom-icon, .add-bottom-friends, .add-bottom-favourites, .add-bottom-recommended {
+    position: relative;
+    left: 50%;
+    clear: left;
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-top: -18px;
+    margin-left: -25px;
+    background-color: #3b5998;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.search-bottom-icon {
+  padding-top: 11px;
+  color: #5100A2;
+  font-size: 24px;
+  text-align: center;
+  background: #F7E0FA;
+  border: 2px solid #860094;
+}
+
+
+.map-canvas
+{
+
+  heigh : 80%;
+}
+
+
 /* jherome */
 
 
@@ -1052,4 +1096,9 @@ body {
   font-family: 'Rationale', sans-serif;
   font-size: 2.0em;
   color: #1da4eb;
+}
+
+
+.sosMap{
+
 }

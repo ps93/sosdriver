@@ -35,10 +35,36 @@ module.exports = function (app) {
                         });
 
                         scope.changeTab = function (tab) {
+
+
+
+
                             if (myTabs.activeIndex !== tab) myTabs._slideTo(tab);
                         };
 
                         $rootScope.$watch('currentTabState', function (currentTabState) {
+
+
+                          if(currentTabState=='undefined_0')
+                          {
+                            $rootScope.title="user";
+                          }
+                          if(currentTabState=='undefined_1')
+                          {
+                            $rootScope.title="geolocalization";
+                          }
+                          if(currentTabState=='undefined_2')
+                          {
+                            $rootScope.title="history";
+                          }
+                          if(currentTabState=='undefined_3')
+                          {
+                            $rootScope.title="settings";
+                          }
+
+
+
+                          console.log(currentTabState);
                             if (currentTabState !== undefined
                                 && $rootScope.currentTabState
                                 && $rootScope.currentTabState.indexOf('home') !== -1

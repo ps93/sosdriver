@@ -3,6 +3,7 @@
 
 module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
 
+  $rootScope.title="user";
   $scope.email = $rootScope.user.email ;
   $scope.number = $rootScope.user.cellulare;
   $scope.city= $rootScope.user.citta;
@@ -11,6 +12,8 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
   $scope.dateofissue = $rootScope.user.emissione;
   $scope.dateofexpiration =  $rootScope.user.scadenza;
   $scope.typelicense=  $rootScope.user.tipopatente;
+
+
 
 
     $scope.clock = new Date();

@@ -35,5 +35,7 @@ module.exports = {
     BOOK_BOOKING : 'Prenota',
     REGISTRAZION_REGISTRAZION : 'REGISTRAZIONE',
     REGISTRAZION_LICENSE : 'REGISTRAZIONE PATENTE',
-    MISSION_COMPLETE_DRIVER : 'Servizi Fatti'
+    MISSION_COMPLETE_DRIVER : 'Servizi Fatti',
+    DETAILS_MAP_PANEL : 'Dettagli',
+    BOOK_MAP_PANEL : 'Prenota'
 };

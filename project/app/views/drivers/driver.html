@@ -32,11 +32,11 @@
 
   <a href="#" class="item item-icon-left">
     <i class="icon ion-ios-people"></i>
-    servizi fatti
+    <div ng-bind="'MISSION_COMPLETE_DRIVER'|translate">servizi fatti</div>
   </a>
 
 </div>
-<button class="button buttonsosdriver-full button-sosdriver sosdriver" ng-click="selectDriver(driver.idautista)">
+<button class="button buttonsosdriver-full button-sosdriver sosdriver" ng-bind="'BOOK_DRIVER'|translate" ng-click="selectDriver(driver.idautista)">
   Prenota
 </button>
 </div>

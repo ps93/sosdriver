@@ -30,5 +30,10 @@ module.exports = {
     SIGN_REG : 'Registrati',
     NEW_ACCOUNT_PREHOME : 'Nuovo Account',
     SAVE_DISPONIBILITY_USER : 'Save',
-    RESET_PASSWORD_PREHOME : 'Rinvio Password'
+    RESET_PASSWORD_PREHOME : 'Rinvio Password',
+    BOOK_DRIVER : 'Prenota',
+    BOOK_BOOKING : 'Prenota',
+    REGISTRAZION_REGISTRAZION : 'REGISTRAZIONE',
+    REGISTRAZION_LICENSE : 'REGISTRAZIONE PATENTE',
+    MISSION_COMPLETE_DRIVER : 'Servizi Fatti'
 };

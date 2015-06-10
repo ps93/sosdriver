@@ -37,5 +37,6 @@ module.exports = {
     REGISTRAZION_LICENSE : 'REGISTRAZIONE PATENTE',
     MISSION_COMPLETE_DRIVER : 'Servizi Fatti',
     DETAILS_MAP_PANEL : 'Dettagli',
-    BOOK_MAP_PANEL : 'Prenota'
+    BOOK_MAP_PANEL : 'Prenota',
+    LICENSE_DRIVER : 'Patente'
 };

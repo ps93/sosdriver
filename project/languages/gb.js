@@ -38,5 +38,6 @@ module.exports = {
     REGISTRAZION_LICENSE : 'REGISTRAZION LICENSE',
     MISSION_COMPLETE_DRIVER : 'Jobs done',
     DETAILS_MAP_PANEL : 'Details',
-    BOOK_MAP_PANEL : 'Book'
+    BOOK_MAP_PANEL : 'Book',
+    LICENSE_DRIVER : 'License'
 };

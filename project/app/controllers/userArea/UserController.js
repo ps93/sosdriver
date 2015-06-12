@@ -1,18 +1,23 @@
 'use strict';
-module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $filter, localStorageService, $GoogleMapInitService) {
+module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $filter, localStorageService, GoogleMapInitService) {
 
 
   $rootScope.user = localStorageService.get('user');
     $scope.controllo;
     $scope.driver = true;
     $scope.clock = new Date();
-/*
-    $scope.iduser = $rootScope.user.IdUser;
-    $scope.email = $rootScope.user.Email;
-    $scope.cellulare = $rootScope.user.Cellulare;
-    $scope.citta = $rootScope.user.Citta;
-    $scope.via = $rootScope.user.Via;
-*/
+
+    $scope.email = "";
+    $scope.cellulare  ="";
+   $scope.citta="";
+   $scope.via="";
+   $scope.codicepatente="";
+   $scope.emissione="";
+   $scope.scadenza="";
+    $scope.tipopatente="";
+
+
+
                 var urldriver= SANITRANSPORT+'controlLicense?Username='+$rootScope.user.Username;
                    $http.get(urldriver).
                    success(function(data, status, headers, config) {
@@ -25,7 +30,7 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $fi
                                      $scope.controllo=1;
                                        }
                                    if(data.Autista==0){
-                                   $rootScope.user.disponibile = data;
+                                   $rootScope.user.Disponibile = data;
                                    localStorageService.set('user',$rootScope.user);
                                    $scope.checkautista = false;}
                                    if(data.Autista==1){
@@ -39,9 +44,26 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $fi
                                     alert("Errore");
                                   });
 $scope.salva = function(){
-  console.log($rootScope.user);
+
+
+
+
+ $scope.email = $rootScope.user.Email == $scope.Email ? $rootScope.user.Email : $scope.email ;
+ $scope.cellulare = $rootScope.user.Cellulare == $scope.cellulare ? $rootScope.user.Cellulare : $scope.cellulare ;
+ $scope.citta = $rootScope.user.Citta == $scope.citta ? $rootScope.user.Citta : $scope.citta ;
+ $scope.via = $rootScope.user.Via == $scope.via ? $rootScope.user.Via : $scope.via ;
+ $scope.codicepatente = $rootScope.user.Codicepatente == $scope.codicepatente ? $rootScope.user.Codicepatente : $scope.codicepatente ;
+ $scope.emissione = $rootScope.user.Emissione == $scope.emissione ? $rootScope.user.Emissione : $scope.emissione ;
+ $scope.scadenza = $rootScope.user.Scadenza == $scope.scadenza ? $rootScope.user.Scadenza : $scope.scadenza ;
+ $scope.tipopatente = $rootScope.user.TipoPatente == $scope.tipopatente ? $rootScope.user.TipoPatente : $scope.tipopatente ;
+
+
+
+
+
     var user = {
-                Username : $rootScope.user.username,
+                
+                Username : $rootScope.user.Username,
                 Email : $scope.email /* !=='undefined' ? $rootScope.user.email : $scope.email */,
                 Cellulare : $scope.cellulare,
                 Citta : $scope.citta,
@@ -74,10 +96,16 @@ $scope.salva = function(){
           alert("Errore Salvataggio");
         });
    };  //end of function salva()
+
+
+
 $scope.annulla = function (){
   $scope.shouldShow = !$scope.shouldShow;
   $state.go('userArea');
 }
+
+
+
 $scope.Driver = function() {
   if ($scope.controllo == 0)
     {
@@ -93,7 +121,7 @@ $scope.Driver = function() {
     }
 };//fine function chooseDriver
 $scope.autista = function (){
-        var url2= SANITRANSPORT+'availability?id='+$scope.iduser;
+        var url2= SANITRANSPORT+'availability?id='+$scope.user.IdUser;
         $http.get(url2).success(function(data, status, headers, config)
           {
             if(data==1)
@@ -114,51 +142,58 @@ $scope.autista = function (){
              alert("Errore Server");
               });
 };
+
+
+
+function mia_posizione(position) {
+  var mylat = position.coords.latitude;
+  var mylon = position.coords.longitude;
+  var myPosition = new google.maps.LatLng(mylat,mylon); // my position
+  console.log(myPosition);
+    //myPosition contiene la tua posizione
+ $scope.mylat = mylat;
+ $scope.mylon = mylon;
+var user = {
+        iduser : $rootScope.user.username,
+         lat : $scope.mylat,
+         lon : $scope.mylon
+      };
+      var url3= SANITRANSPORT+'position';
+var request = {
+            'method' : 'POST',
+            'url' : url3 ,
+            'headers' : {  'Content-Type': 'application/json' },
+            'data' : user
+            };
+$http(request).success(function(data, status, headers, config)
+{
+ if(status==200)
+ alert('Salvato con Successo');
+}).error(function(){
+  // called asynchronously if an error occurs
+  // or server returns response with an error status.
+  alert("Errore Salvataggio");
+});
+$scope.key="AIzaSyAm8OGXur9AQTbEx6HvVQotFO3gf54rEfk";
+var urlgetAddress = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+$scope.mylat+","+$scope.mylon+"&key="+$scope.key;
+$http.get(urlgetAddress).success(function(data, status, headers, config)
+{
+if(status==200)
+{ alert("YEHEY");
+  $scope.actualAddress = data.results[0].formatted_address;
+}
+}).error(function(){
+ // called asynchronously if an error occurs
+ // or server returns response with an error status.
+ alert("Errore Server");
+  });
+}
+
 $scope.localizzazione = function (){
-  GoogleMapInitService.then(function () {
-                        function mia_posizione(position) {
-                          var mylat = position.coords.latitude;
-                          var mylon = position.coords.longitude;
-                          var myPosition = new google.maps.LatLng(mylat,mylon); // my position
-                          console.log(myPosition);
-                            //myPosition contiene la tua posizione
-                         $scope.mylat = mylat;
-                         $scope.mylon = mylon;
-                    var user = {
-                                iduser : $rootScope.user.username,
-                                 lat : $scope.mylat,
-                                 lon : $scope.mylon
-                              };
-                              var url3= SANITRANSPORT+'position';
-                     var request = {
-                                    'method' : 'POST',
-                                    'url' : url3 ,
-                                    'headers' : {  'Content-Type': 'application/json' },
-                                    'data' : user
-                                    };
-                     $http(request).success(function(data, status, headers, config)
-                       {
-                         if(status==200)
-                         alert('Salvato con Successo');
-                       }).error(function(){
-                          // called asynchronously if an error occurs
-                          // or server returns response with an error status.
-                          alert("Errore Salvataggio");
-                        });
-                        $scope.key="AIzaSyAm8OGXur9AQTbEx6HvVQotFO3gf54rEfk";
-                    var urlgetAddress = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+$scope.mylat+","+$scope.mylon+"&key="+$scope.key;
-                    $http.get(urlgetAddress).success(function(data, status, headers, config)
-                      {
-                        if(status==200)
-                        { alert("YEHEY");
-                          $scope.actualAddress = data.results[0].formatted_address;
-                        }
-                        }).error(function(){
-                         // called asynchronously if an error occurs
-                         // or server returns response with an error status.
-                         alert("Errore Server");
-                          });
-                        }
+
+
+
+
                         if (navigator.geolocation){
     navigator.geolocation.getCurrentPosition(mia_posizione);
   var a =5;
@@ -166,7 +201,7 @@ $scope.localizzazione = function (){
       else{
         alert('La geo-localizzazione NON è possibile');
       }
-    });   // end of function googlemapInitService
+     // end of function googlemapInitService
   };//end of function() localizzazione
            //-----------------------------
 };// end of all

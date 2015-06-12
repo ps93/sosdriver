@@ -1,7 +1,7 @@
 'use strict';
 
 
-module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
+module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT,  localStorageService) {
 
   $scope.goToUser = function () {
     $state.go('userArea');
@@ -10,11 +10,11 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
 
 $scope.registrationlicense = function (){
   var user = {
-    Username : $rootScope.user.username,
-    Patente : $scope.license,
+    Username : $rootScope.user.Username,
+    CodicePatente : $scope.license,
     Emissione : $scope.dateofissue,
     Scadenza : $scope.dateofexpiration,
-    Tipopatente : $scope.typelicense,
+    TipoPatente : $scope.typelicense,
 };
 
 
@@ -31,7 +31,8 @@ $scope.registrationlicense = function (){
    $http(request).success(function(data, status, headers, config)
      {
        if(status==200)
-
+       $rootScope.user.Patente = data;
+       localStorageService.set('user',$rootScope.user);
          alert('dati salvati');
          $state.go('userArea');
      }).error(function(){

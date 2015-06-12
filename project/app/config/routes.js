@@ -123,15 +123,14 @@ module.exports = function (app) {
                         /////////////////// RIGISTRATION LICENSE ////////////////
                         /////////////////////////////////////////////////////////
                         .state('registrationlicense', {
-                            parent: '/user',
-                            url: '/userArea',
+                            url: '/licence',
                             template: require('../views/home/registrationlicense.html'),
                             controller: 'registrationLicenseController',
                             resolve: {
                                 load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
                                     var deferred = $q.defer();
                                     require.ensure([], function () {
-                                        $ocLazyLoad.load({name: 'app.userArea'});
+                                        $ocLazyLoad.load({name: 'app.registrationLicence'});
                                         deferred.resolve(require('../controllers/userArea'));
                                     });
                                     return deferred.promise;

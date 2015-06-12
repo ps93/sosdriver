@@ -25,7 +25,7 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT) {
                   username : $rootScope.user.username,
                        };
 
-                var urldriver= SANITRANSPORT+'controlLicense?username='+$rootScope.user.username;
+                var urldriver= SANITRANSPORT+'controlLicense?username='+$rootScope.user.Username;
 
                    $http.get(urldriver).
                    success(function(data, status, headers, config) {
@@ -104,13 +104,13 @@ $scope.salva = function(){
     var user = {
                 Username : $rootScope.user.username,
                 Email : $scope.email !=='undefined' ? $rootScope.user.email : $scope.email ,
-                Telefono : $scope.number,
+                Cellulare : $scope.number,
                 Citta : $scope.city,
                 Via : $scope.street == 'undefined' ? $rootScope.user.street.via : $scope.street,
-                Patente : $scope.license,
+                CodicePatente : $scope.license,
                 Emissione : $scope.dateofissue,
                 Scadenza : $scope.dateofexpiration,
-                Tipopatente : $scope.typelicense,
+                TipoPatente : $scope.typelicense,
               };
 
 

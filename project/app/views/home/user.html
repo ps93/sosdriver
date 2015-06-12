@@ -8,14 +8,13 @@
 
     <div class="item item-text-wrap item-thumbnail-left">
      <img src="prova.jpg" >
-     <h2><b>{{user.nome + " " + user.cognome}}</b></h2>
+     <h2><b>{{user.Nome + " " + user.Cognome}}</b></h2>
      <p>{{clock | date:'dd-MMMM-yyyy'}}</p><ds-widget-clock show-digital theme="blue-light" digital-format="'hh:mm:ss a'"></ds-widget-clock>
      <label class="toggle toggle-royal">
       <input type="checkbox" ng-ngit="chooseDriver = true" ng-click="chooseDriver = !chooseDriver">
       <div class="track">
       <div class="handle"> </div>
     </div>
-    <h3> {{vardriver}}  </h3>
   </div>
 
 
@@ -27,7 +26,7 @@
 
 
           <div class="item">
-              <p1  ng-hide="modifyemail">{{user.email}}</p1>
+              <p1  ng-hide="modifyemail">{{user.Email}}</p1>
               <div align="center"><input name="email" type="text" ng-model="email" placeholder="E-mail" ng-show="modifyemail"/></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifyemail=true" ng-click="modifyemail = !modifyemail"></i></div>
           </div>
@@ -35,7 +34,7 @@
 
 
           <div class="item">
-              <p1  ng-hide="modifycell">{{user.cellulare}}</p1>
+              <p1  ng-hide="modifycell">{{user.Cellulare}}</p1>
               <div align="center"><input name="number" type="text" ng-model="number" placeholder="Numero di Cellulare" ng-show="modifycell"/></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifycell=true" ng-click="modifycell = !modifycell"></i></div>
           </div>
@@ -47,13 +46,13 @@
       </div>
 
           <div class="item">
-              <p1  ng-hide="modifycitta">{{user.citta}}</p1>
+              <p1  ng-hide="modifycitta">{{user.Citta}}</p1>
               <div align="center"><input name="city" type="text" ng-model="city" placeholder="Città" ng-show="modifycitta"/></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifycitta=true" ng-click="modifycitta = !modifycitta"></i></div>
           </div>
 
           <div class="item">
-              <p1  ng-hide="modifyvia">{{user.via}}</p1>
+              <p1  ng-hide="modifyvia">{{user.Via}}</p1>
               <div align="center"><input name="street" type="text" ng-model="street" placeholder="Via" ng-show="modifyvia"/></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifyvia=true" ng-click="modifyvia = !modifyvia"></i></div>
           </div>
@@ -64,26 +63,26 @@
       </div>
 
           <div class="item">
-              <p1  ng-hide="modifycod">{{user.codicepatente}}</p1>
+              <p1  ng-hide="modifycod">{{user.CodicePatente}}</p1>
               <div align="center"><input name="license" type="text" ng-model="license" placeholder="Codice Patente" ng-show="modifycod"/></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifycod=true" ng-click="modifycod = !modifycod"></i></div>
           </div>
 
           <div class="item">
-              <p1  ng-hide="modifyissue">{{user.emissione}}</p1>
+              <p1  ng-hide="modifyissue">{{user.Emissione}}</p1>
               <div align="center" ng-show="modifyissue" ng-bind="'DATE_ISSUE_USER'|translate">Data Emissione<input name="dateofissue" type="date" ng-model="dateofissue" placeholder="Data Emissione"/></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifyissue=true" ng-click="modifyissue = !modifyissue"></i></div>
           </div>
 
           <div class="item">
-              <p1  ng-hide="modifyexpire">{{user.scadenza}}</p1>
+              <p1  ng-hide="modifyexpire">{{user.Scadenza}}</p1>
               <div align="center" ng-show="modifyexpire" ng-bind="'DATE_EXPIRY_USER'|translate">Data Scadenza<input name="dateofexpiration" type="date" ng-model="dateofexpiratio" placeholder="Data Scadenza" /></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifyexpire=true" ng-click="modifyexpire = !modifyexpire"></i></div>
           </div>
 
 
           <div class="item">
-              <p1  ng-hide="modifytipo">{{user.tipopatente}}</p1>
+              <p1  ng-hide="modifytipo">{{user.TipoPatente}}</p1>
               <div align="center"><input name="typelicense" type="text" ng-model="typelicense" placeholder="Tipo Patente" ng-show="modifytipo"/></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifytipo =true" ng-click="modifytipo = !modifytipo"></i></div>
           </div>

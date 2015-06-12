@@ -16,7 +16,7 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT,localS
        Nome : $scope.name,
        Cognome : $scope.surname,
        Sesso : $scope.gender,
-       Nascita : $scope.birthday,
+       DataNascita : $scope.birthday,
        Username : $scope.username,
        Password : $scope.password,
        Email : $scope.email,

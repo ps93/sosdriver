@@ -123,7 +123,7 @@ module.exports = function (app) {
                         /////////////////// RIGISTRATION LICENSE ////////////////
                         /////////////////////////////////////////////////////////
                         .state('registrationlicense', {
-<<<<<<< HEAD
+
                                                   url: '/licence',
                                                   template: require('../views/home/registrationlicense.html'),
                                                   controller: 'registrationLicenseController',
@@ -138,7 +138,6 @@ module.exports = function (app) {
                                                       }]
                                                   }
                                               })
-=======
                             url: '/licence',
                             template: require('../views/home/registrationlicense.html'),
                             controller: 'registrationLicenseController',

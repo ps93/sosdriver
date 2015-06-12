@@ -11,7 +11,7 @@ var app = angular.module('app.userArea', [])
 
 //controller del primo tab che richiama file UserController.js
 .controller('UserController', [
-    '$rootScope', '$scope', '$state', '$http','SANITRANSPORT','$filter',
+    '$rootScope', '$scope', '$state', '$http','SANITRANSPORT','$filter', 'localStorageService', 'GoogleMapInitService',
     require('./UserController')
 ])
 

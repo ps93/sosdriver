@@ -1,123 +1,102 @@
 <div class="spacer-50"></div>
-
 <br> <br> <br>
 <div class="list list-inset">
-
-
   <div class="head">
-
     <div class="item item-text-wrap item-thumbnail-left">
      <img src="prova.jpg" >
      <h2><b>{{user.Nome + " " + user.Cognome}}</b></h2>
      <p>{{clock | date:'dd-MMMM-yyyy'}}</p><ds-widget-clock show-digital theme="blue-light" digital-format="'hh:mm:ss a'"></ds-widget-clock>
      <label class="toggle toggle-royal">
-      <input type="checkbox" ng-ngit="chooseDriver = true" ng-click="chooseDriver = !chooseDriver">
+      <input type="checkbox"  ng-click="Driver()">
       <div class="track">
       <div class="handle"> </div>
     </div>
   </div>
-
-
-
     <div class="list" ng-hide="chooseDriver" >
         <div class="item item-divider">
           <strong ng-bind="'CONTACTS_USER'|translate">Contatti</strong>
         </div>
-
-
+        <div class="item">
+          <div align="center">E-mail</div>
+            <p1  ng-hide="shouldShow">{{user.Email}}</p1>
+            <div align="center"><input ng-model="email" type="email"  placeholder="Inserisci Nuovo Email" ng-show="shouldShow"/></div>
+            <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ></i></div>
+        </div>
           <div class="item">
-              <p1  ng-hide="modifyemail">{{user.Email}}</p1>
-              <div align="center"><input name="email" type="text" ng-model="email" placeholder="E-mail" ng-show="modifyemail"/></div>
-              <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifyemail=true" ng-click="modifyemail = !modifyemail"></i></div>
+            <div align="center" >Numero di Cellulare</div>
+              <p1  ng-hide="shouldShow">{{user.Cellulare}}</p1>
+              <div align="center"><input ng-model="cellulare" type="text" ng-model="cellulare" placeholder="Inserisci Nuovo Numero" ng-show="shouldShow"/></div>
+              <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ></i></div>
           </div>
-
-
-
-          <div class="item">
-              <p1  ng-hide="modifycell">{{user.Cellulare}}</p1>
-              <div align="center"><input name="number" type="text" ng-model="number" placeholder="Numero di Cellulare" ng-show="modifycell"/></div>
-              <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifycell=true" ng-click="modifycell = !modifycell"></i></div>
-          </div>
-
-
-
       <div class="item item-divider">
         <strong ng-bind="'RESIDENCE_USER'|translate">Residenza</strong>
       </div>
-
           <div class="item">
-              <p1  ng-hide="modifycitta">{{user.Citta}}</p1>
-              <div align="center"><input name="city" type="text" ng-model="city" placeholder="Città" ng-show="modifycitta"/></div>
-              <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifycitta=true" ng-click="modifycitta = !modifycitta"></i></div>
+            <div align="center">Città</div>
+              <p1  ng-hide="shouldShow">{{user.Citta}}</p1>
+              <div align="center">
+              <select ng-model="citta" placeholder="Inserisci Nuovo Citta" ng-show="shouldShow">
+                <option >-Seleziona-</option>
+                <option value="BOLOGNA">BOLOGNA</option>
+                <option value="MILANO">MILANO</option>
+                <option value="ROMA">ROMA</option>
+                <option value="TORINO">TORINO</option>
+              </select>
+            </div>
+              <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ></i></div>
           </div>
-
           <div class="item">
-              <p1  ng-hide="modifyvia">{{user.Via}}</p1>
-              <div align="center"><input name="street" type="text" ng-model="street" placeholder="Via" ng-show="modifyvia"/></div>
-              <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifyvia=true" ng-click="modifyvia = !modifyvia"></i></div>
+            <div align="center">Domicilio</div>
+              <p1  ng-hide="shouldShow">{{user.Via}}</p1>
+              <div align="center"><input ng-model="via" type="text" placeholder="Inserisci Nuovo Via" ng-show="shouldShow"/></div>
+              <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ></i></div>
           </div>
-
-   <div ng-hide="tabellapatente" >
-      <div class="item item-divider">
-        <strong ng-bind="'LICENSE_USER'|translate">Patente</strong>
-      </div>
-
-          <div class="item">
-              <p1  ng-hide="modifycod">{{user.CodicePatente}}</p1>
-              <div align="center"><input name="license" type="text" ng-model="license" placeholder="Codice Patente" ng-show="modifycod"/></div>
-              <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifycod=true" ng-click="modifycod = !modifycod"></i></div>
-          </div>
-
-          <div class="item">
-              <p1  ng-hide="modifyissue">{{user.Emissione}}</p1>
-              <div align="center" ng-show="modifyissue" ng-bind="'DATE_ISSUE_USER'|translate">Data Emissione<input name="dateofissue" type="date" ng-model="dateofissue" placeholder="Data Emissione"/></div>
-              <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifyissue=true" ng-click="modifyissue = !modifyissue"></i></div>
-          </div>
-
-          <div class="item">
-              <p1  ng-hide="modifyexpire">{{user.Scadenza}}</p1>
-              <div align="center" ng-show="modifyexpire" ng-bind="'DATE_EXPIRY_USER'|translate">Data Scadenza<input name="dateofexpiration" type="date" ng-model="dateofexpiratio" placeholder="Data Scadenza" /></div>
-              <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifyexpire=true" ng-click="modifyexpire = !modifyexpire"></i></div>
-          </div>
-
-
-          <div class="item">
-              <p1  ng-hide="modifytipo">{{user.TipoPatente}}</p1>
-              <div align="center"><input name="typelicense" type="text" ng-model="typelicense" placeholder="Tipo Patente" ng-show="modifytipo"/></div>
-              <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ng-ngit="modifytipo =true" ng-click="modifytipo = !modifytipo"></i></div>
-          </div>
-    </div>
-      <div>
-        <button class="button button-outline button-balanced col col-33 col-offset-33" ng-show="shouldShow"  ng-click="annulla()" >Annulla</button>
-
-        <button class="button button-outline button-balanced col col-33 col-offset-33" ng-ngit="shouldShow = true"  ng-click="shouldShow = !shouldShow" ng-hide="shouldShow" ng-bind="'CHANGE_USER'|translate">Modifica</button>
-
-        <button  class="button button-outline button-balanced col col-33 col-offset-33" ng-show="shouldShow" ng-bind="'SAVE_USER'|translate" ng-click="salva()">Salva</button>
-      </div>
-</div>
-
-
-<div class="autista" ng-show="chooseDriver">
-  <div class="item item-divider">
-    <strong ng-bind="'DRIVER_USER'|translate">Autista</strong>
-
-    <label class="item item-input">
-    <span class="input-label" ng-bind="'START_DATE_USER'|translate">Data inizio</span>
-    <input type="date" ng-model="datestart">
-  </label>
-  <label class="item item-input">
-    <span class="input-label" ng-bind="'START_TIME_USER'|translate">Ora Inizio</span>
-    <input type="time" ng-model="timestart">
-  </label>
-
-  <label class="item item-input">
-  <span class="input-label" ng-bind="'END_DATE_USER'|translate">Data Fine</span>
-  <input type="date" ng-model="datefinish">
-</label>
-<label class="item item-input">
-  <span class="input-label" ng-bind="'END_TIME_USER'|translate">Ora Fine</span>
-  <input type="time" ng-model="timefinish">
-</label>
-  </div>
-  <button  class="button button-outline button-balanced col col-33 col-offset-33" ng-bind="'SAVE_DISPONIBILITY_USER'|translate" ng-click="disponibile()">Salva</button>
-</div>
+</div> <!--div della prima pagina-->
+  <div class="autista" ng-show="chooseDriver">
+    <div ng-hide="tabellapatente" >
+       <div class="item item-divider">
+         <strong ng-bind="'LICENSE_USER'|translate">Patente</strong>
+       </div>
+           <div class="item">
+             <div align="center" >Numero di Patente</div>
+               <p1  ng-hide="shouldShow">{{user.CodicePatente}}</p1>
+               <div align="center"><input ng-model="codicepatente" type="text"  placeholder="Inserisci Codice Patente" ng-show="shouldShow"/></div>
+               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow"></i></div>
+           </div>
+           <div class="item">
+             <div align="center" ng-bind="'DATE_ISSUE_USER'|translate">Data Emissione</div>
+               <p1  ng-hide="shouldShow">{{user.Emissione | date: 'yyyy-MM-dd'}}</p1>
+               <div align="center"><input type="date"  ng-model="emissione" ng-show="shouldShow"></div>
+               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow"></i></div>
+           </div>
+           <div class="item">
+             <div align="center" >Data Scadenza</div>
+               <p1  ng-hide="shouldShow">{{user.Scadenza | date: 'yyyy-MM-dd'}}</p1>
+               <div align="center"><input type="date" ng-model="scadenza" ng-show="shouldShow" placeholder="yyyy-MM-dd" required /></div>
+               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow"></i></div>
+           </div>
+           <div class="item">
+             <div align="center">Tipologia Patente</div>
+               <p1  ng-hide="shouldShow">{{user.TipoPatente}}</p1>
+               <div align="center"><input ng-model="tipopatente" type="text" placeholder="Inserisci Tipo Patente" ng-show="shouldShow"/>
+                 <select name="tipopatente" ng-model="tipopatente" placeholder="Inserisci Tipo Patente" ng-show="shouldShow">
+                   <option value="A">A</option>
+                   <option value="B">B</option>
+                   <option value="AB">AB</option>
+                 </select>
+               </div>
+               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ></i></div>
+           </div>
+           <label class="checkbox" >
+             <h3>Disponibilità</h3>
+       <input type="checkbox" ng-click="autista()" ng-init="checkautista=false" ng-checked="checkautista">
+     </label>
+            <label class="item item-input">
+              <h2>{{actualAddress}}<button class="button icon ion-android-locate" ng-click="localizzazione()"></button></h2>
+            </label>
+   </div>
+</div><!--seconda pagina-->
+  <button class="button button-block button-positive" ng-show="shouldShow"  ng-click="annulla()" >Annulla</button>
+  <button class="button button-outline button-balanced col col-33 col-offset-33" ng-ngit="shouldShow = true"  ng-click="shouldShow = !shouldShow" ng-hide="shouldShow" ng-bind="'CHANGE_USER'|translate">Modifica</button>
+  <button  class="button button-outline button-balanced col col-33 col-offset-33" ng-show="shouldShow" ng-bind="'SAVE_USER'|translate" ngclick="shouldShow = !shouldShow"ng-click="salva()">Salva</button>
+</div><!--fine-->

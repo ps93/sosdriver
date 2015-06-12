@@ -93,7 +93,7 @@ $scope.Driver = function() {
     }
 };//fine function chooseDriver
 $scope.autista = function (){
-        var url2= SANITRANSPORT+'availability?id='+$scope.iduser;
+        var url2= SANITRANSPORT+'availability?id='+$scope.IdUser;
         $http.get(url2).success(function(data, status, headers, config)
           {
             if(data==1)

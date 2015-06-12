@@ -23,7 +23,7 @@
             <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ></i></div>
         </div>
           <div class="item">
-            <div align="center" >Numero di Cellulare</div>
+            <div align="center" ng-bind="'CELLPHONE_NUMBER_USER'|translate">Numero di Cellulare</div>
               <p1  ng-hide="shouldShow">{{user.Cellulare}}</p1>
               <div align="center"><input ng-model="cellulare" type="text" ng-model="cellulare" placeholder="Inserisci Nuovo Numero" ng-show="shouldShow"/></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ></i></div>
@@ -32,11 +32,11 @@
         <strong ng-bind="'RESIDENCE_USER'|translate">Residenza</strong>
       </div>
           <div class="item">
-            <div align="center">Città</div>
+            <div align="center" ng-bind="'CITY_USER'|translate">Città</div>
               <p1  ng-hide="shouldShow">{{user.Citta}}</p1>
               <div align="center">
               <select ng-model="citta" placeholder="Inserisci Nuovo Citta" ng-show="shouldShow">
-                <option >-Seleziona-</option>
+                <option ng-bind="'SELECT_USER'|translate">-Seleziona-</option>
                 <option value="BOLOGNA">BOLOGNA</option>
                 <option value="MILANO">MILANO</option>
                 <option value="ROMA">ROMA</option>
@@ -46,7 +46,7 @@
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ></i></div>
           </div>
           <div class="item">
-            <div align="center">Domicilio</div>
+            <div align="center" ng-bind="'HOME_USER'|translate">Domicilio</div>
               <p1  ng-hide="shouldShow">{{user.Via}}</p1>
               <div align="center"><input ng-model="via" type="text" placeholder="Inserisci Nuovo Via" ng-show="shouldShow"/></div>
               <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ></i></div>
@@ -58,7 +58,7 @@
          <strong ng-bind="'LICENSE_USER'|translate">Patente</strong>
        </div>
            <div class="item">
-             <div align="center" >Numero di Patente</div>
+             <div align="center" ng-bind="'CODE_LICENSE_USER'|translate">Codice Patente</div>
                <p1  ng-hide="shouldShow">{{user.CodicePatente}}</p1>
                <div align="center"><input ng-model="codicepatente" type="text"  placeholder="Inserisci Codice Patente" ng-show="shouldShow"/></div>
                <div align="right"> <i class="icon ion-edit" ng-show="shouldShow"></i></div>
@@ -70,13 +70,13 @@
                <div align="right"> <i class="icon ion-edit" ng-show="shouldShow"></i></div>
            </div>
            <div class="item">
-             <div align="center" >Data Scadenza</div>
+             <div align="center" ng-bind="'DATE_EXPIRY_USER'|translate">Data Scadenza</div>
                <p1  ng-hide="shouldShow">{{user.Scadenza | date: 'yyyy-MM-dd'}}</p1>
                <div align="center"><input type="date" ng-model="scadenza" ng-show="shouldShow" placeholder="yyyy-MM-dd" required /></div>
                <div align="right"> <i class="icon ion-edit" ng-show="shouldShow"></i></div>
            </div>
            <div class="item">
-             <div align="center">Tipologia Patente</div>
+             <div align="center" ng-bind="'TYPE_LICENSE_USER'|translate">Tipologia Patente</div>
                <p1  ng-hide="shouldShow">{{user.TipoPatente}}</p1>
                <div align="center"><input ng-model="tipopatente" type="text" placeholder="Inserisci Tipo Patente" ng-show="shouldShow"/>
                  <select name="tipopatente" ng-model="tipopatente" placeholder="Inserisci Tipo Patente" ng-show="shouldShow">
@@ -88,7 +88,7 @@
                <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ></i></div>
            </div>
            <label class="checkbox" >
-             <h3>Disponibilità</h3>
+             <h3 ng-bind="'AVAILABILITY_USER'|translate">Disponibilità</h3>
        <input type="checkbox" ng-click="autista()" ng-init="checkautista=false" ng-checked="checkautista">
      </label>
             <label class="item item-input">
@@ -96,7 +96,7 @@
             </label>
    </div>
 </div><!--seconda pagina-->
-  <button class="button button-block button-positive" ng-show="shouldShow"  ng-click="annulla()" >Annulla</button>
+  <button class="button button-block button-positive" ng-show="shouldShow"  ng-click="annulla()" ng-bind="'CANCEL_USER'|translate">Annulla</button>
   <button class="button button-outline button-balanced col col-33 col-offset-33" ng-ngit="shouldShow = true"  ng-click="shouldShow = !shouldShow" ng-hide="shouldShow" ng-bind="'CHANGE_USER'|translate">Modifica</button>
   <button  class="button button-outline button-balanced col col-33 col-offset-33" ng-show="shouldShow" ng-bind="'SAVE_USER'|translate" ngclick="shouldShow = !shouldShow"ng-click="salva()">Salva</button>
 </div><!--fine-->

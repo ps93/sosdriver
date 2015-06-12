@@ -1066,17 +1066,34 @@ body {
     background-size: contain;
     border-radius: 50%;
 }
-
 .search-bottom-icon {
   padding-top: 11px;
-  color: #5100A2;
-  font-size: 24px;
+  color: #FFFFFF;
+  font-size: 25px;
   text-align: center;
-  background: #F7E0FA;
-  border: 2px solid #860094;
+  background: #6D007B;
+  border: 3px solid #580093;
+}
+input[type="sosDriverSearch"]
+{
+    background: transparent;
+    border: none;
+    display: block;
+    padding-top: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+    height: 34px;
+    color: #000000;
+    vertical-align: middle;
+    font-size: 17px;
+    line-height: 16px;
+    font-family: fantasy;
 }
 
-
+.sosDriverSearchAdress
+{
+  width: 100%;
+}
 .map-canvas
 {
 
@@ -1098,6 +1115,20 @@ body {
   color: #1da4eb;
 }
 
+.pac-container {
+  background-color: rgba(255, 255, 255, 0.64);
+  position: relative!important;
+  margin-top: 35%;
+  z-index: 1000;
+  border-radius: 2px;
+  border-top: 0px solid #d9d9d9;
+  font-family: monospace;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
 .sosMap{
 

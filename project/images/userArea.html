@@ -64,6 +64,7 @@
 
 </div>
 
-<div id="searchAddressHere">
-
-</div>
+<div  ng-show = "title=='geolocalization'" class="search-bottom" ng-controller="GeolocalizationController">
+  <i ng-click="calculateAddress()" class="search-bottom-icon ion-ios-search"></i>
+  <input type="sosDriverSearch" id="sosDriverAutocomplete" ng-model="resultSearch" placeholder="indirizzo" class = "sosDriverSearchAdress"/>
+   </div>

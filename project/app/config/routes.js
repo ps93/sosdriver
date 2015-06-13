@@ -102,7 +102,7 @@ module.exports = function (app) {
                       //////////////// USER AREA ////////////////
                       ////////////////////////////////////////////
                       .state('userArea', {
-                          url: '/userArea',
+                          url: '/userArea/:pat',
                           parent: 'base',
                           template: require('../views/home/userArea.html'),
                           controller: 'UserAreaController',
@@ -123,22 +123,21 @@ module.exports = function (app) {
                         /////////////////// RIGISTRATION LICENSE ////////////////
                         /////////////////////////////////////////////////////////
                         .state('registrationlicense', {
-                            parent: '/user',
-                            url: '/userArea',
-                            template: require('../views/home/registrationlicense.html'),
-                            controller: 'registrationLicenseController',
-                            resolve: {
-                                load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
-                                    var deferred = $q.defer();
-                                    require.ensure([], function () {
-                                        $ocLazyLoad.load({name: 'app.userArea'});
-                                        deferred.resolve(require('../controllers/userArea'));
-                                    });
-                                    return deferred.promise;
-                                }]
-                            }
-                        })
 
+                                                  url: '/licence',
+                                                  template: require('../views/home/registrationlicense.html'),
+                                                  controller: 'registrationLicenseController',
+                                                  resolve: {
+                                                      load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
+                                                          var deferred = $q.defer();
+                                                          require.ensure([], function () {
+                                                              $ocLazyLoad.load({name: 'app.registrationLicence'});
+                                                              deferred.resolve(require('../controllers/userArea'));
+                                                          });
+                                                          return deferred.promise;
+                                                      }]
+                                                  }
+                                              })
 
 
                       //////////////////////////////////////////////

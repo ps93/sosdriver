@@ -7,15 +7,6 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $fi
     $scope.driver = true;
     $scope.clock = new Date();
 
-    $scope.email = "";
-    $scope.cellulare  ="";
-   $scope.citta="";
-   $scope.via="";
-   $scope.codicepatente="";
-   $scope.emissione="";
-   $scope.scadenza="";
-    $scope.tipopatente="";
-
 
 
                 var urldriver= SANITRANSPORT+'controlLicense?Username='+$rootScope.user.Username;
@@ -38,6 +29,12 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $fi
                                    localStorageService.set('user',$rootScope.user);
                                    $scope.checkautista =true;
                                      }
+
+                                      $rootScope.user.CodicePatente = $rootScope.user.Patente.CodicePatente;
+                                      $rootScope.user.Emissione;
+                                      $rootScope.user.Scadenza;
+                                      $rootScope.user.TipoPatente;
+
                                  }).error(function(){
                                     // called asynchronously if an error occurs
                                     // or server returns response with an error status.
@@ -45,6 +42,14 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $fi
                                   });
 $scope.salva = function(){
 
+  $scope.email = $rootScope.user.Email;
+  $scope.cellulare  = $rootScope.user.Cellulare;
+  $scope.citta = $rootScope.user.Citta;
+  $scope.via = $rootScope.user.Via;
+  $scope.codicepatente = $rootScope.user.CodicePatente;
+  $scope.emissione = $rootScope.user.Emissione;
+  $scope.scadenza = $rootScope.user.Scadenza;
+  $scope.tipopatente = $rootScope.user.TipoPatente;
 
 
 
@@ -62,17 +67,18 @@ $scope.salva = function(){
 
 
     var user = {
-                
+
                 Username : $rootScope.user.Username,
                 Email : $scope.email /* !=='undefined' ? $rootScope.user.email : $scope.email */,
                 Cellulare : $scope.cellulare,
                 Citta : $scope.citta,
                 Via : $scope.via /*== 'undefined' ? $rootScope.user.street.via : $scope.street*/,
                 CodicePatente : $scope.codicepatente,
-                Emissione : $scope.emissione,
-                Scadenza : $scope.scadenza,
+                Emissione : $filter('date')(new Date($scope.emissione), 'yyyy MM dd'),
+                Scadenza : $filter('date')(new Date($scope.scadenza), 'yyyy MM dd'),
                 TipoPatente : $scope.tipopatente
               };
+
               var url1= SANITRANSPORT+'modification';
      var request = {
                     'method' : 'POST',

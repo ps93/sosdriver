@@ -65,13 +65,13 @@
            </div>
            <div class="item">
              <div align="center" ng-bind="'DATE_ISSUE_USER'|translate">Data Emissione</div>
-               <p1  ng-hide="shouldShow">{{user.Emissione | date: 'yyyy-MM-dd'}}</p1>
+               <p1  ng-hide="shouldShow">{{user.Emissione | date}}</p1>
                <div align="center"><input type="date"  ng-model="emissione" ng-show="shouldShow"></div>
                <div align="right"> <i class="icon ion-edit" ng-show="shouldShow"></i></div>
            </div>
            <div class="item">
-             <div align="center" >Data Scadenza</div>
-               <p1  ng-hide="shouldShow">{{user.Scadenza | date: 'yyyy-MM-dd'}}</p1>
+             <div align="center">Data Scadenza</div>
+               <p1  ng-hide="shouldShow">{{user.Scadenza | date}}</p1>
                <div align="center"><input type="date" ng-model="scadenza" ng-show="shouldShow" placeholder="yyyy-MM-dd" required /></div>
                <div align="right"> <i class="icon ion-edit" ng-show="shouldShow"></i></div>
            </div>
@@ -87,12 +87,12 @@
                </div>
                <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ></i></div>
            </div>
-           <label class="checkbox" >
+           <label class="checkbox">
              <h3>Disponibilità</h3>
        <input type="checkbox" ng-click="autista()" ng-init="checkautista=false" ng-checked="checkautista">
      </label>
             <label class="item item-input">
-              <h2>{{actualAddress}}<button class="button icon ion-android-locate" ng-click="localizzazione()"></button></h2>
+              <button class="button icon ion-android-locate" ng-click="localizzazione()"></button><h2>{{actualAddress}}</h2>
             </label>
    </div>
 </div><!--seconda pagina-->

@@ -29,7 +29,7 @@ var app = angular.module('app.userArea', [])
 ])
 
 .controller('registrationLicenseController', [
-    '$rootScope', '$scope', '$state','$http','SANITRANSPORT',
+    '$rootScope', '$scope', '$state','$http','SANITRANSPORT', 'localStorageService',
     require('./registrationLicenseController')
 ]);
 

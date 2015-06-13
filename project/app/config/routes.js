@@ -102,7 +102,7 @@ module.exports = function (app) {
                       //////////////// USER AREA ////////////////
                       ////////////////////////////////////////////
                       .state('userArea', {
-                          url: '/userArea',
+                          url: '/userArea/:pat',
                           parent: 'base',
                           template: require('../views/home/userArea.html'),
                           controller: 'UserAreaController',
@@ -138,8 +138,11 @@ module.exports = function (app) {
                                                       }]
                                                   }
                                               })
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ddcc3019b47a2ac801a34b13205f485d8c23ac24
 
 
                       //////////////////////////////////////////////

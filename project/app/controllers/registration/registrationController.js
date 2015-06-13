@@ -20,7 +20,7 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT,localS
        Username : $scope.username,
        Password : $scope.password,
        Email : $scope.email,
-       Telefono : $scope.number,
+       Cellulare : $scope.number,
        Citta : $scope.city,
        Via : $scope.street,
 
@@ -42,7 +42,7 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT,localS
           if(status==200)
           {
             $rootScope.user = request.data;
-            localStorageService.set('user',user);
+            localStorageService.set('user',$rootScope.user);
             $state.go('userArea');
           }
 

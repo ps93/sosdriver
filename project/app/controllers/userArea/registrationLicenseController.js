@@ -1,7 +1,7 @@
 'use strict';
 
 
-module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT,  localStorageService) {
+module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, localStorageService) {
 
   $scope.goToUser = function () {
     $state.go('userArea');
@@ -31,10 +31,12 @@ $scope.registrationlicense = function (){
    $http(request).success(function(data, status, headers, config)
      {
        if(status==200)
+       {
        $rootScope.user.Patente = data;
        localStorageService.set('user',$rootScope.user);
+       }
          alert('dati salvati');
-         $state.go('userArea');
+         $state.go('userArea',{pat:1});
      }).error(function(){
         // called asynchronously if an error occurs
         // or server returns response with an error status.

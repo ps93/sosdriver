@@ -3,6 +3,15 @@
 module.exports = function ($rootScope,$scope,$state,GoogleMapInitService,$interval) {
   var swiper = new Swiper('.swiper-container');
 
+  $scope.openMenu = function () {
+      $rootScope.toggleMenu = true;
+  };
+
+
+    $scope.closeMenu = function () {
+        $rootScope.toggleMenu = false;
+    };
+
 
   $interval(function()
   {
@@ -21,7 +30,7 @@ module.exports = function ($rootScope,$scope,$state,GoogleMapInitService,$interv
  GoogleMapInitService.then(function () {
 
 
- 
+
 });
 
 

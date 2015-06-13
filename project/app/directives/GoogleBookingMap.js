@@ -2,8 +2,8 @@
 
 module.exports = function (app) {
 
-    app.directive('googleHotelMap', ['$rootScope','GoogleMapInitService','$timeout','$http','$state',
-        function ($rootScope,GoogleMapInitService,$timeout,$http) {
+    app.directive('googleBookingMap', ['$rootScope','GoogleMapInitService','$timeout','$http','$state',
+        function ($rootScope,GoogleMapInitService,$timeout,$http,$state) {
             return {
               restrict : 'E',
                 scope: {
@@ -47,16 +47,28 @@ module.exports = function (app) {
                       GoogleMapInitService.then(function () {
 
 
-                        function mia_posizione(position) {
 
 
+                        if(navigator.geolocation)
+                        {
+                          navigator.geolocation.getCurrentPosition(mia_posizione)
+                          var a =5 ;
+                        }
+                        else
+                        alert('la geolocalizzazione non e possibile');
 
+
+                        function mia_posizione(position)
+                        {
 
                           var myLat = position.coords.latitude;
                           var myLon = position.coords.longitude;
-                          var myPosition = new google.maps.LatLng(myLat, myLon); // my position
+                          var myPosition = new google.maps.LatLng(myLat,myLon);
+                          console.log(myPosition);
+                          var destination = new google.maps.LatLng($rootScope.homeCustomer.lat,$rootScope.homeCustomer.long);
 
-                          var destination = new google.maps.LatLng($rootScope.driverSelected.lat,$rootScope.driverSelected.lon);
+
+
 
                           var directionsDisplay = new google.maps.DirectionsRenderer();
                           var directionsService = new google.maps.DirectionsService();
@@ -135,15 +147,8 @@ module.exports = function (app) {
 
                              });
 
-                        }
 
-                        if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(mia_posizione);
-  var a =5;
-      }
-      else{
-        alert('La geo-localizzazione NON è possibile');
-      }
+  }
 
 
 
@@ -168,8 +173,8 @@ module.exports = function (app) {
 
                       scope.booking = function()
                       {
-
-                          console.log($rootScope);
+                      //    alert("prenoto");
+                      //    console.log($rootScope);
                         var data = {
 
                           "amount": scope.prezzo,

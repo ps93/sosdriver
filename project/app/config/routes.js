@@ -139,28 +139,6 @@ module.exports = function (app) {
                                                   }
                                               })
 
-
-                      //////////////////////////////////////////////
-                        //////////////// DRIVER ////////////////
-                        ////////////////////////////////////////////
-                        .state('driver', {
-                            url: '/driver/:id',
-
-                            template: require('../views/drivers/driver.html'),
-                            controller: 'DriverController',
-                            resolve: {
-                                load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
-                                    var deferred = $q.defer();
-                                    require.ensure([], function () {
-                                        $ocLazyLoad.load({name: 'app.driver'});
-                                        deferred.resolve(require('../controllers/drivers'));
-                                    });
-                                    return deferred.promise;
-                                }]
-                            }
-                        })
-
-
                         //////////////////////////////////////////////
                           //////////////// DRIVER ////////////////
                           ////////////////////////////////////////////

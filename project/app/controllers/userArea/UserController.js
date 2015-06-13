@@ -74,6 +74,27 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $fi
                                         navigator.camera.getPicture( success , failure , cameraOptions );
                                     };
 
+$scope.takePicture = function(){
+        var cameraOptions = {
+            quality: 50,
+            destinationType: Camera.DestinationType.DATA_URL
+         };
+        var success = function(data){
+        $scope.$apply(function () {
+             /*
+               remember to set the image ng-src in $apply,
+               i tried to set it from outside and it doesn't work.
+             */
+               $scope.cameraPic = "data:image/jpeg;base64," + data;
+             });
+         };
+        var failure = function(message){
+             alert('Failed because: ' + message);
+        };
+        //call the cordova camera plugin to open the device's camera
+        navigator.camera.getPicture( success , failure , cameraOptions );
+    };
+
 $scope.salva = function(){
 
   $scope.email = $rootScope.user.Email;
@@ -158,9 +179,9 @@ $scope.Driver = function() {
 };//fine function chooseDriver
 $scope.autista = function (){
 
-
-
         var url2= SANITRANSPORT+'availability?id='+$scope.user.idUser;
+
+
 
         $http.get(url2).success(function(data, status, headers, config)
           {
@@ -197,7 +218,7 @@ function mia_posizione(position) {
  $scope.mylat = mylat;
  $scope.mylon = mylon;
 var user = {
-        iduser : $rootScope.user.username,
+        iduser : $rootScope.user.idUser,
          lat : $scope.mylat,
          lon : $scope.mylon
       };

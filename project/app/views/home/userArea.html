@@ -1,33 +1,33 @@
-<div id="full-page">
-<div class="mioDiv">
-<div class="bar bar-header bar-sosdriver">
-  <h1 class="title">Header </h1>
-  <i class="ion-paper-airplane"> </i>
-</div>
-
-<div class="tabs-striped tabs-top tabs-background-sosdriver tabs-color-dark">
-    <div class="tabs">
-      <a class="tab-item" ng-click="changeTab(0)">
-        <i class="icon ion-person"> </i>
-        Person
-      </a>
-      <a class="tab-item" ng-click="changeTab(1)">
-        <i class="icon ion-earth">  </i>
-        Map
-      </a>
-      <a class="tab-item" ng-click="changeTab(2)">
-        <i class="icon ion-ios-list-outline"></i>
-        Cronology
-      </a>
-
-      <a class="tab-item"  ng-click="changeTab(3)">
-        <i class="icon ion-gear-a"></i>
-        Settings
-      </a>
+<div id="full-page" ng-class="{'overflow-hidden':toggleMenu || toggleSpinner || _toggle_panelShare || _toggle_panelSearch}">
+  <div class="mioDiv">
+    <div class="bar bar-header bar-sosdriver">
+      <h1 class="title">Header </h1>
+      <i class="ion-android-notifications-none" ng-click="openMenu()"> </i>
     </div>
-  </div>
 
-</div>
+    <div class="tabs-striped tabs-top tabs-background-sosdriver tabs-color-dark">
+        <div class="tabs">
+            <a class="tab-item" ng-click="changeTab(0)">
+              <i class="icon ion-person"> </i>
+              Person
+            </a>
+            <a class="tab-item" ng-click="changeTab(1)">
+              <i class="icon ion-earth">  </i>
+              Map
+            </a>
+            <a class="tab-item" ng-click="changeTab(2)">
+              <i class="icon ion-ios-list-outline"></i>
+              Cronology
+            </a>
+
+            <a class="tab-item"  ng-click="changeTab(3)">
+              <i class="icon ion-gear-a"></i>
+              Settings
+            </a>
+        </div>
+    </div>
+
+
   <div define-area type-area="withHeaderFooterTabHome">
 
       <tabs class="swiper-container">
@@ -42,9 +42,13 @@
               </div>
 
               <!-- TAB2 -->
+
               <div  class="swiper-slide" id="google-map" ng-controller="GeolocalizationController" >
                   <load-template url="../views/home/geolocalization.html"></load-template>
-              </div>
+                  <div id="prova"></div>
+
+
+            </div>
 
               <!-- TAB3 -->
               <div when-scrolled class="swiper-slide">
@@ -62,8 +66,39 @@
 
     </div>
 
-</div>
+  </div>
 
-<div id="searchAddressHere">
+    <div ng-class="toggleMenu ? 'open-menu':'close-menu'"
+           ng-swipe-right="closeMenu()"
+           id="right-page">
+          <div id="main-menu">
+            <div class="list">
+
+                <a class="item item-avatar" href="#">
+                  <img src="prova.jpg">
+                  <div align="center" class = "notifyContent"><h2>Venkman</h2>
+                  <p>Back off, man. I'm a scientist.</p>
+                </div>
+                </a>
+
+
+
+            </div>
+          </div>
+      </div>
+
+      <!--PAGE CONTENT-->
+    <ui-view></ui-view>
+
+    <!-- MENU OVERLAY -->
+    <div ng-click="closeMenu()" ng-swipe-right="closeMenu()" ng-class="toggleMenu ? 'open-overlay':'close-overlay'"
+         class="overlay"></div>
+
+    <!-- OVERLAY -->
+    <div ng-class="(toggleSpinner) ? 'open-overlay':'close-overlay'" class="overlay"></div>
+
+    <!-- SPINNER -->
+    <spinner ng-if="toggleSpinner"></spinner>
+
 
 </div>

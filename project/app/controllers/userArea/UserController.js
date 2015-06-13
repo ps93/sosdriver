@@ -155,11 +155,6 @@ $scope.Driver = function() {
 };//fine function chooseDriver
 $scope.autista = function (){
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> ddcc3019b47a2ac801a34b13205f485d8c23ac24
         var url2= SANITRANSPORT+'availability?id='+$scope.user.IdUser;
 
         $http.get(url2).success(function(data, status, headers, config)

@@ -46,15 +46,15 @@ module.exports = {
             Swiper: 'swiper',
             accounting: 'accounting'
         })
-        new NgAnnotatePlugin({
+    /*    new NgAnnotatePlugin({
             add: true
-        })
+        }),
         new Webpack.optimize.UglifyJsPlugin({
             mangle: true,
             compress: {
                 warnings: false
             }
-        })
+        })*/
     ]
 
 };

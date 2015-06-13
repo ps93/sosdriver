@@ -138,21 +138,7 @@ module.exports = function (app) {
                                                       }]
                                                   }
                                               })
-                            url: '/licence',
-                            template: require('../views/home/registrationlicense.html'),
-                            controller: 'registrationLicenseController',
-                            resolve: {
-                                load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
-                                    var deferred = $q.defer();
-                                    require.ensure([], function () {
-                                        $ocLazyLoad.load({name: 'app.registrationLicence'});
-                                        deferred.resolve(require('../controllers/userArea'));
-                                    });
-                                    return deferred.promise;
-                                }]
-                            }
-                        })
->>>>>>> 9c7ca877aa075f3df023b8aa9169f7355ad9321d
+
 
 
 

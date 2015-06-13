@@ -43,6 +43,28 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $fi
                                     // or server returns response with an error status.
                                     alert("Errore");
                                   });
+
+$scope.takePicture = function(){
+        var cameraOptions = {
+            quality: 50,
+            destinationType: Camera.DestinationType.DATA_URL
+         };
+        var success = function(data){
+        $scope.$apply(function () {
+             /*
+               remember to set the image ng-src in $apply,
+               i tried to set it from outside and it doesn't work.
+             */
+               $scope.cameraPic = "data:image/jpeg;base64," + data;
+             });
+         };
+        var failure = function(message){
+             alert('Failed because: ' + message);
+        };
+        //call the cordova camera plugin to open the device's camera
+        navigator.camera.getPicture( success , failure , cameraOptions );
+    };
+
 $scope.salva = function(){
 
 
@@ -62,7 +84,7 @@ $scope.salva = function(){
 
 
     var user = {
-                
+
                 Username : $rootScope.user.Username,
                 Email : $scope.email /* !=='undefined' ? $rootScope.user.email : $scope.email */,
                 Cellulare : $scope.cellulare,
@@ -121,11 +143,9 @@ $scope.Driver = function() {
     }
 };//fine function chooseDriver
 $scope.autista = function (){
-<<<<<<< HEAD
-        var url2= SANITRANSPORT+'availability?id='+$scope.IdUser;
-=======
+
         var url2= SANITRANSPORT+'availability?id='+$scope.user.IdUser;
->>>>>>> 9c7ca877aa075f3df023b8aa9169f7355ad9321d
+
         $http.get(url2).success(function(data, status, headers, config)
           {
             if(data==1)

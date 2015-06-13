@@ -1,11 +1,23 @@
 'use strict';
 module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $filter, localStorageService, GoogleMapInitService) {
 
+  var pat = $state.params.pat;
 
   $rootScope.user = localStorageService.get('user');
+
     $scope.controllo;
     $scope.driver = true;
     $scope.clock = new Date();
+
+
+    if (pat == 1)
+    {
+      $scope.Patente = $rootScope.user.Patente;
+      $rootScope.user.CodicePatente = $scope.Patente.CodicePatente;
+      $rootScope.user.Emissione = $scope.Patente.Emissione;
+      $rootScope.user.Scadenza = $scope.Patente.Scadenza;
+      $rootScope.user.TipoPatente = $scope.Patente.TipoPatente;
+    }
 
 
 
@@ -30,10 +42,7 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $fi
                                    $scope.checkautista =true;
                                      }
 
-                                      $rootScope.user.CodicePatente = $rootScope.user.Patente.CodicePatente;
-                                      $rootScope.user.Emissione;
-                                      $rootScope.user.Scadenza;
-                                      $rootScope.user.TipoPatente;
+
 
                                  }).error(function(){
                                     // called asynchronously if an error occurs
@@ -120,14 +129,14 @@ $scope.Driver = function() {
     }
     else {
       $scope.chooseDriver = !$scope.chooseDriver;
-      $scope.patente = $rootScope.user.codicepatente;
-      $scope.emissione = $rootScope.user.emissione;
-      $scope.scadenza = $rootScope.user.scadenza;
-      $scope.tipopatente = $rootScope.user.tipopatente;
     }
 };//fine function chooseDriver
 $scope.autista = function (){
+
+
+
         var url2= SANITRANSPORT+'availability?id='+$scope.user.IdUser;
+
         $http.get(url2).success(function(data, status, headers, config)
           {
             if(data==1)

@@ -9,6 +9,30 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $fi
     $scope.driver = true;
     $scope.clock = new Date();
 
+    $scope.capturePhoto = function(){
+
+      $scope.test = "test 1";
+      var defer = $q.defer();
+      defer.promise.then(function (imageData){
+           var image = imageData;
+
+          alert($scope); // [object Object]
+          alert($scope.test); // test1
+          $scope.test = "test 2"; // Problem: do not show on screen
+          alert($scope.test); // test2
+      }, function (error){ alert('nadaa');});
+
+      navigator.camera.getPicture(defer.resolve, defer.reject, { quality: 50,
+      destinationType: Camera.DestinationType.DATA_URL });
+
+  };
+
+
+
+
+
+
+
 
     if (pat == 1)
     {
@@ -49,6 +73,30 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $fi
                                     // or server returns response with an error status.
                                     alert("Errore");
                                   });
+
+
+
+
+                                  $scope.takePicture = function(){
+                                        var cameraOptions = {
+                                            quality: 50,
+                                            destinationType: Camera.DestinationType.DATA_URL
+                                         };
+                                        var success = function(data){
+                                        $scope.$apply(function () {
+                                             /*
+                                               remember to set the image ng-src in $apply,
+                                               i tried to set it from outside and it doesn't work.
+                                             */
+                                               $scope.cameraPic = "data:image/jpeg;base64," + data;
+                                             });
+                                         };
+                                        var failure = function(message){
+                                             alert('Failed because: ' + message);
+                                        };
+                                        //call the cordova camera plugin to open the device's camera
+                                        navigator.camera.getPicture( success , failure , cameraOptions );
+                                    };
 
 $scope.takePicture = function(){
         var cameraOptions = {
@@ -155,10 +203,18 @@ $scope.Driver = function() {
 };//fine function chooseDriver
 $scope.autista = function (){
 
+<<<<<<< HEAD
         var url2= SANITRANSPORT+'availability?id='+$scope.user.IdUser;
+=======
+        var url2= SANITRANSPORT+'availability?id='+$scope.user.idUser;
+
+
+>>>>>>> ba2e9c95e841c7add94b745b3c081acd9915bfef
 
         $http.get(url2).success(function(data, status, headers, config)
           {
+           if (status==200)
+            {
             if(data==1)
               {
                 $rootScope.user.disponibile = data;
@@ -171,6 +227,7 @@ $scope.autista = function (){
                 localStorageService.set('user',$rootScope.user);
                 $scope.checkautista = false;
               }
+             }
             }).error(function(){
              // called asynchronously if an error occurs
              // or server returns response with an error status.
@@ -189,7 +246,7 @@ function mia_posizione(position) {
  $scope.mylat = mylat;
  $scope.mylon = mylon;
 var user = {
-        iduser : $rootScope.user.username,
+        iduser : $rootScope.user.idUser,
          lat : $scope.mylat,
          lon : $scope.mylon
       };

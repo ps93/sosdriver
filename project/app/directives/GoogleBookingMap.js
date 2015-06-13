@@ -181,14 +181,14 @@ module.exports = function (app) {
                           "languages": $rootScope.userSettings.language,
                           "minutes":scope.durata,
                           "distance":  scope.distanza,
-                          "iddriver": $rootScope.driverSelected.iddriver,
-                          "iduser": $rootScope.user.idUser,
+                          "iddriver": $rootScope.driverSelected.IdDriver,
+                          "iduser": $rootScope.user.IdUser,
                           "lonpartenza": scope.myLon,
                           "latpartenza": scope.myLat,
                           "latarrivo": $rootScope.driverSelected.lat,
                           "lonarrivo":$rootScope.driverSelected.lon,
-                          "name": $rootScope.user.nome,
-                          "surname": $rootScope.user.cognome
+                          "name": $rootScope.user.Nome,
+                          "surname": $rootScope.user.Cognome
 
                         };
 

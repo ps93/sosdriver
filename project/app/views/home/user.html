@@ -3,7 +3,7 @@
 <div class="list list-inset">
   <div class="head">
     <div class="item item-text-wrap item-thumbnail-left">
-     <img src="prova.jpg" >
+     <img src="prova.jpg" id="provaImage" ng-click="capturePhoto()">
      <h2><b>{{user.Nome + " " + user.Cognome}}</b></h2>
      <p>{{clock | date:'dd-MMMM-yyyy'}}</p><ds-widget-clock show-digital theme="blue-light" digital-format="'hh:mm:ss a'"></ds-widget-clock>
      <label class="toggle toggle-royal">

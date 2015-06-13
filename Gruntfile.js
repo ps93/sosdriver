@@ -119,7 +119,8 @@ module.exports = function (grunt) {
                         'https://github.com/apache/cordova-plugin-statusbar.git',
                         'https://github.com/apache/cordova-plugin-dialogs.git',
                         'https://github.com/apache/cordova-plugin-inappbrowser.git',
-                        'https://github.com/apache/cordova-plugin-geolocation.git'
+                        'https://github.com/apache/cordova-plugin-geolocation.git',
+                        'https://github.com/apache/cordova-plugin-camera.git'
                     ]
                 }
             },

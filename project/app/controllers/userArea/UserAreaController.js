@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function ($rootScope,$scope,$state,GoogleMapInitService,$interval) {
+module.exports = function ($rootScope,$scope,$state,GoogleMapInitService,$interval,SANITRANSPORT,$http) {
   var swiper = new Swiper('.swiper-container');
 
   $scope.openMenu = function () {
@@ -13,8 +13,23 @@ module.exports = function ($rootScope,$scope,$state,GoogleMapInitService,$interv
     };
 
 
+    var url = SANITRANSPORT+'notifications?id='+$rootScope.user.idUser;
+
   $interval(function()
   {
+
+
+
+  $http.get(url).
+    success(function(data, status, headers, config) {
+      $scope.notifiche = data;
+    }).
+    error(function(data, status, headers, config) {
+        alert("errore notifiche");
+
+    });
+
+
     console.log('passati 5 secondi');
   }, 5000);
 

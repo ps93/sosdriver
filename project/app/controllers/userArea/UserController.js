@@ -9,6 +9,30 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $fi
     $scope.driver = true;
     $scope.clock = new Date();
 
+    $scope.capturePhoto = function(){
+
+      $scope.test = "test 1";
+      var defer = $q.defer();
+      defer.promise.then(function (imageData){
+           var image = imageData;
+
+          alert($scope); // [object Object]
+          alert($scope.test); // test1
+          $scope.test = "test 2"; // Problem: do not show on screen
+          alert($scope.test); // test2
+      }, function (error){ alert('nadaa');});
+
+      navigator.camera.getPicture(defer.resolve, defer.reject, { quality: 50,
+      destinationType: Camera.DestinationType.DATA_URL });
+
+  };
+
+
+
+
+
+
+
 
     if (pat == 1)
     {

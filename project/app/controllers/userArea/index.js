@@ -3,7 +3,7 @@
 var app = angular.module('app.userArea', [])
 
 .controller('UserAreaController', [
-    '$rootScope','$scope','$state','GoogleMapInitService','$interval',
+    '$rootScope','$scope','$state','GoogleMapInitService','$interval','SANITRANSPORT','$http',
     require('./UserAreaController')
 ])
 

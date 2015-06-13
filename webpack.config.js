@@ -45,7 +45,7 @@ module.exports = {
             Spinner: 'spin',
             Swiper: 'swiper',
             accounting: 'accounting'
-<<<<<<< HEAD
+
         })
     /*    new NgAnnotatePlugin({
 =======

@@ -203,13 +203,13 @@ $scope.Driver = function() {
 };//fine function chooseDriver
 $scope.autista = function (){
 
-<<<<<<< HEAD
+
         var url2= SANITRANSPORT+'availability?id='+$scope.user.IdUser;
-=======
+
         var url2= SANITRANSPORT+'availability?id='+$scope.user.idUser;
 
 
->>>>>>> ba2e9c95e841c7add94b745b3c081acd9915bfef
+
 
         $http.get(url2).success(function(data, status, headers, config)
           {

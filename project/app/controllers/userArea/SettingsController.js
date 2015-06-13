@@ -24,5 +24,9 @@ module.exports = function ($rootScope, $scope, $state, $translate, localStorageS
         alert("si");
       };
 
+    $scope.logOut = function () {
+      Session.clear();
+      $location.path('/prehome');
+    };
 
 };

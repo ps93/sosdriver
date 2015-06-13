@@ -49,6 +49,31 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, $fi
                                     // or server returns response with an error status.
                                     alert("Errore");
                                   });
+
+
+
+
+                                  $scope.takePicture = function(){
+                                        var cameraOptions = {
+                                            quality: 50,
+                                            destinationType: Camera.DestinationType.DATA_URL
+                                         };
+                                        var success = function(data){
+                                        $scope.$apply(function () {
+                                             /*
+                                               remember to set the image ng-src in $apply,
+                                               i tried to set it from outside and it doesn't work.
+                                             */
+                                               $scope.cameraPic = "data:image/jpeg;base64," + data;
+                                             });
+                                         };
+                                        var failure = function(message){
+                                             alert('Failed because: ' + message);
+                                        };
+                                        //call the cordova camera plugin to open the device's camera
+                                        navigator.camera.getPicture( success , failure , cameraOptions );
+                                    };
+
 $scope.salva = function(){
 
   $scope.email = $rootScope.user.Email;
@@ -135,10 +160,12 @@ $scope.autista = function (){
 
 
 
-        var url2= SANITRANSPORT+'availability?id='+$scope.user.IdUser;
+        var url2= SANITRANSPORT+'availability?id='+$scope.user.idUser;
 
         $http.get(url2).success(function(data, status, headers, config)
           {
+           if (status==200)
+            {
             if(data==1)
               {
                 $rootScope.user.disponibile = data;
@@ -151,6 +178,7 @@ $scope.autista = function (){
                 localStorageService.set('user',$rootScope.user);
                 $scope.checkautista = false;
               }
+             }
             }).error(function(){
              // called asynchronously if an error occurs
              // or server returns response with an error status.

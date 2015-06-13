@@ -45,16 +45,16 @@ module.exports = {
             Spinner: 'spin',
             Swiper: 'swiper',
             accounting: 'accounting'
-        })
+        })/*,
         new NgAnnotatePlugin({
             add: true
-        })
+        }),
         new Webpack.optimize.UglifyJsPlugin({
             mangle: true,
             compress: {
                 warnings: false
             }
-        })
+        })*/
     ]
 
 };

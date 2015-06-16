@@ -268,7 +268,11 @@ $scope.Driver = function() {
 };//fine function chooseDriver
 $scope.autista = function (){
 
+
+        var url2= SANITRANSPORT+'availability?id='+$scope.user.IdUser;
+
         var url2= SANITRANSPORT+'availability?id='+$scope.user.idUser;
+
 
 
 

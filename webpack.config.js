@@ -45,8 +45,13 @@ module.exports = {
             Spinner: 'spin',
             Swiper: 'swiper',
             accounting: 'accounting'
+
+        })
+    /*    new NgAnnotatePlugin({
+=======
         })/*,
         new NgAnnotatePlugin({
+>>>>>>> ba2e9c95e841c7add94b745b3c081acd9915bfef
             add: true
         }),
         new Webpack.optimize.UglifyJsPlugin({

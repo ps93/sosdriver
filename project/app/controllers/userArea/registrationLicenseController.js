@@ -11,6 +11,7 @@ module.exports = function ($rootScope, $scope, $state, $http, SANITRANSPORT, loc
 $scope.registrationlicense = function (){
   var user = {
     Username : $rootScope.user.Username,
+    CodiceFiscale : $scope.codicefiscale,
     CodicePatente : $scope.license,
     Emissione : $scope.dateofissue,
     Scadenza : $scope.dateofexpiration,

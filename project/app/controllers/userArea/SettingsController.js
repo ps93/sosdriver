@@ -25,8 +25,8 @@ module.exports = function ($rootScope, $scope, $state, $translate, localStorageS
       };
 
     $scope.logOut = function () {
-      localStorage.clearAll('user');
-      Session.clear();
+      localStorageService.clearAll('user');
+      $state.go('prehome');
     };
 
 };

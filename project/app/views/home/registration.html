@@ -1,25 +1,32 @@
+<div id="NamespacePreHome">
 <div id="full-page">
-  <div class="bar bar-header bar-balanced">
+  <div class="bar bar-header bar-sosdriver">
   <a ng-click="goToPrehome()" class="button icon-left ion-chevron-left button-clear "></a>
   <h1 class="title" ng-bind="'REGISTRAZION_REGISTRAZION'|translate">REGISTRAZIONE</h1>
 </div>
 <br><br>
 
+
 <form name="userForm" novalidate>
 <div class="list">
   <fieldset ng-show="step">
 
-  <label class="item item-input item-stacked-label item-stable">
+    <div class="item item-divider">
+    PROFILO
+  </div>
+
+
+  <label class="item item-input ">
     <span class="input-label" ng-bind="'NAME_REG'|translate">Nome</span>
-    <input type="text"  ng-model="name"  ng-required="true" >
+    <input type="text"  ng-model="name"  ng-required="true" placeholder="Giovanni">
   </label>
 
-  <label class="item item-input item-stacked-label item-stable">
+  <label class="item item-input">
     <span class="input-label  item-royal" ng-bind="'SURNAME_REG'|translate">Cognome</span>
-    <input type="text"  ng-model="surname"    ng-required="true" >
+    <input type="text"  ng-model="surname"    ng-required="true"  placeholder="Rossi">
   </label>
 
-  <label class="item item-input item-stacked-label item-stable">
+  <label class="item item-input item-select">
     <span class="input-label  item-royal" ng-bind="'BIRTHDAY_REG'|translate">Data di Nascita</span>
     <div class="row">
       <div class="col col-bottom">
@@ -30,18 +37,18 @@
   </label>
 
 
-  <label class="item item-input item-select item-stacked-label item-stable">
+  <label class="item item-input item-select">
     <div class="input-label" ng-bind="'SEX_REG'|translate">Sesso</div>
     <select ng-model="gender"   ng-required="true" >
-      <option value="M">Maschio</option>
+      <option value="M" ng-selected=true>Maschio</option>
       <option value="F">Femmina</option>
     </select>
   </label>
 
   <label class="item item-input item-select">
     <div class="input-label" ng-bind="'RESIDENCE_REG'|translate">Residenza</div>
-    <select ng-model="city"    ng-required="true" >
-  <option value="BOLOGNA">BOLOGNA</option>
+    <select ng-model="city"  ng-required="true" >
+  <option value="BOLOGNA" ng-selected=true>BOLOGNA</option>
   <option value="MILANO">MILANO</option>
   <option value="ROMA">ROMA</option>
   <option value="TORINO">TORINO</option>
@@ -50,34 +57,42 @@
   </label>
 
 
-      <label class="item item-input item-stacked-label item-stable">
+      <label class="item item-input">
         <span class="input-label" ng-bind="'STREET_REG'|translate">Via</span>
-        <input class="item-royal" name="via" type="text"  ng-model="street"    ng-required="true" >
+        <input class="item-royal" name="via" type="text"  ng-model="street"    ng-required="true" placeholder="Via matteotti 53">
       </label>
 
+      <label class="item item-input">
+        <span class="input-label" ng-bind="'CEL_NUMBER_REG'|translate">Numero di Telefono</span>
+        <input class="item-royal" name="numero" type="text"  ng-model="number" placeholder="324xxxxx"  ng-required="true">
+      </label>
+
+
 </fieldset>
-  <button align="center" class="button button-outline button-balanced col col-33 col-offset-33" ng-show="step" ng-init="step= true" ng-click="step = !step"  >
+  <button align="center" class="button button-block button-positive" ng-show="step" ng-init="step= true" ng-click="step = !step"  >
   Avanti
   </button>
 
 
+
   <fieslset ng-hide="step">
-  <label class="item item-input item-stacked-label item-stable">
+
+  <div class="item item-divider">
+  ACCOUNT
+</div>
+
+  <label class="item item-input">
     <span class="input-label">E-mail</span>
     <input class="item-royal" name="Partenza" type="text" ng-model="email"    ng-required="true" >
   </label>
 
-  <label class="item item-input item-stacked-label item-stable">
-    <span class="input-label" ng-bind="'CEL_NUMBER_REG'|translate">Numero di Telefono</span>
-    <input class="item-royal" name="numero" type="text"  ng-model="number"   ng-required="true">
-  </label>
 
-  <label class="item item-input item-stacked-label item-stable">
+  <label class="item item-input">
     <span class="input-label">Username</span>
     <input class="item-royal" name="username" type="text"  ng-model="username"     ng-required="true" >
   </label>
 
-  <label class="item item-input item-stacked-label item-stable">
+  <label class="item item-input">
     <span class="input-label">Password</span>
     <input class="item-royal" name="password" type="password"  ng-model="password"    ng-required="true" >
   </label>
@@ -86,12 +101,13 @@
     </fieldset>
 
 
-  <button align="center" ng-bind="'SIGN_REG'|translate" class="button button-outline button-balanced col col-33 col-offset-33" ng-click="registration()"  ng-disabled="!userForm.$valid">
+  <button align="center" ng-bind="'SIGN_REG'|translate" class="button button-block button-positive" ng-click="registration()"  ng-disabled="!userForm.$valid">
   Registrati
   </button>
 
 </form>
 
 
+</div>
 </div>
 </div>

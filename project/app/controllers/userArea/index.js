@@ -24,7 +24,7 @@ var app = angular.module('app.userArea', [])
 ])
 
 .controller('SettingsController', [
-  '$rootScope', '$scope', '$state','$translate', 'localStorageService', 'tmhDynamicLocale', '$timeout', 
+  '$rootScope', '$scope', '$state','$translate', 'localStorageService', 'tmhDynamicLocale', '$timeout',
     require('./SettingsController')
 ])
 

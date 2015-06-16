@@ -3,18 +3,37 @@
 <div class="list list-inset">
   <div class="head">
     <div class="item item-text-wrap item-thumbnail-left">
-      <img  class="myImage" src="prova.jpg" ng-click="takePicture()">
+      <img  class="myImage" src="prova.jpg" ng-click="capturePhotos()">
       <img id="myImage">
 
      <h2><b>{{user.Nome + " " + user.Cognome}}</b></h2>
      <p>{{clock | date:'dd-MMMM-yyyy'}}</p><ds-widget-clock show-digital theme="blue-light" digital-format="'hh:mm:ss a'"></ds-widget-clock>
-     <label class="toggle toggle-royal">
+     <label class="toggle toggle-light">
       <input type="checkbox"  ng-click="Driver()">
       <div class="track">
       <div class="handle"> </div>
     </div>
   </div>
     <div class="list" ng-hide="chooseDriver" >
+      <div class="item item-divider">
+        <strong>Dati Utente</strong>
+      </div>
+      <div class="item">
+        <div align="center">Codice Utente</div>
+          <p1>{{user.idUser}}</p1>
+      </div>
+      <div class="item">
+        <div align="center">Data di Nascita</div>
+          <p1>{{user.DataNascita}}</p1>
+      </div>
+      <div class="item">
+        <div align="center">Sesso</div>
+          <p1>{{user.Sesso}}</p1>
+      </div>
+      <div class="item">
+        <div align="center">Data di Nascita</div>
+          <p1>{{user.DataNascita}}</p1>
+      </div>
         <div class="item item-divider">
           <strong ng-bind="'CONTACTS_USER'|translate">Contatti</strong>
         </div>
@@ -90,8 +109,10 @@
                <div align="right"> <i class="icon ion-edit" ng-show="shouldShow" ></i></div>
            </div>
 
+           <div class="item item-divider">
+             <strong ng-bind="'AVAILABILITY_USER'|translate">Disponibilità</strong>
+           </div>
            <label class="checkbox" >
-             <h3 ng-bind="'AVAILABILITY_USER'|translate">Disponibilità</h3>
        <input type="checkbox" ng-click="autista()" ng-init="checkautista=false" ng-checked="checkautista">
      </label>
             <label class="item item-input">
@@ -100,6 +121,6 @@
    </div>
 </div><!--seconda pagina-->
   <button class="button button-block button-positive" ng-show="shouldShow"  ng-click="annulla()" ng-bind="'CANCEL_USER'|translate">Annulla</button>
-  <button class="button button-outline button-balanced col col-33 col-offset-33" ng-ngit="shouldShow = true"  ng-click="shouldShow = !shouldShow" ng-hide="shouldShow" ng-bind="'CHANGE_USER'|translate">Modifica</button>
-  <button  class="button button-outline button-balanced col col-33 col-offset-33" ng-show="shouldShow" ng-bind="'SAVE_USER'|translate" ngclick="shouldShow = !shouldShow"ng-click="salva()">Salva</button>
+  <button class="button button-block button-positive" ng-ngit="shouldShow = true"  ng-click="shouldShow = !shouldShow" ng-hide="shouldShow" ng-bind="'CHANGE_USER'|translate">Modifica</button>
+  <button  class="button button-block button-positive" ng-show="shouldShow" ng-bind="'SAVE_USER'|translate" ngclick="shouldShow = !shouldShow"ng-click="salva()">Salva</button>
 </div><!--fine-->

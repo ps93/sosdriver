@@ -781,7 +781,7 @@ header {
   padding: 20px;
   overflow: hidden;
   border: none;
-  font: normal 45px/1 "Audiowide", Helvetica, sans-serif;
+  font: normal 45px/1 "Audiowide";
   color: rgba(255,255,255,0.70);
   text-align: center;
   -o-text-overflow: ellipsis;

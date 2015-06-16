@@ -5105,7 +5105,7 @@ a.item-content {
   padding-top: 8px;
   padding-bottom: 8px;
   min-height: 30px;
-  background-color: rgba(81, 7, 126, 0.54);
+  background-color: rgba(57, 7, 87, 0.54);
   color: #FFF;
   font-weight: 500;
   padding: 3%;
@@ -6613,8 +6613,8 @@ progress {
         box-shadow: none;
         color: #fff; }
   .button.button-positive {
-    border-color: #0c63ee;
-    background-color: #387ef5;
+    border-color: #394C96;
+    background-color: #394C96;
     color: #fff; }
     .button.button-positive:hover {
       color: #fff;

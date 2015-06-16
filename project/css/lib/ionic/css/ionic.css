@@ -2400,9 +2400,10 @@ sub {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-  border: 1px solid #c0c0c0; }
+  margin: 2px 2px;
+  padding: 0.35em 0em 0.75em;
+  font-family: monospace;
+  }
 
 /**
  * 1. Correct `color` not being inherited in IE 8/9.
@@ -2532,7 +2533,9 @@ table {
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: monospace;
+  }
 
 html {
   overflow: hidden;
@@ -5102,11 +5105,11 @@ a.item-content {
   padding-top: 8px;
   padding-bottom: 8px;
   min-height: 30px;
-  background-color: rgba(150, 170, 239, 0.54);
-  color: #000;
+  background-color: rgba(81, 7, 126, 0.54);
+  color: #FFF;
   font-weight: 500;
   padding: 3%;
-  border-color: rgb(133, 133, 184);
+  border-color: rgba(133, 133, 184, 0);
   }
 
 .platform-ios .item-divider-platform, .item-divider-ios {
@@ -5306,11 +5309,11 @@ a.item-content {
   position: relative;
   padding-top: 1px;
   padding-bottom: 1px;
-  padding-left: 0;
   margin-bottom: 20px; }
 
 .list:last-child {
-  margin-bottom: 0px; }
+  padding-left: 1%;
+padding-right: 1%; }
   .list:last-child.card {
     margin-bottom: 40px; }
 

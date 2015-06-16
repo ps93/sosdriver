@@ -49,6 +49,7 @@ module.exports = function (app) {
 
             .state('registration', {
                 url: '/Registration',
+                parent: 'headermenuslider',
                 template: require('../views/home/registration.html'),
                 controller: 'registrationController',
                 resolve: {

@@ -30,6 +30,8 @@ module.exports = function ($rootScope,$scope,$state,GoogleMapInitService,$interv
     });
 
 
+
+
     console.log('passati 5 secondi');
   }, 60000);
 

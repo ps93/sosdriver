@@ -204,7 +204,7 @@ $scope.Driver = function() {
 $scope.autista = function (){
 
 
-        var url2= SANITRANSPORT+'availability?id='+$scope.user.IdUser;
+
 
         var url2= SANITRANSPORT+'availability?id='+$scope.user.idUser;
 

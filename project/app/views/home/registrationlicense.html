@@ -1,4 +1,4 @@
-<div class="bar bar-header bar-balanced">
+<div class="bar bar-header bar-sosdriver">
   <a ng-click="goToUser()" class="button icon-left ion-chevron-left button-clear "></a>
   <h1 class="title" ng-bind="'REGISTRAZION_LICENSE'|translate">REGISTRAZIONE PATENTE</h1>
 </div>
@@ -8,12 +8,13 @@
 <form name="userForm" novalidate>
 <div class="list">
 
-<label class="item item-input item-stacked-label item-stable">
+
+<label class="item item-input">
   <span class="input-label" ng-bind="'LICENSE_REG'|translate">Numero di Patente</span>
   <input class="item-royal" name="numereopatente" type="text"  ng-model="license"  ng-required="true" >
 </label>
 
-<label class="item item-input item-stacked-label item-stable">
+<label class="item item-input">
   <span class="input-label  item-royal" ng-bind="'DATE_ISSUE_REG'|translate">Data di Emissione</span>
   <div class="row">
     <div class="col col-bottom">
@@ -24,7 +25,7 @@
 </label>
 
 
-<label class="item item-input item-stacked-label item-stable">
+<label class="item item-input">
   <span class="input-label  item-royal" ng-bind="'DATE_EXPIRY_REG'|translate">Data di Scadenza</span>
   <div class="row">
     <div class="col col-bottom">
@@ -38,13 +39,13 @@
 <label class="item item-input item-select">
   <div class="input-label" ng-bind="'TYPE_LICENSE_REG'|translate">Tipologia Patente</div>
   <select ng-model="typelicense"   ng-required="true" >
-    <option value="A">A</option>
+    <option value="A" ng-selected=true>A</option>
     <option value="B">B</option>
     <option value="AB">AB</option>
   </select>
 </label>
 
-<button align="center" ng-bind="'SIGN_REG'|translate" class="button button-outline button-balanced col col-33 col-offset-33"  ng-disabled="!userForm.$valid"  ng-click="registrationlicense()">
+<button align="center" ng-bind="'SIGN_REG'|translate" class="button button-block button-positive"  ng-disabled="!userForm.$valid"  ng-click="registrationlicense()">
 Salva
 </button>
 </form>

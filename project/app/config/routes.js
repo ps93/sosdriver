@@ -164,9 +164,30 @@ module.exports = function (app) {
                         })
 
 
+                        //////////////////////////////////////////////
+                          //////////////// RECOVER PASSWORD ////////////////
+                          ////////////////////////////////////////////
+                          .state('recoverPassword', {
+                              url: '/Recover',
+
+                              template: require('../views/home/recoverPassword.html'),
+                              controller: 'recoverPasswordController',
+                              resolve: {
+                                  load: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
+                                      var deferred = $q.defer();
+                                      require.ensure([], function () {
+                                          $ocLazyLoad.load({name: 'app.recoverPassword'});
+                                          deferred.resolve(require('../controllers/recoverPassword'));
+                                      });
+                                      return deferred.promise;
+                                  }]
+                              }
+                          })
+
+
 
                         //////////////////////////////////////////////
-                          //////////////// DRIVER ////////////////
+                          //////////////// BOOKING ////////////////
                           ////////////////////////////////////////////
                           .state('booking', {
                               url: '/booking/:id',

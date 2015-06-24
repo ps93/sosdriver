@@ -20,7 +20,7 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT,localS
         $http(request).success(function(data, status, headers, config)
         {
 
-           if(status=='200')
+           if(status==200)
            {
               console.log('recupero password con successo');
 

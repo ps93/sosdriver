@@ -169,7 +169,7 @@ module.exports = function (app) {
                           ////////////////////////////////////////////
                           .state('recoverPassword', {
                               url: '/Recover',
-
+                              parent: 'headermenuslider',
                               template: require('../views/home/recoverPassword.html'),
                               controller: 'recoverPasswordController',
                               resolve: {

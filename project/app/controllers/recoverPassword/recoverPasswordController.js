@@ -3,6 +3,12 @@
 module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT,localStorageService)
 {
 
+  $scope.goToDrivers = function()
+  {
+    $state.go('prehome');
+  };
+
+
   $scope.recover = function ()
   {
 

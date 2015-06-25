@@ -44,5 +44,6 @@ module.exports = {
     BOOK_MAP_PANEL : 'Prenota',
     LICENSE_DRIVER : 'Patente',
     USER_INFORMATION : 'Dati utente',
-    NOTIFICATIONS : 'Notifiche'
+    NOTIFICATIONS : 'Notifiche',
+    RECOVER : 'Recupero password'
 };

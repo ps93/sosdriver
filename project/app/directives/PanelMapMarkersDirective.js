@@ -176,7 +176,7 @@ scope.calculateAddress = function()
             '<div                     class="popup">'+
             '<h2 >'+data.nome+' '+  data.cognome+'</h2>'+
             ' <div class="row"> <div class="col col-50"><img src="http://img4.wikia.nocookie.net/__cb20130920142351/simpsons/images/e/e9/Pic_1187696292_8.jpg" style="max-width:100%;" /> </div>'+
-            '<div class="col col-50"> <button id="detailButton" class="button button-outline button-dark" ng-click="driverDetail('+data.idautista+')"> Dettagli </button><div class="spacer-5"></div><button class="button button-outline button-dark"> Prenota </button> </div> </div>'+
+            '<div class="col col-50"> <div class="spacer-20"> </div> <div class="spacer-10"> </div><button id="detailButton" class="button button-outline button-dark" ng-click="driverDetail('+data.idautista+')"> Dettagli </button><div class="spacer-5"></div> </div> </div>'+
             '</div>';
 
             var compiled = $compile(content)(scope);

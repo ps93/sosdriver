@@ -45,5 +45,6 @@ module.exports = {
     BOOK_MAP_PANEL : 'Book',
     LICENSE_DRIVER : 'License',
     USER_INFORMATION : 'User information',
-    NOTIFICATIONS : 'Notifications'
+    NOTIFICATIONS : 'Notifications',
+    RECOVER : 'Recover password'
 };

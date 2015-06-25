@@ -49,4 +49,9 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT,localS
         $state.go('registration');
   };
 
+  $scope.goToRecoverPassword = function()
+  {
+    $state.go('recoverPassword');
+  };
+
 };

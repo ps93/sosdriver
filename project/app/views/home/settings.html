@@ -1,8 +1,8 @@
 <div id="NamespaceSettings">
     <div class="margin-lateral">
         <div class="spacer-30"></div>
-
-        <h1 ng-bind=" 'SELECT_LANGUAGE' | translate">Select language</h1>
+<div class="spacer-20"></div>
+        <h2 ng-bind=" 'SELECT_LANGUAGE' | translate">Select language</h2>
 
         <div class="spacer-5"></div>
         <select class="sosdriver-select" ng-model="settings.language">
@@ -14,13 +14,13 @@
 
         <div class="spacer-20"></div>
 
-
-        <button class="button icon-left ion-log-out button-clear button-dark" ng-click="logOut()" >Logout</button>
+        <h2 >Logout</h2>
+        <button class="button icon-left ion-log-out button-clear button-dark" ng-click="logOut()" ></button>
 
 
         <div class="spacer-20"></div>
-        <br></br>
-      <h5>Notifiche</h5><label class="toggle toggle-royal">
+          <h2  ng-bind=" 'NOTIFICATIONS' | translate" >Notifiche</h2>
+      <label class="toggle toggle-royal">
        <input type="checkbox">
        <div class="track">
          <div class="handle"></div>
@@ -28,7 +28,7 @@
      </label>
         <div class="spacer-20"></div>
         <div class="spacer-20"></div>
-        
+
         <button ng-click="saveSettings($event)" class="btn-xxl btn-sosDriver" ng-bind=" 'SAVE_SETTINGS' | translate">
             Salva
         </button>

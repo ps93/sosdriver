@@ -14,6 +14,7 @@ module.exports = function ($rootScope,$scope,$state,GoogleMapInitService,$interv
 
 
     var url = SANITRANSPORT+'notifications?id='+$rootScope.user.idUser;
+      var url2 = SANITRANSPORT+'drivers';
 
   $interval(function()
   {
@@ -23,12 +24,24 @@ module.exports = function ($rootScope,$scope,$state,GoogleMapInitService,$interv
   $http.get(url).
     success(function(data, status, headers, config) {
       $scope.notifiche = data;
+      console.log("notifiche");
     }).
     error(function(data, status, headers, config) {
-        alert("errore notifiche");
+        console.log("errore notifiche");
 
     });
 
+
+
+  $http.get(url2).
+    success(function(data, status, headers, config) {
+      $rootScope.drivers = data;
+      console.log("drivers");
+    }).
+    error(function(data, status, headers, config) {
+        console.log("errore drivers");
+
+    });
 
 
 

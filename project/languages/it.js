@@ -42,5 +42,7 @@ module.exports = {
     MISSION_COMPLETE_DRIVER : 'Servizi Fatti',
     DETAILS_MAP_PANEL : 'Dettagli',
     BOOK_MAP_PANEL : 'Prenota',
-    LICENSE_DRIVER : 'Patente'
+    LICENSE_DRIVER : 'Patente',
+    USER_INFORMATION : 'Dati utente',
+    NOTIFICATIONS : 'Notifiche'
 };

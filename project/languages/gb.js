@@ -43,5 +43,7 @@ module.exports = {
     MISSION_COMPLETE_DRIVER : 'Jobs done',
     DETAILS_MAP_PANEL : 'Details',
     BOOK_MAP_PANEL : 'Book',
-    LICENSE_DRIVER : 'License'
+    LICENSE_DRIVER : 'License',
+    USER_INFORMATION : 'User information',
+    NOTIFICATIONS : 'Notifications'
 };

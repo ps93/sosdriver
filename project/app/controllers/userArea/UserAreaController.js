@@ -8,14 +8,26 @@ module.exports = function ($rootScope,$scope,$state,GoogleMapInitService,$interv
   };
 
 
+
     $scope.closeMenu = function () {
         $rootScope.toggleMenu = false;
     };
 
+    $scope.openNotification = function(){
 
-    var url = SANITRANSPORT+'notifications?id='+$rootScope.user.idUser;
+      alert('funge');
+    };
+    var url = SANITRANSPORT+'notifications?id='+$rootScope.user.IdUser;
       var url2 = SANITRANSPORT+'drivers';
+      $http.get(url).
+        success(function(data, status, headers, config) {
+          $scope.notifiche = data;
+          console.log("notifiche");
+        }).
+        error(function(data, status, headers, config) {
+            console.log("errore notifiche");
 
+        });
   $interval(function()
   {
 

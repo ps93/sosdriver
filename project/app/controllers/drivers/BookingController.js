@@ -14,6 +14,10 @@ console.log("questooo "+$scope.partenza);
 
   var idautista = $state.params.id;
 
+  $scope.goToDrivers = function()
+  {
+      $state.go('userArea');
+  };
   $scope.provaBooking= function()
   {
 

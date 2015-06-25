@@ -68,12 +68,16 @@
           <div id="main-menu">
             <div class="list">
 
-                <a class="item item-avatar" href="#">
+              <div ng-repeat="notifica in ::notifiche track by $index">
+                  <a class="item item-avatar"  ng-click="openNotification()">
                   <img src="prova.jpg">
                   <div align="center" class = "notifyContent"><h2>Venkman</h2>
-                  <p>Back off, man. I'm a scientist.</p>
+                  <p >{{notifica.messaggio}}</p>
+
+              
                 </div>
                 </a>
+              </div>
 
 
 

@@ -46,7 +46,7 @@ module.exports = function ($rootScope, $scope, $state,$http,SANITRANSPORT,localS
             $state.go('userArea');
           }
 
-          alert(data);
+      
 
         }).error(function(){
            // called asynchronously if an error occurs
